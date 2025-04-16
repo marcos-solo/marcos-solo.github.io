@@ -1,91 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcos Solomon Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marcos Solomon Portfolio</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+
+    header {
+      background-color: #1f2937;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #fff;
+    }
+
+    .section {
+      margin-top: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 2rem;
+    }
+
+    .section h2 {
+      color: #1f2937;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: .5rem;
+    }
+
+    .experience div,
+    .skills div {
+      margin: 0.5rem 0;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skills div {
+      background-color: #e5e7eb;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background-color: #111827;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    .section img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Marcos Solomon</h1>
-            <p>Email: <a href="mailto:Solomonmarcos34@gmail.com">Solomonmarcos34@gmail.com</a> | Phone: 0741840839</p>
-        </div>
-    </header>
+  <header>
+    <div class="container">
+      <img src="profile.jpg" alt="Marcos Solomon Profile Photo" />
+      <h1>Marcos Solomon</h1>
+      <p>
+        Email:
+        <a href="mailto:Solomonmarcos34@gmail.com" style="color: #38bdf8;">Solomonmarcos34@gmail.com</a>
+        |
+        Phone: 0741840839
+      </p>
+    </div>
+  </header>
 
-    <section id="objective" class="section">
-        <div class="container">
-            <h2>Career Objective</h2>
-            <p>I am seeking a dynamic and stimulating workplace that fosters innovation, presents challenges, and provides ample opportunities for personal and professional growth. My dedication to tasks, intrinsic motivation, and adaptability, coupled with excellent communication and interpersonal abilities, enable me to collaborate effectively across diverse settings. Additionally, I possess a keen creative drive and an unwavering enthusiasm for exploring new ideas and advancements.</p>
-        </div>
-    </section>
+  <section id="objective" class="section">
+    <div class="container">
+      <h2>Career Objective</h2>
+      <p>
+        I am seeking a dynamic and stimulating workplace that fosters innovation, presents challenges, and provides ample opportunities for personal and professional growth. My dedication to tasks, intrinsic motivation, and adaptability, coupled with excellent communication and interpersonal abilities, enable me to collaborate effectively across diverse settings. Additionally, I possess a keen creative drive and an unwavering enthusiasm for exploring new ideas and advancements.
+      </p>
+      <img src="career-objective.jpg" alt="Career Focus Image">
+    </div>
+  </section>
 
-    <section id="experience" class="section">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="experience">
-                <div>
-                    <h3>UI/UX Mobile Applications</h3>
-                    <p>Maxlimited Technologies Embu (2022-2023)</p>
-                </div>
-                <div>
-                    <h3>Remote Externship</h3>
-                    <p>RevRoad - VC Industry Deal Sourcing</p>
-                </div>
-                <div>
-                    <h3>Industrial Attachment</h3>
-                    <p>Society of Forensics and Expert Association</p>
-                </div>
-            </div>
+  <section id="experience" class="section">
+    <div class="container">
+      <h2>Experience</h2>
+      <div class="experience">
+        <div>
+          <h3>UI/UX Mobile Applications</h3>
+          <p>Maxlimited Technologies Embu (2022-2023)</p>
         </div>
-    </section>
+        <div>
+          <h3>Remote Externship</h3>
+          <p>RevRoad - VC Industry Deal Sourcing</p>
+        </div>
+        <div>
+          <h3>Industrial Attachment</h3>
+          <p>Society of Forensics and Expert Association</p>
+        </div>
+      </div>
+      <img src="experience.jpg" alt="Professional Experience Image">
+    </div>
+  </section>
 
-    <section id="education" class="section">
-        <div class="container">
-            <h2>Education</h2>
-            <p>Bachelor of Business Information Technology (University of Embu, 2021 - Present)</p>
-        </div>
-    </section>
+  <section id="education" class="section">
+    <div class="container">
+      <h2>Education</h2>
+      <p>Bachelor of Business Information Technology (University of Embu, 2021 - Present)</p>
+      <img src="education.jpg" alt="Graduation Cap or University Image">
+    </div>
+  </section>
 
-    <section id="certifications" class="section">
-        <div class="container">
-            <h2>Certifications</h2>
-            <ul>
-                <li>Security Operation Centre (SOC)</li>
-                <li>Network Security</li>
-                <li>HTML5, Python, Django, and Flask (Full-Stack)</li>
-                <li>Real Ethical Hacking with Python</li>
-                <li>Mastering Linux</li>
-                <li>NGINX, Apache, SSL Encryption</li>
-                <li>Adobe XD UI/UX Design</li>
-                <li>Pro Video Editing</li>
-                <li>Graphic Design</li>
-                <li>Web Hacking</li>
-            </ul>
-        </div>
-    </section>
+  <section id="certifications" class="section">
+    <div class="container">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Security Operation Centre (SOC)</li>
+        <li>Network Security</li>
+        <li>HTML5, Python, Django, and Flask (Full-Stack)</li>
+        <li>Real Ethical Hacking with Python</li>
+        <li>Mastering Linux</li>
+        <li>NGINX, Apache, SSL Encryption</li>
+        <li>Adobe XD UI/UX Design</li>
+        <li>Pro Video Editing</li>
+        <li>Graphic Design</li>
+        <li>Web Hacking</li>
+      </ul>
+      <img src="certifications.jpg" alt="Certificates Image">
+    </div>
+  </section>
 
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills">
-                <div>Security Analyst</div>
-                <div>UI/UX Designer</div>
-                <div>Full-Stack Developer</div>
-                <div>Computer Networking</div>
-                <div>Video Editing</div>
-                <div>Graphic Design</div>
-                <div>Web Security</div>
-                <div>Digital Forensics</div>
-            </div>
-        </div>
-    </section>
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div>Security Analyst</div>
+        <div>UI/UX Designer</div>
+        <div>Full-Stack Developer</div>
+        <div>Computer Networking</div>
+        <div>Video Editing</div>
+        <div>Graphic Design</div>
+        <div>Web Security</div>
+        <div>Digital Forensics</div>
+      </div>
+      <img src="skills.jpg" alt="Skills Image">
+    </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 Marcos Solomon. All rights reserved.</p>
-        </div>
-    </footer>
+  <footer>
+    <div class="container">
+      <p>© 2025 Marcos Solomon. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
