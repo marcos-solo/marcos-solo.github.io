@@ -184,3 +184,49 @@ nav ul li a.active {
     margin: 10px 0;
   }
 }
+.home-content {
+  text-align: center;
+  padding: 40px;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0077b6;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #0077b6;
+  margin-bottom: 20px;
+}
+
+.intro {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  color: #444;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0077b6;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #005b8e;
+}
