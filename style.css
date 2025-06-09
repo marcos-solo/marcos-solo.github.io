@@ -41,7 +41,7 @@ body {
   border-radius: 5px;
 }
 
-/* Section Styling */
+/* Sections */
 .section {
   max-width: 1000px;
   margin: 2rem auto;
@@ -80,21 +80,55 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Footer */
-footer {
+/* Home Page Styling */
+.home-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 2rem;
   text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-  background-color: #222;
-  color: #ccc;
-  font-size: 0.9rem;
 }
+
+.home-content {
+  max-width: 800px;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #555;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background-color: #00bcd4;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0097a7;
+}
+
+/* Lab Grid */
 .lab-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
+/* Lab Box */
 .lab {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -108,6 +142,11 @@ footer {
   margin-bottom: 0.5rem;
 }
 
+.lab p {
+  font-size: 0.95rem;
+}
+
+/* Lab Images */
 .lab img {
   width: 100%;
   max-height: 220px;
@@ -116,9 +155,6 @@ footer {
   margin: 1rem 0;
 }
 
-.lab p {
-  font-size: 0.95rem;
-}
 .lab-images {
   display: flex;
   gap: 10px;
@@ -132,14 +168,13 @@ footer {
   object-fit: cover;
   max-height: 200px;
 }
-.profile-img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #555;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  background-color: #222;
+  color: #ccc;
+  font-size: 0.9rem;
 }
-
-
