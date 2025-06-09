@@ -15,22 +15,25 @@ body {
 /* Navbar */
 .navbar {
   background-color: #222;
-  padding: 1.5rem 0; /* Increased height */
+  padding: 1.5rem 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 3rem; /* Increased gap between links */
+  gap: 3rem;
 }
 
 .navbar ul li a {
   color: #eee;
   text-decoration: none;
-  padding: 0.75rem 1.5rem; /* Increased clickable area */
-  font-size: 1.1rem; /* Larger font size */
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
   font-weight: 600;
 }
@@ -42,9 +45,26 @@ body {
   border-radius: 6px;
 }
 
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
 
+  .navbar {
+    padding: 1rem;
+  }
 
-/* Sections */
+  .navbar ul li a {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Section Styling */
 .section {
   max-width: 1000px;
   margin: 2rem auto;
@@ -52,6 +72,7 @@ body {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  line-height: 1.6;
 }
 
 .section h2 {
@@ -181,6 +202,7 @@ footer {
   color: #ccc;
   font-size: 0.9rem;
 }
+
 /* Contact Section Enhancements */
 #contact {
   text-align: center;
@@ -201,6 +223,8 @@ footer {
 #contact p {
   margin: 0.8rem 0;
 }
+
+/* Download Button */
 .download-btn {
   display: inline-block;
   margin: 1.5rem 0;
@@ -216,50 +240,33 @@ footer {
 .download-btn:hover {
   background-color: #005b99;
 }
-.section {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  line-height: 1.6;
-  font-family: "Segoe UI", sans-serif;
-  color: #333;
+
+/* Responsive Images and Text */
+@media (max-width: 768px) {
+  .section {
+    padding: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section h3 {
+    font-size: 1.2rem;
+  }
+
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .btn,
+  .download-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .lab-images img {
+    width: 100%;
+  }
 }
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #007acc;
-  padding-bottom: 0.3rem;
-}
-
-.section h3 {
-  color: #007acc;
-  margin-top: 2rem;
-}
-
-.section ul {
-  padding-left: 1.2rem;
-}
-
-.section li {
-  margin-bottom: 0.5rem;
-}
-
-/* Download Button */
-.download-btn {
-  display: inline-block;
-  margin: 1rem 0;
-  padding: 0.7rem 1.5rem;
-  background-color: #007acc;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.download-btn:hover {
-  background-color: #005b99;
-}
-
-
