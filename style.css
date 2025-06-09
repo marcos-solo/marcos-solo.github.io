@@ -119,7 +119,7 @@ footer {
 .lab p {
   font-size: 0.95rem;
 }
-/* .lab-images {
+.lab-images {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -131,5 +131,15 @@ footer {
   border-radius: 8px;
   object-fit: cover;
   max-height: 200px;
-} */
+}
+.profile-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #555;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
 
