@@ -5,6 +5,152 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects | Jane Doe</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #222;
+      padding: 1.5rem 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .navbar ul li a {
+      color: #eee;
+      text-decoration: none;
+      padding: 0.75rem 1.2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      background-color: #00bcd4;
+      color: #fff;
+      border-radius: 6px;
+    }
+
+    /* Section Layout */
+    .section {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      text-align: center;
+      color: #00bcd4;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #00bcd4;
+      display: inline-block;
+      padding-bottom: 0.4rem;
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: #fafafa;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .project img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .project h4 {
+      font-size: 1.5rem;
+      color: #007acc;
+      margin-bottom: 0.5rem;
+    }
+
+    .project p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+      color: white;
+    }
+
+    .btn.github {
+      background-color: #333;
+    }
+
+    .btn.github:hover {
+      background-color: #000;
+    }
+
+    .btn.site {
+      background-color: #00bcd4;
+    }
+
+    .btn.site:hover {
+      background-color: #0097a7;
+    }
+
+    @media (max-width: 768px) {
+      .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .project {
+        padding: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -23,49 +169,52 @@
   <section id="projects" class="section">
     <h2>Projects</h2>
 
-    <!-- Existing Projects -->
+    <!-- GitHub Repositories -->
     <div class="project">
-      <img src="images/project1.png" alt="Project 1" />
-      <h4>Vulnerability Scanner</h4>
-      <p>Built a web-based tool using Django + React to scan websites for known CVEs.</p>
+      <img src="images/project1.png" alt="Hospital DSS" />
+      <h4>Hospital DSS</h4>
+      <p>A hospital decision support system built with Django, React, and MySQL.</p>
+      <div class="btn-group">
+        <a href="https://github.com/marcos-solo/hosi_dss" class="btn github" target="_blank">View on GitHub</a>
+      </div>
     </div>
 
     <div class="project">
-      <img src="images/project2.png" alt="Project 2" />
-      <h4>Phishing Detection Model</h4>
-      <p>Developed an ML model that detects phishing URLs using Scikit-learn.</p>
-    </div>
-
-    <div class="project">
-      <img src="images/project3.png" alt="Project 3" />
-      <h4>Student Portal</h4>
-      <p>Created a full-stack student portal with assignments, certificates, and tracking.</p>
-    </div>
-
-    <!-- Added: Penetration Testing Projects -->
-    <div class="project">
-      <h4>Penetration Testing</h4>
-      <ul>
-        <li><a href="https://ho.bethsaidamedicareinstitute.co.ke" target="_blank">ho.bethsaidamedicareinstitute.co.ke</a></li>
-        <li><a href="https://sofsrea.bethsaidamedicareinstitute.co.ke" target="_blank">sofsrea.bethsaidamedicareinstitute.co.ke</a></li>
-        <li><a href="https://memba.websealinternational.com" target="_blank">memba.websealinternational.com</a></li>
-      </ul>
-      <p>Performed comprehensive penetration testing and reported on vulnerabilities, misconfigurations, and security hardening recommendations.</p>
-    </div>
-
-    <!-- Added: GitHub Repositories -->
-    <div class="project">
-      <h4>Hospital DSS System</h4>
-      <p>Developed a hospital decision support system using Django, React, and MySQL.</p>
-      <a class="download-btn" href="https://github.com/marcos-solo/hosi_dss" target="_blank">View on GitHub</a>
-    </div>
-
-    <div class="project">
+      <img src="images/project2.png" alt="Tea Harvester Weather Checker" />
       <h4>Tea Harvester Weather Checker</h4>
-      <p>Created a system that fetches and analyzes weather data to aid tea harvesting decisions.</p>
-      <a class="download-btn" href="https://github.com/marcos-solo/tea_harvester_weather-checker" target="_blank">View on GitHub</a>
+      <p>A weather-checker tool built with Django to assist tea farmers.</p>
+      <div class="btn-group">
+        <a href="https://github.com/marcos-solo/tea_harvester_weather-checker" class="btn github" target="_blank">View on GitHub</a>
+      </div>
     </div>
 
+    <!-- Tested Systems -->
+    <div class="project">
+      <img src="images/project3.png" alt="Bethsaida Main" />
+      <h4>Bethsaida Medicare Main Site</h4>
+      <p>Performed penetration testing on the hospital's primary domain.</p>
+      <div class="btn-group">
+        <a href="https://ho.bethsaidamedicareinstitute.co.ke" class="btn site" target="_blank">View Site</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="images/project4.png" alt="Sofsrea" />
+      <h4>Sofsrea Portal</h4>
+      <p>Security assessment and penetration testing of the Sofsrea branch system.</p>
+      <div class="btn-group">
+        <a href="https://sofsrea.bethsaidamedicareinstitute.co.ke" class="btn site" target="_blank">View Site</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="images/project5.png" alt="WebSeal Memba" />
+      <h4>WebSeal Memba</h4>
+      <p>Penetration testing on WebSeal International Memba portal.</p>
+      <div class="btn-group">
+        <a href="https://memba.websealinternational.com" class="btn site" target="_blank">View Site</a>
+      </div>
+    </div>
   </section>
 
 </body>
