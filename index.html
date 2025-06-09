@@ -3,143 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jane Doe - Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Home | Jane Doe Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#labs">Lab Challenges</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="labs.html">Lab Challenges</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Home -->
-  <section id="home" class="section">
-    <img src="images/DSCN4281.JPG" alt="Profile Photo" class="profile-img" />
-    <h1>Jane Doe</h1>
-    <p class="tagline">Cybersecurity Enthusiast | Web Developer | Problem Solver</p>
-  </section>
-
-  <!-- Resume -->
-  <section id="resume" class="section">
-    <h2>Resume</h2>
-    <div class="resume-block">
-      <h3>Education</h3>
-      <p>BSc. Computer Science - XYZ University (2020-2024)</p>
-
-      <h3>Experience</h3>
-      <p>Intern, CyberSec Labs (2023) - Performed penetration tests and log analysis.</p>
-
-      <h3>Certifications</h3>
-      <ul>
-        <li>CompTIA Security+</li>
-        <li>Certified Ethical Hacker (CEH)</li>
-      </ul>
-
-      <h3>Skills</h3>
-      <ul>
-        <li>Python, JavaScript, HTML/CSS, Bash</li>
-        <li>OWASP ZAP, Wireshark, Nmap, Burp Suite</li>
-        <li>Linux, Git, REST APIs</li>
-      </ul>
+  <!-- Home Section -->
+  <section id="home" class="section home-section">
+    <div class="home-content">
+      <img src="images/DSCN4281.JPG" alt="Profile Picture" class="profile-img" />
+      <h1>Jane Doe</h1>
+      <p class="tagline">Cybersecurity Enthusiast | Web Developer | Problem Solver</p>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-    <div class="project">
-      <img src="images/project1.png" alt="Vulnerability Scanner"/>
-      <h4>Vulnerability Scanner</h4>
-      <p>Built a web-based tool using Django + React to scan websites for known CVEs.</p>
-    </div>
-    <div class="project">
-      <img src="images/project2.png" alt="Phishing Detection"/>
-      <h4>Phishing Detection Model</h4>
-      <p>Developed an ML model that detects phishing URLs using Scikit-learn.</p>
-    </div>
-    <div class="project">
-      <img src="images/project3.png" alt="Student Portal"/>
-      <h4>Student Portal</h4>
-      <p>Created a full-stack student portal with assignments, certificates, and tracking.</p>
-    </div>
-  </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jane Doe. All rights reserved.</p>
+  </footer>
 
-  <!-- Lab Challenges -->
-  <section id="labs" class="section">
-    <h2>Lab Challenges</h2>
-
-    <div class="lab">
-      <h4>Lab Challenge 1: SQL Injection</h4>
-      <p><strong>Problem:</strong> Bypass login with SQL payloads</p>
-      <p><strong>Approach:</strong> Used `' OR '1'='1` in input field</p>
-      <p><strong>Tools:</strong> Burp Suite, browser DevTools</p>
-      <img src="images/screen1.png" alt="SQLi Screenshot" />
-      <p><strong>Lessons:</strong> Importance of input validation and parameterized queries.</p>
-    </div>
-
-    <div class="lab">
-      <h4>Lab Challenge 2: XSS Attack</h4>
-      <p><strong>Problem:</strong> Inject script to trigger alert box</p>
-      <p><strong>Approach:</strong> Used `<script>alert(1)</script>` in form field</p>
-      <p><strong>Tools:</strong> Chrome DevTools</p>
-      <img src="images/screen2.png" alt="XSS Screenshot" />
-      <p><strong>Lessons:</strong> Need for output encoding and input sanitization.</p>
-    </div>
-
-    <div class="lab">
-      <h4>Lab Challenge 3: Directory Traversal</h4>
-      <p><strong>Problem:</strong> Access restricted files outside the root</p>
-      <p><strong>Approach:</strong> Tried `../../etc/passwd` in URL parameters</p>
-      <p><strong>Tools:</strong> Curl, browser</p>
-      <img src="images/screen3.png" alt="Traversal Screenshot" />
-      <p><strong>Lessons:</strong> Restrict file path access and sanitize input.</p>
-    </div>
-
-    <div class="lab">
-      <h4>Lab Challenge 4: File Upload Exploit</h4>
-      <p><strong>Problem:</strong> Upload PHP shell via profile upload</p>
-      <p><strong>Approach:</strong> Renamed `.php` file with image header</p>
-      <p><strong>Tools:</strong> Burp Suite, shell</p>
-      <img src="images/screen4.png" alt="File Upload Screenshot" />
-      <p><strong>Lessons:</strong> Validate file type, extension, and content.</p>
-    </div>
-
-    <div class="lab">
-      <h4>Lab Challenge 5: Broken Authentication</h4>
-      <p><strong>Problem:</strong> Login without password via token reuse</p>
-      <p><strong>Approach:</strong> Captured and reused auth token</p>
-      <p><strong>Tools:</strong> Burp Suite, Firefox</p>
-      <img src="images/screen5.png" alt="Broken Auth Screenshot" />
-      <p><strong>Lessons:</strong> Invalidate tokens properly and secure session handling.</p>
-    </div>
-
-    <div class="lab">
-      <h4>Lab Challenge 6: IDOR</h4>
-      <p><strong>Problem:</strong> Access another user's records</p>
-      <p><strong>Approach:</strong> Changed user ID in API request</p>
-      <p><strong>Tools:</strong> Burp Suite, browser tools</p>
-      <img src="images/screen6.png" alt="IDOR Screenshot" />
-      <p><strong>Lessons:</strong> Implement proper access control checks.</p>
-    </div>
-
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:jane.doe@example.com">jane.doe@example.com</a></p>
-    <p>Phone: +123-456-7890</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/janedoe" target="_blank">linkedin.com/in/janedoe</a></p>
-    <p>GitHub: <a href="https://github.com/janedoe" target="_blank">github.com/janedoe</a></p>
-  </section>
-
-  <script src="script.js"></script>
 </body>
 </html>
