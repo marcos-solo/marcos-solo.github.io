@@ -213,4 +213,57 @@ footer {
 .download-btn:hover {
   background-color: #005b99;
 }
+.section {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  line-height: 1.6;
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #007acc;
+  padding-bottom: 0.3rem;
+}
+
+.section h3 {
+  color: #007acc;
+  margin-top: 2rem;
+}
+
+.section ul {
+  padding-left: 1.2rem;
+}
+
+.section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Download Button */
+.download-btn {
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 0.7rem 1.5rem;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #005b99;
+}
+body {
+  background-color: #f8f9fa;
+}
+
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
 
