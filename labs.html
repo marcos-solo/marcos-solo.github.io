@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lab Challenges | Jane Doe</title>
+  <title>Lab Challenges | Marcos Solomon</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -23,43 +23,55 @@
   <section id="labs" class="section">
     <h2>Lab Challenges</h2>
 
-    <!-- Repeat this block for each challenge -->
-    <div class="lab">
-      <h4>SQL Injection Login Bypass</h4>
-      <p><strong>Problem:</strong> Bypass authentication via vulnerable login form</p>
-      <p><strong>Approach:</strong> Used `' OR '1'='1` payload</p>
-      <p><strong>Tools:</strong> Burp Suite, browser DevTools</p>
-      <img src="images/screen1.png" alt="SQLi Screenshot" />
-      <p><strong>Lessons Learned:</strong> Importance of parameterized queries</p>
-    </div>
+    <div class="lab-grid">
 
-    <div class="lab">
-      <h4>XSS Detection and Exploitation</h4>
-      <p><strong>Problem:</strong> Reflected XSS in search input</p>
-      <p><strong>Tools:</strong> Burp Suite, browser console</p>
-      <img src="images/screen2.png" alt="XSS Screenshot" />
-      <p><strong>Lessons:</strong> Input sanitization and CSP headers</p>
-    </div>
+      <div class="lab">
+        <h4>SQL Injection Login Bypass</h4>
+        <p><strong>Problem:</strong> Bypass authentication via vulnerable login form</p>
+        <p><strong>Approach:</strong> Used `' OR '1'='1` payload</p>
+        <p><strong>Tools:</strong> Burp Suite, browser DevTools</p>
+        <img src="https://marcos-solo.github.io/images/screen1.png" alt="SQLi Screenshot" />
+        <p><strong>Lessons Learned:</strong> Importance of parameterized queries</p>
+      </div>
 
-    <!-- Add screen3 to screen6 labs similarly -->
-    <div class="lab">
-      <h4>Command Injection</h4>
-      <img src="images/screen3.png" alt="Command Injection Screenshot" />
-    </div>
-    <div class="lab">
-      <h4>Directory Traversal</h4>
-      <img src="images/screen4.png" alt="Dir Traversal Screenshot" />
-    </div>
-    <div class="lab">
-      <h4>Broken Auth Exploit</h4>
-      <img src="images/screen5.png" alt="Broken Auth Screenshot" />
-    </div>
-    <div class="lab">
-      <h4>Privilege Escalation</h4>
-      <img src="images/screen6.png" alt="Priv Escalation Screenshot" />
+      <div class="lab">
+        <h4>XSS Detection and Exploitation</h4>
+        <p><strong>Problem:</strong> Reflected XSS in search input</p>
+        <p><strong>Tools:</strong> Burp Suite, browser console</p>
+        <img src="https://marcos-solo.github.io/images/screen2.png" alt="XSS Screenshot" />
+        <p><strong>Lessons:</strong> Input sanitization and CSP headers</p>
+      </div>
+
+      <div class="lab">
+        <h4>Command Injection</h4>
+        <img src="https://marcos-solo.github.io/images/screen3.png" alt="Command Injection Screenshot" />
+        <p><strong>Summary:</strong> Executed OS commands via unsanitized input fields</p>
+      </div>
+
+      <div class="lab">
+        <h4>Directory Traversal</h4>
+        <img src="https://marcos-solo.github.io/images/screen4.png" alt="Directory Traversal Screenshot" />
+        <p><strong>Summary:</strong> Accessed restricted files via `../` traversal</p>
+      </div>
+
+      <div class="lab">
+        <h4>Broken Authentication Exploit</h4>
+        <img src="https://marcos-solo.github.io/images/screen5.png" alt="Broken Auth Screenshot" />
+        <p><strong>Summary:</strong> Gained unauthorized access using session ID manipulation</p>
+      </div>
+
+      <div class="lab">
+        <h4>Privilege Escalation</h4>
+        <img src="https://marcos-solo.github.io/images/screen6.png" alt="Privilege Escalation Screenshot" />
+        <p><strong>Summary:</strong> Escalated privileges through misconfigured sudo access</p>
+      </div>
+
     </div>
   </section>
 
+  <footer>
+    <p>&copy; 2025 Marcos Solomon. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
-
