@@ -20,29 +20,35 @@ nav {
   top: 0;
   width: 100%;
   background-color: #222;
-  padding: 10px 0;
+  padding: 12px 0;
   z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 nav ul li a {
   color: #fff;
+  font-size: 1rem;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
 }
 
-nav ul li a:hover {
-  color: #00bcd4;
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #00bcd4;
+  color: #fff;
 }
 
 /* Sections */
@@ -127,17 +133,33 @@ nav ul li a:hover {
 }
 
 /* Contact */
+#contact {
+  text-align: center;
+  background-color: #e3f2fd;
+  padding: 40px 20px;
+  border-top: 2px solid #90caf9;
+  border-bottom: 2px solid #90caf9;
+}
+
+#contact h2 {
+  color: #0d47a1;
+  margin-bottom: 20px;
+}
+
 #contact p {
   margin: 10px 0;
-  text-align: center;
+  font-size: 1.1em;
 }
 
 #contact a {
-  color: #0d47a1;
+  color: #1976d2;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
 }
 
 #contact a:hover {
+  color: #004ba0;
   text-decoration: underline;
 }
 
@@ -156,5 +178,9 @@ nav ul li a:hover {
   .profile-img {
     width: 140px;
     height: 140px;
+  }
+
+  nav ul li {
+    margin: 10px 0;
   }
 }
