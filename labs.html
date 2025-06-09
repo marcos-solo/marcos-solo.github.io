@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab Challenges | Jane Doe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="labs.html" class="active">Lab Challenges</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Lab Challenges Section -->
+  <section id="labs" class="section">
+    <h2>Lab Challenges</h2>
+
+    <!-- Repeat this block for each challenge -->
+    <div class="lab">
+      <h4>SQL Injection Login Bypass</h4>
+      <p><strong>Problem:</strong> Bypass authentication via vulnerable login form</p>
+      <p><strong>Approach:</strong> Used `' OR '1'='1` payload</p>
+      <p><strong>Tools:</strong> Burp Suite, browser DevTools</p>
+      <img src="images/screen1.png" alt="SQLi Screenshot" />
+      <p><strong>Lessons Learned:</strong> Importance of parameterized queries</p>
+    </div>
+
+    <div class="lab">
+      <h4>XSS Detection and Exploitation</h4>
+      <p><strong>Problem:</strong> Reflected XSS in search input</p>
+      <p><strong>Tools:</strong> Burp Suite, browser console</p>
+      <img src="images/screen2.png" alt="XSS Screenshot" />
+      <p><strong>Lessons:</strong> Input sanitization and CSP headers</p>
+    </div>
+
+    <!-- Add screen3 to screen6 labs similarly -->
+    <div class="lab">
+      <h4>Command Injection</h4>
+      <img src="images/screen3.png" alt="Command Injection Screenshot" />
+    </div>
+    <div class="lab">
+      <h4>Directory Traversal</h4>
+      <img src="images/screen4.png" alt="Dir Traversal Screenshot" />
+    </div>
+    <div class="lab">
+      <h4>Broken Auth Exploit</h4>
+      <img src="images/screen5.png" alt="Broken Auth Screenshot" />
+    </div>
+    <div class="lab">
+      <h4>Privilege Escalation</h4>
+      <img src="images/screen6.png" alt="Priv Escalation Screenshot" />
+    </div>
+  </section>
+
+</body>
+</html>
 
