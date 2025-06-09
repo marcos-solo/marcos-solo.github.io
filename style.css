@@ -119,3 +119,17 @@ footer {
 .lab p {
   font-size: 0.95rem;
 }
+.lab-images {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.lab-images img {
+  width: calc(50% - 5px);
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 200px;
+}
+
