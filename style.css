@@ -284,4 +284,15 @@ footer {
   border-radius: 6px;
   margin-bottom: 1rem;
 }
+/* Page transition: dip to black */
+body.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    background-color: #000;
+  }
+}
 
