@@ -68,29 +68,39 @@
     }
 
     .lab {
-      background: #1a1a1a;
-      border-radius: 12px;
+      background-color: #1a1a1a;
+      border: 1px solid #00ffaa20;
+      border-radius: 16px;
       padding: 1.5rem;
-      box-shadow: 0 0 10px rgba(0, 255, 170, 0.05);
-      transition: transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 255, 170, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .lab:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 255, 170, 0.3);
     }
 
     .lab h4 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
       color: #00ffaa;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
     }
 
     .lab p {
-      margin: 0.4rem 0;
+      margin: 0.6rem 0;
+      color: #ddd;
     }
 
     .lab strong {
       color: #fff;
+    }
+
+    .lab code {
+      background-color: #2b2b2b;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      color: #00ffaa;
     }
 
     .lab-images {
@@ -101,6 +111,23 @@
       max-width: 100%;
       border-radius: 8px;
       margin-top: 0.5rem;
+      box-shadow: 0 0 10px rgba(0, 255, 170, 0.2);
+    }
+
+    .lab a {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #00ffaa;
+      color: #000;
+      text-decoration: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .lab a:hover {
+      background-color: #00ddaa;
     }
 
     footer {
@@ -141,31 +168,29 @@
     <h2><i class="fas fa-flask"></i> Lab Challenges</h2>
 
     <section class="lab-grid">
-        <article class="lab">
-          <h4><i class="fab fa-windows"></i> Windows Fundamentals: User Management</h4>
-          <p><strong>Objective:</strong> Understand and manage user accounts and groups in Windows environments</p>
-          <p><strong>Approach:</strong> Explored user permissions, the <code>net user</code> command, and group policies using Command Prompt and PowerShell</p>
-          <p><strong>Tools:</strong> Windows Command Line, PowerShell, Hack The Box Academy</p>
-          <div class="lab-images">
-            <img src="https://marcos-solo.github.io/images/windows-user-management.png" alt="Windows User Management Screenshot" />
-          </div>
-          <p><strong>Lessons Learned:</strong> The importance of least privilege, proper account enumeration, and recognizing common misconfigurations in user and group management</p>
-          <p><strong>Certificate:</strong> <a href="https://academy.hackthebox.com/achievement/1917487/49" target="_blank">View HTB Windows Fundamentals Certificate</a></p>
-        </article>
-        
-        <article class="lab">
-          <h4><i class="fab fa-linux"></i> Linux Fundamentals: File Permissions and Ownership</h4>
-          <p><strong>Objective:</strong> Understand file and directory permissions in Linux systems</p>
-          <p><strong>Approach:</strong> Practiced using <code>ls -l</code>, <code>chmod</code>, <code>chown</code>, and symbolic vs numeric permissions</p>
-          <p><strong>Tools:</strong> Linux Terminal, Hack The Box Pwnbox</p>
-          <div class="lab-images">
-            <img src="https://marcos-solo.github.io/images/linux-permissions.png" alt="Linux File Permissions Screenshot" />
-          </div>
-          <p><strong>Lessons Learned:</strong> How Linux enforces access control via user/group/other permissions, and how misconfigurations can lead to privilege escalation</p>
-          <p><strong>Certificate:</strong> <a href="https://academy.hackthebox.com/achievement/1917487/18" target="_blank">View HTB Linux Fundamentals Certificate</a></p>
-        </article>
+      <article class="lab">
+        <h4><i class="fab fa-windows"></i> Windows Fundamentals: User Management</h4>
+        <p><strong>Objective:</strong> Understand and manage user accounts and groups in Windows environments</p>
+        <p><strong>Approach:</strong> Explored user permissions, the <code>net user</code> command, and group policies using Command Prompt and PowerShell</p>
+        <p><strong>Tools:</strong> Windows Command Line, PowerShell, Hack The Box Academy</p>
+        <div class="lab-images">
+          <img src="https://marcos-solo.github.io/images/windows-user-management.png" alt="Windows User Management Screenshot" />
+        </div>
+        <p><strong>Lessons Learned:</strong> The importance of least privilege, proper account enumeration, and recognizing common misconfigurations in user and group management</p>
+        <p><strong>Certificate:</strong> <a href="https://academy.hackthebox.com/achievement/1917487/49" target="_blank">View HTB Windows Fundamentals Certificate</a></p>
+      </article>
 
-
+      <article class="lab">
+        <h4><i class="fab fa-linux"></i> Linux Fundamentals: File Permissions and Ownership</h4>
+        <p><strong>Objective:</strong> Understand file and directory permissions in Linux systems</p>
+        <p><strong>Approach:</strong> Practiced using <code>ls -l</code>, <code>chmod</code>, <code>chown</code>, and symbolic vs numeric permissions</p>
+        <p><strong>Tools:</strong> Linux Terminal, Hack The Box Pwnbox</p>
+        <div class="lab-images">
+          <img src="https://marcos-solo.github.io/images/linux-permissions.png" alt="Linux File Permissions Screenshot" />
+        </div>
+        <p><strong>Lessons Learned:</strong> How Linux enforces access control via user/group/other permissions, and how misconfigurations can lead to privilege escalation</p>
+        <p><strong>Certificate:</strong> <a href="https://academy.hackthebox.com/achievement/1917487/18" target="_blank">View HTB Linux Fundamentals Certificate</a></p>
+      </article>
 
       <article class="lab">
         <h4><i class="fas fa-terminal"></i> Pawned Fawn Machine On Hackthebox</h4>
@@ -184,10 +209,10 @@
       </article>
 
       <article class="lab">
-        <h4><i class="fas fa-user-secret"></i> pawned Redeemer Machine on Hackthebox</h4>
+        <h4><i class="fas fa-user-secret"></i> Pawned Redeemer Machine on Hackthebox</h4>
         <p><strong>Summary:</strong> connected FTP, SMB, Telnet, Rsync and RDP anonymously. Use Nmap to identify open ports. connected to a MongoDB server.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen5.png" alt="Broken Authentication Screenshot" />         
+          <img src="https://marcos-solo.github.io/images/screen5.png" alt="Broken Authentication Screenshot" />
         </div>
       </article>
 
@@ -195,8 +220,7 @@
         <h4><i class="fas fa-user-shield"></i> Pawned the Meow Machine on Hackthebox</h4>
         <p><strong>Summary:</strong> connected FTP, SMB, Telnet, Rsync and RDP anonymously. Use Nmap to identify open ports. connected to a MongoDB server.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen6.png" alt="Privilege Escalation Screenshot 1" /><br>
-    
+          <img src="https://marcos-solo.github.io/images/screen6.png" alt="Privilege Escalation Screenshot 1" />
         </div>
       </article>
 
