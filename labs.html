@@ -4,98 +4,209 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lab Challenges | Marcos Solomon</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- Styles -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f0f;
+      color: #f5f5f5;
+    }
+
+    .navbar {
+      background: #121212;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active,
+    .navbar a[aria-current="page"] {
+      color: #00ffaa;
+    }
+
+    main.section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00ffaa;
+      margin-bottom: 2.5rem;
+    }
+
+    .lab-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .lab {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px rgba(0, 255, 170, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .lab:hover {
+      transform: translateY(-4px);
+    }
+
+    .lab h4 {
+      color: #00ffaa;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .lab p {
+      margin: 0.4rem 0;
+    }
+
+    .lab strong {
+      color: #fff;
+    }
+
+    .lab-images {
+      margin-top: 1rem;
+    }
+
+    .lab-images img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      background: #121212;
+      color: #888;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .lab-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="resume.html">Resume</a></li>
       <li><a href="projects.html">Projects</a></li>
-      <li><a href="labs.html" class="active">Lab Challenges</a></li>
+      <li><a href="labs.html" class="active" aria-current="page">Lab Challenges</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <!-- Lab Challenges Section -->
-  <section id="labs" class="section">
-    <h2>Lab Challenges</h2>
+  <main class="section" id="labs">
+    <h2><i class="fas fa-flask"></i> Lab Challenges</h2>
 
-    <div class="lab-grid">
+    <section class="lab-grid">
 
-      <div class="lab">
-        <h4>SQL Injection Login Bypass</h4>
+      <article class="lab">
+        <h4><i class="fas fa-database"></i> SQL Injection Login Bypass</h4>
         <p><strong>Problem:</strong> Bypass authentication via vulnerable login form</p>
-        <p><strong>Approach:</strong> Used `' OR '1'='1` payload</p>
+        <p><strong>Approach:</strong> Used <code>' OR '1'='1</code> payload</p>
         <p><strong>Tools:</strong> Burp Suite, browser DevTools</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen1.png" alt="SQLi Screenshot 1" />
-<!--           <img src="https://marcos-solo.github.io/images/screen1a.png" alt="SQLi Screenshot 2" /> -->
+          <img src="https://marcos-solo.github.io/images/screen1.png" alt="SQL Injection Login Bypass Screenshot" />
         </div>
         <p><strong>Lessons Learned:</strong> Importance of parameterized queries</p>
-      </div>
+      </article>
 
-      <div class="lab">
-        <h4>XSS Detection and Exploitation</h4>
+      <article class="lab">
+        <h4><i class="fas fa-code"></i> XSS Detection and Exploitation</h4>
         <p><strong>Problem:</strong> Reflected XSS in search input</p>
         <p><strong>Tools:</strong> Burp Suite, browser console</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen2.png" alt="XSS Screenshot 1" />
-<!--           <img src="https://marcos-solo.github.io/images/screen2a.png" alt="XSS Screenshot 2" /> -->
+          <img src="https://marcos-solo.github.io/images/screen2.png" alt="XSS Detection Screenshot" />
         </div>
         <p><strong>Lessons:</strong> Input sanitization and CSP headers</p>
-      </div>
+      </article>
 
-      <div class="lab">
-        <h4>Command Injection</h4>
+      <article class="lab">
+        <h4><i class="fas fa-terminal"></i> Command Injection</h4>
         <p><strong>Summary:</strong> Executed OS commands via unsanitized input fields</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen3.png" alt="Command Injection Screenshot 1" />
-<!--           <img src="https://marcos-solo.github.io/images/screen3a.png" alt="Command Injection Screenshot 2" /> -->
+          <img src="https://marcos-solo.github.io/images/screen3.png" alt="Command Injection Screenshot" />
         </div>
-      </div>
+      </article>
 
-      <div class="lab">
-        <h4>Directory Traversal</h4>
-        <p><strong>Summary:</strong> Accessed restricted files via `../` traversal</p>
+      <article class="lab">
+        <h4><i class="fas fa-folder-open"></i> Directory Traversal</h4>
+        <p><strong>Summary:</strong> Accessed restricted files via <code>../</code> traversal</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen4.png" alt="Dir Traversal Screenshot 1" />
-<!--           <img src="https://marcos-solo.github.io/images/screen4a.png" alt="Dir Traversal Screenshot 2" /> -->
+          <img src="https://marcos-solo.github.io/images/screen4.png" alt="Directory Traversal Screenshot" />
         </div>
-      </div>
+      </article>
 
-      <div class="lab">
-        <h4>Broken Authentication Exploit</h4>
+      <article class="lab">
+        <h4><i class="fas fa-user-secret"></i> Broken Authentication Exploit</h4>
         <p><strong>Summary:</strong> Gained unauthorized access using session ID manipulation</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen5.png" alt="Broken Auth Screenshot 1" />
-<!--           <img src="https://marcos-solo.github.io/images/screen5a.png" alt="Broken Auth Screenshot 2" /> -->
+          <img src="https://marcos-solo.github.io/images/screen5.png" alt="Broken Authentication Screenshot" />
         </div>
-      </div>
+      </article>
 
-      <div class="lab">
-        <h4>Privilege Escalation</h4>
+      <article class="lab">
+        <h4><i class="fas fa-user-shield"></i> Privilege Escalation (1)</h4>
         <p><strong>Summary:</strong> Escalated privileges through misconfigured sudo access</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen6.png" alt="Priv Escalation Screenshot 1" />
-<!--           <img src="https://marcos-solo.github.io/images/screena.png" alt="Priv Escalation Screenshot 2" /> -->
+          <img src="https://marcos-solo.github.io/images/screen6.png" alt="Privilege Escalation Screenshot 1" />
         </div>
-      </div>
-      
-      <div class="lab">
-        <h4>Privilege Escalation</h4>
-        <p><strong>Summary:</strong> Escalated privileges through misconfigured sudo access</p>
+      </article>
+
+      <article class="lab">
+        <h4><i class="fas fa-user-shield"></i> Privilege Escalation (2)</h4>
+        <p><strong>Summary:</strong> Additional case of privilege escalation via misconfigured permissions</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen6a.png" alt="Priv Escalation Screenshot 1" />
-<!--           <img src="https://marcos-solo.github.io/images/screeba.png" alt="Priv Escalation Screenshot 2" /> -->
+          <img src="https://marcos-solo.github.io/images/screen6a.png" alt="Privilege Escalation Screenshot 2" />
         </div>
-      </div>
+      </article>
 
-    </div>
-  </section>
+    </section>
+  </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Marcos Solomon. All rights reserved.</p>
   </footer>
