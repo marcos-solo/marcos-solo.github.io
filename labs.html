@@ -141,27 +141,28 @@
     <h2><i class="fas fa-flask"></i> Lab Challenges</h2>
 
     <section class="lab-grid">
+        <article class="lab">
+          <h4><i class="fab fa-windows"></i> Windows Fundamentals: User Management</h4>
+          <p><strong>Objective:</strong> Understand and manage user accounts and groups in Windows environments</p>
+          <p><strong>Approach:</strong> Explored user permissions, the `net user` command, and group policies using Command Prompt and PowerShell</p>
+          <p><strong>Tools:</strong> Windows Command Line, PowerShell, Hack The Box Academy</p>
+          <div class="lab-images">
+            <img src="https://marcos-solo.github.io/images/windows-user-management.png" alt="Windows User Management Screenshot" />
+          </div>
+          <p><strong>Lessons Learned:</strong> The importance of least privilege, proper account enumeration, and recognizing common misconfigurations in user and group management</p>
+        </article>
+        
+        <article class="lab">
+          <h4><i class="fab fa-linux"></i> Linux Fundamentals: File Permissions and Ownership</h4>
+          <p><strong>Objective:</strong> Understand file and directory permissions in Linux systems</p>
+          <p><strong>Approach:</strong> Practiced using `ls -l`, `chmod`, `chown`, and symbolic vs numeric permissions</p>
+          <p><strong>Tools:</strong> Linux Terminal, Hack The Box Pwnbox</p>
+          <div class="lab-images">
+            <img src="https://marcos-solo.github.io/images/linux-permissions.png" alt="Linux File Permissions Screenshot" />
+          </div>
+          <p><strong>Lessons Learned:</strong> How Linux enforces access control via user/group/other permissions, and how misconfigurations can lead to privilege escalation</p>
+        </article>
 
-      <article class="lab">
-        <h4><i class="fas fa-database"></i> SQL Injection Login Bypass</h4>
-        <p><strong>Problem:</strong> Bypass authentication via vulnerable login form</p>
-        <p><strong>Approach:</strong> Used <code>' OR '1'='1</code> payload</p>
-        <p><strong>Tools:</strong> Burp Suite, browser DevTools</p>
-        <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen1.png" alt="SQL Injection Login Bypass Screenshot" />
-        </div>
-        <p><strong>Lessons Learned:</strong> Importance of parameterized queries</p>
-      </article>
-
-      <article class="lab">
-        <h4><i class="fas fa-code"></i> XSS Detection and Exploitation</h4>
-        <p><strong>Problem:</strong> Reflected XSS in search input</p>
-        <p><strong>Tools:</strong> Burp Suite, browser console</p>
-        <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen2.png" alt="XSS Detection Screenshot" />
-        </div>
-        <p><strong>Lessons:</strong> Input sanitization and CSP headers</p>
-      </article>
 
       <article class="lab">
         <h4><i class="fas fa-terminal"></i> Pawned Fawn Machine On Hackthebox</h4>
