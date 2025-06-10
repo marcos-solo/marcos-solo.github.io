@@ -284,5 +284,102 @@ footer {
   border-radius: 6px;
   margin-bottom: 1rem;
 }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f0f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
 
+    .navbar {
+      background: #121212;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .navbar a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #00ffaa;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00ffaa;
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      color: #00ffaa;
+      margin-top: 2rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    strong {
+      color: #fff;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background-color: #00ffaa;
+      color: #000;
+      font-weight: bold;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      margin: 1rem 0 2rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #00ddaa;
+    }
+
+    .fa-shield-alt, .fa-globe {
+      color: #00ffaa;
+      margin-right: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+    }
 
