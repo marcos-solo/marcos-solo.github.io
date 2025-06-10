@@ -5,16 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects | Marcos Solomon</title>
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <!-- Font Awesome for icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-  <!-- Styles -->
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0f0f0f;
-      color: #f5f5f5;
+      background: #101010;
+      color: #eaeaea;
       line-height: 1.6;
     }
 
@@ -38,7 +40,7 @@
     }
 
     .navbar a {
-      color: #ccc;
+      color: #bbb;
       text-decoration: none;
       transition: color 0.3s;
     }
@@ -50,8 +52,8 @@
     }
 
     main.section {
-      padding: 3rem 2rem;
-      max-width: 800px;
+      padding: 3rem 1.5rem;
+      max-width: 1000px;
       margin: auto;
     }
 
@@ -64,25 +66,37 @@
 
     h3 {
       color: #00ffaa;
-      margin-top: 2rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    ul li {
-      margin-bottom: 0.6rem;
-    }
-
-    strong {
-      color: #fff;
+      margin-top: 1rem;
     }
 
     .project-item {
+      background: #1a1a1a;
+      border-radius: 1rem;
+      padding: 1.5rem;
       margin-bottom: 2rem;
-      border-bottom: 1px solid #222;
-      padding-bottom: 1rem;
+      border: 1px solid #2a2a2a;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .project-item:nth-child(1) { animation-delay: 0.1s; }
+    .project-item:nth-child(2) { animation-delay: 0.2s; }
+    .project-item:nth-child(3) { animation-delay: 0.3s; }
+    .project-item:nth-child(4) { animation-delay: 0.4s; }
+    .project-item:nth-child(5) { animation-delay: 0.5s; }
+
+    .project-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 255, 170, 0.1);
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: none;
+      }
     }
 
     .project-item a {
@@ -101,6 +115,26 @@
       margin-right: 0.4rem;
     }
 
+    .tech-tag {
+      display: inline-block;
+      background: #00ffaa20;
+      color: #00ffaa;
+      border: 1px solid #00ffaa40;
+      border-radius: 0.5rem;
+      padding: 0.2rem 0.6rem;
+      margin: 0.3rem 0.3rem 0 0;
+      font-size: 0.8rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #888;
+      border-top: 1px solid #222;
+      margin-top: 2rem;
+    }
+
     @media (max-width: 768px) {
       h2 {
         font-size: 2rem;
@@ -110,6 +144,10 @@
         flex-direction: column;
         gap: 1rem;
         align-items: center;
+      }
+
+      .project-item {
+        padding: 1rem;
       }
     }
   </style>
@@ -134,52 +172,76 @@
     <div class="project-list">
 
       <article class="project-item">
-        <h3><i class="fas fa-hospital"></i>Hospital DSS</h3>
+        <h3><i class="fas fa-hospital"></i> Hospital DSS</h3>
         <p>A hospital decision support system built with Django, React, and MySQL.</p>
-        <p><strong>Tech Stack:</strong> Django, React, MySQL</p>
-        <a href="https://github.com/marcos-solo/hosi_dss" target="_blank" rel="noopener noreferrer">
+        <div>
+          <span class="tech-tag">Django</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">MySQL</span>
+        </div>
+        <a href="https://github.com/marcos-solo/hosi_dss" target="_blank" rel="noopener noreferrer" aria-label="View Hospital DSS project on GitHub">
           <i class="fab fa-github"></i>View on GitHub
         </a>
       </article>
 
       <article class="project-item">
-        <h3><i class="fas fa-cloud-sun"></i>Tea Harvester Weather Checker</h3>
+        <h3><i class="fas fa-cloud-sun"></i> Tea Harvester Weather Checker</h3>
         <p>A weather-checker tool built with Django to assist tea farmers with real-time forecasts.</p>
-        <p><strong>Tech Stack:</strong> Django, OpenWeather API</p>
-        <a href="https://github.com/marcos-solo/tea_harvester_weather-checker" target="_blank" rel="noopener noreferrer">
+        <div>
+          <span class="tech-tag">Django</span>
+          <span class="tech-tag">OpenWeather API</span>
+        </div>
+        <a href="https://github.com/marcos-solo/tea_harvester_weather-checker" target="_blank" rel="noopener noreferrer" aria-label="View Tea Harvester Weather Checker on GitHub">
           <i class="fab fa-github"></i>View on GitHub
         </a>
       </article>
 
       <article class="project-item">
-        <h3><i class="fas fa-store"></i>Shop Manager</h3>
+        <h3><i class="fas fa-store"></i> Shop Manager</h3>
         <p>Performed penetration testing on the shop management primary domain.</p>
-        <p><strong>Tools Used:</strong> OWASP ZAP, Burp Suite, Nmap</p>
-        <a href="https://ho.bethsaidamedicareinstitute.co.ke" target="_blank" rel="noopener noreferrer">
+        <div>
+          <span class="tech-tag">OWASP ZAP</span>
+          <span class="tech-tag">Burp Suite</span>
+          <span class="tech-tag">Nmap</span>
+        </div>
+        <a href="https://ho.bethsaidamedicareinstitute.co.ke" target="_blank" rel="noopener noreferrer" aria-label="View Shop Manager site">
           <i class="fas fa-globe"></i>View Site
         </a>
       </article>
 
       <article class="project-item">
-        <h3><i class="fas fa-network-wired"></i>Sofsrea Portal</h3>
+        <h3><i class="fas fa-network-wired"></i> Sofsrea Portal</h3>
         <p>Security assessment and penetration testing of the Sofsrea branch system.</p>
-        <p><strong>Focus:</strong> Auth Bypass, SQL Injection, Subdomain Enumeration</p>
-        <a href="https://sofsrea.bethsaidamedicareinstitute.co.ke" target="_blank" rel="noopener noreferrer">
+        <div>
+          <span class="tech-tag">Auth Bypass</span>
+          <span class="tech-tag">SQL Injection</span>
+          <span class="tech-tag">Subdomain Enum</span>
+        </div>
+        <a href="https://sofsrea.bethsaidamedicareinstitute.co.ke" target="_blank" rel="noopener noreferrer" aria-label="View Sofsrea Portal">
           <i class="fas fa-globe"></i>View Site
         </a>
       </article>
 
       <article class="project-item">
-        <h3><i class="fas fa-shield-alt"></i>WebSeal Memba</h3>
+        <h3><i class="fas fa-shield-alt"></i> WebSeal Memba</h3>
         <p>Penetration testing on WebSeal International Memba portal.</p>
-        <p><strong>Focus:</strong> Broken Authentication, Session Hijacking, XSS</p>
-        <a href="https://memba.websealinternational.com" target="_blank" rel="noopener noreferrer">
+        <div>
+          <span class="tech-tag">Broken Auth</span>
+          <span class="tech-tag">Session Hijacking</span>
+          <span class="tech-tag">XSS</span>
+        </div>
+        <a href="https://memba.websealinternational.com" target="_blank" rel="noopener noreferrer" aria-label="View WebSeal Memba site">
           <i class="fas fa-globe"></i>View Site
         </a>
       </article>
 
     </div>
   </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Marcos Solomon | All rights reserved.
+  </footer>
 
 </body>
 </html>
