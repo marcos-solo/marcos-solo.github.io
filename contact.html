@@ -4,38 +4,116 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Marcos Solomon</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #1c1c1c, #0f0f0f);
+      color: #fff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      background: #121212;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .navbar a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #00ffaa;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #00ffaa;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      margin: 1rem 0;
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+
+    a {
+      color: #00ffaa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
 
   <!-- Navbar -->
-  <nav class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-      <ul class="flex space-x-6">
-        <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
-        <li><a href="resume.html" class="hover:text-blue-600">Resume</a></li>
-        <li><a href="projects.html" class="hover:text-blue-600">Projects</a></li>
-        <li><a href="labs.html" class="hover:text-blue-600">Lab Challenges</a></li>
-        <li><a href="contact.html" class="text-blue-600 font-semibold">Contact</a></li>
-      </ul>
-    </div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="labs.html">Lab Challenges</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
   </nav>
 
   <!-- Contact Section -->
-  <section id="contact" class="max-w-4xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">Contact Me</h2>
-    <div class="space-y-4 text-lg text-gray-700">
-      <p><strong>Email:</strong> <a href="mailto:solomonmarcos34@gmail.com" class="text-blue-600 hover:underline">solomonmarcos34@gmail.com</a></p>
-      <p><strong>Phone:</strong> <span class="text-gray-800">+254 0741840839</span></p>
-      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/janedoe" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/janedoe</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/marcos-solo" target="_blank" class="text-blue-600 hover:underline">github.com/marcos-solo</a></p>
-    </div>
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p><strong>Email:</strong> <a href="mailto:solomonmarcos34@gmail.com">solomonmarcos34@gmail.com</a></p>
+    <p><strong>Phone:</strong> +254 0741840839</p>
+    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/janedoe" target="_blank">linkedin.com/in/janedoe</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/marcos-solo" target="_blank">github.com/marcos-solo</a></p>
   </section>
-
-  <!-- Footer -->
-  <footer class="bg-white text-center py-4 border-t mt-8">
-    <p class="text-sm text-gray-600">&copy; 2025 Marcos Solomon. All rights reserved.</p>
-  </footer>
 
 </body>
 </html>
