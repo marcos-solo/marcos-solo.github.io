@@ -4,12 +4,122 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Resume | Marcos Solomon</title>
-  <link rel="stylesheet" href="style.css" />
+  
+  <!-- SEO -->
+  <meta name="description" content="Marcos Solomon's cybersecurity resume highlighting education, skills, and certifications.">
+  <meta name="keywords" content="Cybersecurity, Resume, Penetration Tester, Ethical Hacking, Skills, Certifications">
+  <meta name="author" content="Marcos Solomon">
 
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+  <!-- Styles -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f0f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background: #121212;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .navbar a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #00ffaa;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00ffaa;
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      color: #00ffaa;
+      margin-top: 2rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    strong {
+      color: #fff;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background-color: #00ffaa;
+      color: #000;
+      font-weight: bold;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      margin: 1rem 0 2rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #00ddaa;
+    }
+
+    .fa-shield-alt, .fa-globe {
+      color: #00ffaa;
+      margin-right: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
-<body>
+<body onload="AOS.init();">
 
   <!-- Navbar -->
   <nav class="navbar">
@@ -23,13 +133,13 @@
   </nav>
 
   <!-- Resume Section -->
-  <section id="resume" class="section">
+  <section id="resume" class="section" data-aos="fade-up">
     <h2>Resume</h2>
 
     <!-- Download CV Button -->
-
-  <a href="/files/marcos_solomon_CS-SA10-25038.pdf" download class="download-btn">Download My CV (PDF)</a>
-  
+    <a href="/files/marcos_solomon_CS-SA10-25038.pdf" download class="download-btn">
+      <i class="fas fa-download"></i> Download My CV (PDF)
+    </a>
 
     <h3>Education</h3>
     <p><strong>Bachelor in Business Information Technology</strong><br>
@@ -39,14 +149,16 @@
     <ul>
       <li><i class="fas fa-shield-alt"></i> Certified Ethical Hacker (CEH) – Alison</li>
       <li><i class="fas fa-globe"></i> Web Security Fundamentals – Udemy</li>
-      <li>Python for Ethical Hacking – Online Course</li>
+      <li><i class="fas fa-laptop-code"></i> Python for Ethical Hacking – Online Course</li>
     </ul>
 
     <h3>Professional Training</h3>
     <p>
       I have been actively involved in training corporate personnel in cybersecurity practices 
-      and digital forensics. These sessions were directed under the <strong>Society of Forensics and Researchers Association (SOFSREA)</strong>, 
-      aiming to equip professionals with practical skills in security auditing, vulnerability scanning, and cyber hygiene awareness. 
+      and digital forensics. These sessions were directed under the 
+      <strong>Society of Forensics and Researchers Association (SOFSREA)</strong>, 
+      aiming to equip professionals with practical skills in security auditing, 
+      vulnerability scanning, and cyber hygiene awareness.
     </p>
 
     <h3>Skills</h3>
@@ -57,5 +169,7 @@
     </ul>
   </section>
 
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>
