@@ -4,9 +4,161 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home | Marcos Solomon Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  
+  <!-- SEO -->
+  <meta name="description" content="Marcos Solomon's Cybersecurity Portfolio – showcasing projects, resume, and ethical hacking expertise.">
+  <meta name="keywords" content="Cybersecurity, Penetration Testing, Ethical Hacking, Digital Forensics, Portfolio">
+  <meta name="author" content="Marcos Solomon">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #1c1c1c, #0f0f0f);
+      color: #fff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      background: #121212;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .navbar a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #00ffaa;
+    }
+
+    .home-section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+      background: transparent;
+    }
+
+    .home-content {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #00ffaa;
+      box-shadow: 0 4px 12px rgba(0, 255, 170, 0.3);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: #00ffaa;
+      margin-bottom: 1rem;
+      height: 1.5rem;
+    }
+
+    .intro {
+      margin: 1.2rem 0 2rem;
+      color: #ccc;
+    }
+
+    .btn {
+      background-color: #00ffaa;
+      color: #000;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #00ddaa;
+    }
+
+    .socials {
+      margin-top: 2rem;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: #ccc;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #00ffaa;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .tagline {
+        font-size: 1rem;
+      }
+
+      .profile-img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .intro {
+        font-size: 0.95rem;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
-<body>
+<body onload="AOS.init();">
 
   <!-- Navigation Bar -->
   <nav class="navbar">
@@ -20,22 +172,53 @@
   </nav>
 
   <!-- Home Section -->
-  <section id="home" class="section home-section">
+  <section id="home" class="section home-section" data-aos="fade-up">
     <div class="home-content">
-      <img src="/images/port1.jpeg" alt="Profile Picture" class="profile-img" />
+      <img loading="lazy" src="/images/port1.jpeg" alt="Profile Picture" class="profile-img" />
       <h1>Marcos Solomon</h1>
-      <p class="tagline">Cybersecurity Analyst | Penetration Tester </p>
-      
+      <p class="tagline"><span id="typewriter"></span></p>
       <p class="intro">
         I’m a passionate cybersecurity analyst with hands-on experience in vulnerability scanning,
         penetration testing, and digital forensics. I thrive on solving complex security problems and
         turning insights into actionable defense strategies. This portfolio showcases my projects, training labs,
         and achievements in the field of cybersecurity.
       </p>
-
       <a href="resume.html" class="btn">View My Resume</a>
+
+      <div class="socials">
+        <a href="https://github.com/marcos-solomon" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/marcos-solomon" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:marcos@example.com"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
   </section>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    const phrases = ['Cybersecurity Analyst', 'Penetration Tester', 'CTF Player', 'Threat Hunter'];
+    let i = 0, j = 0, currentPhrase = [], isDeleting = false;
+
+    function loop() {
+      document.getElementById('typewriter').innerHTML = currentPhrase.join('');
+
+      if (!isDeleting && j <= phrases[i].length) {
+        currentPhrase.push(phrases[i][j++]);
+      } else if (isDeleting && j > 0) {
+        currentPhrase.pop();
+        j--;
+      }
+
+      if (j === phrases[i].length) isDeleting = true;
+      if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % phrases.length;
+      }
+
+      setTimeout(loop, isDeleting ? 100 : 200);
+    }
+    loop();
+  </script>
 
 </body>
 </html>
