@@ -4,114 +4,104 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects | Marcos Solomon</title>
-
+  <!-- Styles -->
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f0f;
+      color: #f5f5f5;
       line-height: 1.6;
     }
 
     .navbar {
-      background-color: #1f1f1f;
-      padding: 1.5rem 0;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+      background: #121212;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
 
     .navbar ul {
       list-style: none;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
-    .navbar ul li a {
+    .navbar a {
       color: #ccc;
       text-decoration: none;
-      padding: 0.75rem 1.2rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
+      transition: color 0.3s;
     }
 
-    .navbar ul li a:hover,
-    .navbar ul li a.active {
-      background-color: #00bcd4;
-      color: #000;
-      border-radius: 6px;
+    .navbar a:hover,
+    .navbar a.active {
+      color: #00ffaa;
     }
 
     .section {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: #1e1e1e;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+      padding: 3rem 2rem;
+      max-width: 800px;
+      margin: auto;
     }
 
     h2 {
-      font-size: 2rem;
       text-align: center;
-      color: #00bcd4;
+      font-size: 2.5rem;
+      color: #00ffaa;
       margin-bottom: 2rem;
-      border-bottom: 2px solid #00bcd4;
-      display: inline-block;
-      padding-bottom: 0.4rem;
     }
 
-    .project-list {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
+    h3 {
+      color: #00ffaa;
+      margin-top: 2rem;
     }
 
-    .project-item {
-      background-color: #232323;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    ul {
+      padding-left: 1.2rem;
     }
 
-    .project-item h3 {
-      font-size: 1.5rem;
-      color: #00bcd4;
-      margin-bottom: 0.5rem;
+    ul li {
+      margin-bottom: 0.6rem;
     }
 
-    .project-item p {
-      color: #ccc;
-      margin-bottom: 0.75rem;
-    }
-
-    .project-item a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      background-color: #00bcd4;
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .project-item a:hover {
-      background-color: #0097a7;
+    strong {
       color: #fff;
     }
 
+    .download-btn {
+      display: inline-block;
+      background-color: #00ffaa;
+      color: #000;
+      font-weight: bold;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      margin: 1rem 0 2rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #00ddaa;
+    }
+
+    .fa-shield-alt, .fa-globe {
+      color: #00ffaa;
+      margin-right: 0.5rem;
+    }
+
     @media (max-width: 768px) {
-      .section {
-        padding: 1rem;
+      h2 {
+        font-size: 2rem;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
       }
     }
   </style>
