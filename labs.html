@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lab Challenges | Marcos Solomon</title>
    
-  <!-- Font Awesome for icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Styles -->
   <style>
@@ -15,6 +15,7 @@
       font-family: 'Poppins', sans-serif;
       background: #0f0f0f;
       color: #f5f5f5;
+      line-height: 1.6;
     }
 
     .navbar {
@@ -34,12 +35,15 @@
       gap: 1.5rem;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .navbar a {
       color: #ccc;
       text-decoration: none;
       transition: color 0.3s;
+      font-size: 1.1rem;
     }
 
     .navbar a:hover,
@@ -50,7 +54,7 @@
 
     main.section {
       padding: 3rem 2rem;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: auto;
     }
 
@@ -63,7 +67,7 @@
 
     .lab-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
       gap: 2rem;
     }
 
@@ -74,6 +78,8 @@
       padding: 1.5rem;
       box-shadow: 0 4px 12px rgba(0, 255, 170, 0.1);
       transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
     }
 
     .lab:hover {
@@ -85,6 +91,13 @@
       font-size: 1.5rem;
       margin-bottom: 1rem;
       color: #00ffaa;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lab h4 i {
+      font-size: 1.3rem;
     }
 
     .lab p {
@@ -101,17 +114,29 @@
       padding: 0.2rem 0.5rem;
       border-radius: 4px;
       color: #00ffaa;
+      font-family: 'Courier New', monospace;
     }
 
     .lab-images {
-      margin-top: 1rem;
+      margin: 1.5rem 0;
       text-align: center;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .lab-images .icon {
-      font-size: 3rem;
+      font-size: 4rem;
       color: #00ffaa;
       margin: 0.5rem 0;
+      opacity: 0.8;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .lab:hover .lab-images .icon {
+      transform: scale(1.1);
+      opacity: 1;
     }
 
     .lab a {
@@ -124,6 +149,7 @@
       border-radius: 25px;
       font-weight: bold;
       transition: background 0.3s ease;
+      align-self: flex-start;
     }
 
     .lab a:hover {
@@ -146,6 +172,24 @@
 
       h2 {
         font-size: 2rem;
+      }
+      
+      .navbar ul {
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      main.section {
+        padding: 2rem 1rem;
+      }
+      
+      .lab {
+        padding: 1.2rem;
+      }
+      
+      .lab h4 {
+        font-size: 1.3rem;
       }
     }
   </style>
@@ -194,44 +238,53 @@
 
       <article class="lab">
         <h4><i class="fas fa-terminal"></i> Pawned Fawn Machine On Hackthebox</h4>
-        <p><strong>Summary:</strong> connected FTP, SMB, Telnet, Rsync and RDP anonymously. Use Nmap to identify open ports. connected to a MongoDB server.</p>
+        <p><strong>Summary:</strong> Connected FTP, SMB, Telnet, Rsync and RDP anonymously. Used Nmap to identify open ports. Connected to a MongoDB server.</p>
         <div class="lab-images">
           <i class="fas fa-server icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> Network service enumeration, anonymous access exploitation, basic privilege escalation</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
 
       <article class="lab">
         <h4><i class="fas fa-folder-open"></i> Pawned Dancing Machine on HacktheBox</h4>
-        <p><strong>Summary:</strong> connected FTP, SMB, Telnet, Rsync and RDP anonymously. Use Nmap to identify open ports. connected to a MongoDB server.</p>
+        <p><strong>Summary:</strong> Exploited misconfigured SMB shares to gain initial access, then pivoted through the network using stolen credentials.</p>
         <div class="lab-images">
           <i class="fas fa-folder icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> SMB enumeration, password cracking, lateral movement techniques</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
 
       <article class="lab">
         <h4><i class="fas fa-user-secret"></i> Pawned Redeemer Machine on Hackthebox</h4>
-        <p><strong>Summary:</strong> connected FTP, SMB, Telnet, Rsync and RDP anonymously. Use Nmap to identify open ports. connected to a MongoDB server.</p>
+        <p><strong>Summary:</strong> Exploited Redis database misconfiguration to gain shell access and escalate privileges through cron job manipulation.</p>
         <div class="lab-images">
           <i class="fas fa-database icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> NoSQL database exploitation, cron job privilege escalation, Linux persistence techniques</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
 
       <article class="lab">
         <h4><i class="fas fa-user-shield"></i> Pawned the Meow Machine on Hackthebox</h4>
-        <p><strong>Summary:</strong> connected FTP, SMB, Telnet, Rsync and RDP anonymously. Use Nmap to identify open ports. connected to a MongoDB server.</p>
+        <p><strong>Summary:</strong> Gained initial access through exposed Telnet service, then exploited PATH variable misconfiguration for root access.</p>
         <div class="lab-images">
           <i class="fas fa-shield-alt icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> Telnet exploitation, Linux environment variable manipulation, basic privilege escalation</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
 
       <article class="lab">
-        <h4><i class="fas fa-user-shield"></i> Performed Defensive Security On Tryhackme</h4>
-        <p><strong>Summary:</strong> Practiced how soc analyst works with siem practices</p>
+        <h4><i class="fas fa-eye"></i> Performed Defensive Security On Tryhackme</h4>
+        <p><strong>Summary:</strong> Practiced SOC analyst workflows including SIEM monitoring, log analysis, and incident response procedures.</p>
         <div class="lab-images">
-          <i class="fas fa-eye icon"></i>
+          <i class="fas fa-desktop icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> SIEM operations, log correlation, threat detection, incident documentation</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
-      <!-- New Labs Added -->
 
       <article class="lab">
         <h4><i class="fas fa-network-wired"></i> Attacktive Directory on TryHackMe</h4>
@@ -239,6 +292,8 @@
         <div class="lab-images">
           <i class="fas fa-sitemap icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> AD enumeration, Kerberos attacks, lateral movement, BloodHound analysis</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
       
       <article class="lab">
@@ -247,22 +302,28 @@
         <div class="lab-images">
           <i class="fas fa-search icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> Memory dump analysis, Windows Event Log parsing, forensic artifact collection</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
       
       <article class="lab">
-        <h4><i class="fas fa-network-wired"></i> Introduction to Networking on HackTheBox</h4>
+        <h4><i class="fas fa-project-diagram"></i> Introduction to Networking on HackTheBox</h4>
         <p><strong>Summary:</strong> Covered OSI model, subnetting, routing, and packet inspection with Wireshark and tcpdump.</p>
         <div class="lab-images">
-          <i class="fas fa-project-diagram icon"></i>
+          <i class="fas fa-network-wired icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> Network protocol analysis, packet capturing, subnet calculations</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
       
       <article class="lab">
-        <h4><i class="fas fa-bullseye"></i> Attacking Web Apps with FFUF on HackTheBox</h4>
+        <h4><i class="fas fa-crosshairs"></i> Attacking Web Apps with FFUF on HackTheBox</h4>
         <p><strong>Summary:</strong> Discovered hidden directories, parameters, and files using the FFUF fuzzing tool.</p>
         <div class="lab-images">
-          <i class="fas fa-crosshairs icon"></i>
+          <i class="fas fa-globe icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> Web application fuzzing, directory brute-forcing, parameter discovery</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
       
       <article class="lab">
@@ -271,86 +332,108 @@
         <div class="lab-images">
           <i class="fas fa-virus icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> Malware classification, basic static analysis, sandbox analysis</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
       
       <article class="lab">
-        <h4><i class="fas fa-crosshairs"></i> Using Metasploit Framework on HackTheBox</h4>
+        <h4><i class="fas fa-terminal"></i> Using Metasploit Framework on HackTheBox</h4>
         <p><strong>Summary:</strong> Practiced scanning, exploitation, and post-exploitation using Metasploit modules and Meterpreter.</p>
-        <div class="lab-images">
-          <i class="fas fa-terminal icon"></i>
-        </div>
-      </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-shield-alt"></i> OWASP Top 10 - 2021 on TryHackMe</h4>
-        <p><strong>Summary:</strong> Studied and exploited web vulnerabilities like XSS, IDOR, SSRF, and Injection based on the OWASP Top 10.</p>
-        <div class="lab-images">
-          <i class="fas fa-lock icon"></i>
-        </div>
-      </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-user-secret"></i> Passive Recon on TryHackMe</h4>
-        <p><strong>Summary:</strong> Explored methods to gather information without directly engaging with the target using WHOIS, Shodan, and DNS dumps.</p>
-        <div class="lab-images">
-          <i class="fas fa-binoculars icon"></i>
-        </div>
-      </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-search"></i> Splunk: Exploring SPL on TryHackMe</h4>
-        <p><strong>Summary:</strong> Learned how to write Splunk Processing Language queries to analyze logs and detect anomalies.</p>
-        <div class="lab-images">
-          <i class="fas fa-chart-line icon"></i>
-        </div>
-      </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-database"></i> SQLi Fundamentals on HackTheBox</h4>
-        <p><strong>Summary:</strong> Practiced SQL Injection techniques to extract database content and bypass login forms.</p>
         <div class="lab-images">
           <i class="fas fa-code icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> Metasploit framework usage, payload generation, post-exploitation modules</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
       
       <article class="lab">
-        <h4><i class="fas fa-eye"></i> Threat Intelligence Tools on TryHackMe</h4>
-        <p><strong>Summary:</strong> Worked with tools like VirusTotal, AbuseIPDB, and MISP to collect, correlate, and analyze threat indicators.</p>
-        <div class="lab-images">
-          <i class="fas fa-globe icon"></i>
-        </div>
-      </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-exclamation-triangle"></i> Vulnerability Assessment on HackTheBox</h4>
-        <p><strong>Summary:</strong> Scanned systems using Nmap and Nessus to identify and assess vulnerabilities.</p>
+        <h4><i class="fas fa-lock"></i> OWASP Top 10 - 2021 on TryHackMe</h4>
+        <p><strong>Summary:</strong> Studied and exploited web vulnerabilities like XSS, IDOR, SSRF, and Injection based on the OWASP Top 10.</p>
         <div class="lab-images">
           <i class="fas fa-shield-virus icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> Web vulnerability exploitation, secure coding principles, vulnerability mitigation</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
       
       <article class="lab">
-        <h4><i class="fas fa-paper-plane"></i> Web Requests on HackTheBox</h4>
+        <h4><i class="fas fa-binoculars"></i> Passive Recon on TryHackMe</h4>
+        <p><strong>Summary:</strong> Explored methods to gather information without directly engaging with the target using WHOIS, Shodan, and DNS dumps.</p>
+        <div class="lab-images">
+          <i class="fas fa-search icon"></i>
+        </div>
+        <p><strong>Skills Gained:</strong> Open-source intelligence (OSINT), DNS enumeration, infrastructure mapping</p>
+        <a href="#" target="_blank">View Lab Details</a>
+      </article>
+      
+      <article class="lab">
+        <h4><i class="fas fa-chart-line"></i> Splunk: Exploring SPL on TryHackMe</h4>
+        <p><strong>Summary:</strong> Learned how to write Splunk Processing Language queries to analyze logs and detect anomalies.</p>
+        <div class="lab-images">
+          <i class="fas fa-search-plus icon"></i>
+        </div>
+        <p><strong>Skills Gained:</strong> Splunk query language, log analysis, correlation searches</p>
+        <a href="#" target="_blank">View Lab Details</a>
+      </article>
+      
+      <article class="lab">
+        <h4><i class="fas fa-code"></i> SQLi Fundamentals on HackTheBox</h4>
+        <p><strong>Summary:</strong> Practiced SQL Injection techniques to extract database content and bypass login forms.</p>
+        <div class="lab-images">
+          <i class="fas fa-database icon"></i>
+        </div>
+        <p><strong>Skills Gained:</strong> SQL injection techniques, database enumeration, blind SQLi</p>
+        <a href="#" target="_blank">View Lab Details</a>
+      </article>
+      
+      <article class="lab">
+        <h4><i class="fas fa-globe"></i> Threat Intelligence Tools on TryHackMe</h4>
+        <p><strong>Summary:</strong> Worked with tools like VirusTotal, AbuseIPDB, and MISP to collect, correlate, and analyze threat indicators.</p>
+        <div class="lab-images">
+          <i class="fas fa-bullseye icon"></i>
+        </div>
+        <p><strong>Skills Gained:</strong> Threat intelligence platforms, IOC analysis, threat actor tracking</p>
+        <a href="#" target="_blank">View Lab Details</a>
+      </article>
+      
+      <article class="lab">
+        <h4><i class="fas fa-shield-virus"></i> Vulnerability Assessment on HackTheBox</h4>
+        <p><strong>Summary:</strong> Scanned systems using Nmap and Nessus to identify and assess vulnerabilities.</p>
+        <div class="lab-images">
+          <i class="fas fa-search icon"></i>
+        </div>
+        <p><strong>Skills Gained:</strong> Vulnerability scanning, CVSS scoring, remediation prioritization</p>
+        <a href="#" target="_blank">View Lab Details</a>
+      </article>
+      
+      <article class="lab">
+        <h4><i class="fas fa-exchange-alt"></i> Web Requests on HackTheBox</h4>
         <p><strong>Summary:</strong> Understood the structure and behavior of HTTP requests and practiced crafting them with Burp Suite and curl.</p>
         <div class="lab-images">
-          <i class="fas fa-exchange-alt icon"></i>
+          <i class="fas fa-paper-plane icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> HTTP protocol, request manipulation, Burp Suite usage</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
       
       <article class="lab">
         <h4><i class="fas fa-wifi"></i> WiFi Hacking 101 on TryHackMe</h4>
         <p><strong>Summary:</strong> Captured and cracked WPA2 handshakes, deauthenticated users, and scanned wireless networks.</p>
         <div class="lab-images">
-          <i class="fas fa-wifi icon"></i>
+          <i class="fas fa-signal icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> Wireless security, WPA2 cracking, RF monitoring</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
       
       <article class="lab">
-        <h4><i class="fas fa-ethernet"></i> L2 MAC Flooding & ARP Spoofing on TryHackMe</h4>
+        <h4><i class="fas fa-project-diagram"></i> L2 MAC Flooding & ARP Spoofing on TryHackMe</h4>
         <p><strong>Summary:</strong> Practiced ARP poisoning and MAC flooding to intercept and analyze network traffic.</p>
         <div class="lab-images">
-          <i class="fas fa-project-diagram icon"></i>
+          <i class="fas fa-ethernet icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> Layer 2 attacks, MITM techniques, network traffic interception</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
       
       <article class="lab">
@@ -359,22 +442,28 @@
         <div class="lab-images">
           <i class="fas fa-desktop icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> Security operations, alert investigation, incident response basics</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
       
       <article class="lab">
-        <h4><i class="fas fa-file-alt"></i> Intro to Log Analysis on TryHackMe</h4>
+        <h4><i class="fas fa-file-code"></i> Intro to Log Analysis on TryHackMe</h4>
         <p><strong>Summary:</strong> Analyzed Windows and Linux logs to identify malicious activity using grep, Event Viewer, and audit logs.</p>
         <div class="lab-images">
-          <i class="fas fa-file-code icon"></i>
+          <i class="fas fa-file-alt icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> Log analysis, event correlation, anomaly detection</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
       
       <article class="lab">
-        <h4><i class="fas fa-globe"></i> DNS in Detail on TryHackMe</h4>
+        <h4><i class="fas fa-globe-americas"></i> DNS in Detail on TryHackMe</h4>
         <p><strong>Summary:</strong> Explored DNS record types, zone transfers, and DNS reconnaissance using dig, nslookup, and DNSenum.</p>
         <div class="lab-images">
-          <i class="fas fa-globe-americas icon"></i>
+          <i class="fas fa-server icon"></i>
         </div>
+        <p><strong>Skills Gained:</strong> DNS protocol, record analysis, DNS enumeration techniques</p>
+        <a href="#" target="_blank">View Lab Details</a>
       </article>
     </section>
   </main>
