@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | Marcos Solomon Portfolio</title>
+  <title>Home | Marcos Solomon - Cybersecurity Professional</title>
   
   <!-- SEO -->
   <meta name="description" content="Marcos Solomon's Cybersecurity Portfolio – showcasing projects, resume, and ethical hacking expertise.">
   <meta name="keywords" content="Cybersecurity, Penetration Testing, Ethical Hacking, Digital Forensics, Portfolio">
   <meta name="author" content="Marcos Solomon">
+  <meta property="og:image" content="/images/port1.jpeg">
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 
@@ -20,6 +23,18 @@
 
   <!-- Custom Styles -->
   <style>
+    :root {
+      --primary: #00ffaa;
+      --primary-dark: #00cc88;
+      --bg-dark: #0f0f0f;
+      --bg-darker: #080808;
+      --text-light: #ffffff;
+      --text-muted: #cccccc;
+      --nav-bg: rgba(18, 18, 18, 0.95);
+      --shadow-color: rgba(0, 255, 170, 0.3);
+      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -28,21 +43,49 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #1c1c1c, #0f0f0f);
-      color: #fff;
+      background: radial-gradient(ellipse at top, #1a1a1a, #0a0a0a);
+      color: var(--text-light);
       line-height: 1.6;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
+    /* Navigation */
     .navbar {
-      background: #121212;
-      padding: 1rem 2rem;
+      background: var(--nav-bg);
+      padding: 1.2rem 2rem;
       display: flex;
       justify-content: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      position: sticky;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 1000;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .navbar-container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .navbar-brand i {
+      font-size: 1.4rem;
     }
 
     .navbar ul {
@@ -52,16 +95,37 @@
     }
 
     .navbar a {
-      color: #ccc;
+      color: var(--text-muted);
       text-decoration: none;
-      transition: color 0.3s;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      position: relative;
+      padding: 0.5rem 0;
     }
 
     .navbar a:hover,
     .navbar a.active {
-      color: #00ffaa;
+      color: var(--primary);
     }
 
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    .navbar a:hover::after,
+    .navbar a.active::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
     .home-section {
       min-height: 100vh;
       display: flex;
@@ -69,155 +133,365 @@
       align-items: center;
       padding: 2rem;
       text-align: center;
-      background: transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0,255,170,0.05) 0%, rgba(0,0,0,0) 70%);
+      z-index: -1;
+      animation: pulse 15s infinite alternate;
     }
 
     .home-content {
-      max-width: 700px;
+      max-width: 800px;
       margin: auto;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .profile-img-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
     }
 
     .profile-img {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 1rem;
-      border: 3px solid #00ffaa;
-      box-shadow: 0 4px 12px rgba(0, 255, 170, 0.3);
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 30px var(--shadow-color);
+      transition: var(--transition);
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-img-container::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: 50%;
+      border: 2px dashed var(--primary);
+      animation: spin 20s linear infinite;
+      opacity: 0.7;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin: 1rem 0 0.5rem;
+      background: linear-gradient(to right, var(--primary), #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 700;
     }
 
     .tagline {
-      font-size: 1.2rem;
-      color: #00ffaa;
+      font-size: 1.5rem;
+      color: var(--primary);
       margin-bottom: 1rem;
-      height: 1.5rem;
+      height: 2rem;
+      font-family: 'Space Mono', monospace;
     }
 
     .intro {
-      margin: 1.2rem 0 2rem;
-      color: #ccc;
+      margin: 1.5rem auto 2.5rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      font-size: 1.1rem;
     }
 
+    /* Buttons */
     .btn {
-      background-color: #00ffaa;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background-color: var(--primary);
       color: #000;
-      padding: 0.7rem 1.5rem;
-      border-radius: 25px;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px var(--shadow-color);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 0 0.5rem;
     }
 
     .btn:hover {
-      background-color: #00ddaa;
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px var(--shadow-color);
     }
 
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: rgba(0, 255, 170, 0.1);
+    }
+
+    /* Social Links */
     .socials {
-      margin-top: 2rem;
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
     }
 
     .socials a {
-      margin: 0 10px;
-      color: #ccc;
+      color: var(--text-muted);
       font-size: 1.5rem;
-      transition: color 0.3s;
+      transition: var(--transition);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .socials a:hover {
-      color: #00ffaa;
+      color: var(--primary);
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: 0 5px 15px var(--shadow-color);
+    }
+
+    /* Scroll Indicator */
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+    }
+
+    .scroll-down:hover {
+      color: var(--primary);
+    }
+
+    /* Animations */
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.5; }
+      100% { transform: scale(1.2); opacity: 0.8; }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+      40% { transform: translateY(-20px) translateX(-50%); }
+      60% { transform: translateY(-10px) translateX(-50%); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      h1 {
+        font-size: 2.5rem;
+      }
     }
 
     @media (max-width: 768px) {
+      .navbar-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
       h1 {
         font-size: 2rem;
       }
 
       .tagline {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
 
       .profile-img {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
       }
 
       .intro {
-        font-size: 0.95rem;
+        font-size: 1rem;
       }
 
-      .navbar ul {
+      .btn-container {
+        display: flex;
         flex-direction: column;
-        align-items: center;
+        gap: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .tagline {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
-<body onload="AOS.init();">
+<body>
 
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="labs.html">Lab Challenges</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">
+        <i class="fas fa-user-secret"></i> Marcos Solomon
+      </a>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="labs.html">Lab Challenges</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- Home Section -->
-  <section id="home" class="section home-section" data-aos="fade-up">
-    <div class="home-content">
-      <img loading="lazy" src="/images/port1.jpeg" alt="Profile Picture" class="profile-img" />
+  <!-- Hero Section -->
+  <section id="home" class="home-section">
+    <div class="home-content" data-aos="fade-up" data-aos-delay="100">
+      <div class="profile-img-container">
+        <img loading="lazy" src="/images/port1.jpeg" alt="Marcos Solomon Profile Picture" class="profile-img" />
+      </div>
+      
       <h1>Marcos Solomon</h1>
       <p class="tagline"><span id="typewriter"></span></p>
+      
       <p class="intro">
-        I’m a passionate cybersecurity analyst with hands-on experience in vulnerability scanning,
-        penetration testing, and digital forensics. I thrive on solving complex security problems and
-        turning insights into actionable defense strategies. This portfolio showcases my projects, training labs,
-        and achievements in the field of cybersecurity.
+        I'm a passionate cybersecurity professional specializing in penetration testing, 
+        vulnerability assessment, and security architecture. With hands-on experience 
+        in both offensive and defensive security, I help organizations identify weaknesses 
+        before attackers do.
       </p>
-      <a href="resume.html" class="btn">View My Resume</a>
+      
+      <div class="btn-container">
+        <a href="resume.html" class="btn">
+          <i class="fas fa-file-alt"></i> View Resume
+        </a>
+        <a href="projects.html" class="btn btn-outline">
+          <i class="fas fa-code"></i> My Projects
+        </a>
+      </div>
 
       <div class="socials">
-        <a href="https://github.com/marcos-solo" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/marcos-solomon" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:solomonmarcos34@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/marcos-solo" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/marcos-solomon" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://twitter.com/marcos_solo" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="mailto:solomonmarcos34@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+
+      <div class="scroll-down" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+        <i class="fas fa-chevron-down"></i>
       </div>
     </div>
   </section>
 
-  <!-- Scripts -->
+  <!-- AOS Animation Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Typewriter Effect -->
   <script>
-    const phrases = ['Cybersecurity Analyst', 'Penetration Tester', 'CTF Player', 'Threat Hunter'];
-    let i = 0, j = 0, currentPhrase = [], isDeleting = false;
+    const phrases = [
+      'Cybersecurity Specialist', 
+      'Penetration Tester', 
+      'Ethical Hacker',
+      'Security Researcher',
+      'CTF Player',
+      'Bug Bounty Hunter'
+    ];
+    
+    let i = 0, j = 0, currentPhrase = [], isDeleting = false, isEnd = false;
 
     function loop() {
+      isEnd = false;
       document.getElementById('typewriter').innerHTML = currentPhrase.join('');
 
-      if (!isDeleting && j <= phrases[i].length) {
-        currentPhrase.push(phrases[i][j++]);
-      } else if (isDeleting && j > 0) {
-        currentPhrase.pop();
-        j--;
-      }
+      if (i < phrases.length) {
+        if (!isDeleting && j <= phrases[i].length) {
+          currentPhrase.push(phrases[i][j]);
+          j++;
+        }
 
-      if (j === phrases[i].length) isDeleting = true;
-      if (isDeleting && j === 0) {
-        isDeleting = false;
-        i = (i + 1) % phrases.length;
-      }
+        if (isDeleting && j > 0) {
+          currentPhrase.pop();
+          j--;
+        }
 
-      setTimeout(loop, isDeleting ? 100 : 200);
+        if (j === phrases[i].length) {
+          isEnd = true;
+          isDeleting = true;
+        }
+
+        if (isDeleting && j === 0) {
+          currentPhrase = [];
+          isDeleting = false;
+          i++;
+          if (i === phrases.length) {
+            i = 0;
+          }
+        }
+      }
+      
+      const speedUp = Math.random() * (80 - 50) + 50;
+      const normalSpeed = Math.random() * (300 - 200) + 200;
+      const time = isEnd ? 2000 : isDeleting ? speedUp : normalSpeed;
+      setTimeout(loop, time);
     }
-    loop();
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+      });
+      loop();
+    });
   </script>
 
 </body>
