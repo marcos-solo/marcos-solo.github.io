@@ -11,7 +11,9 @@
   <meta name="author" content="Marcos Solomon">
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <!-- AOS Animation -->
@@ -19,157 +21,564 @@
 
   <!-- Styles -->
   <style>
+    :root {
+      --primary: #00ffaa;
+      --primary-dark: #00cc88;
+      --bg-dark: #0f0f0f;
+      --bg-darker: #080808;
+      --card-bg: #1a1a1a;
+      --card-border: #2a2a2a;
+      --text-light: #f5f5f5;
+      --text-muted: #ccc;
+      --nav-bg: rgba(18, 18, 18, 0.95);
+      --tag-bg: rgba(0, 255, 170, 0.12);
+      --tag-border: rgba(0, 255, 170, 0.3);
+      --shadow-color: rgba(0, 255, 170, 0.1);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0f0f0f;
-      color: #f5f5f5;
+      background: var(--bg-dark);
+      color: var(--text-light);
       line-height: 1.6;
     }
 
+    /* Navbar */
     .navbar {
-      background: #121212;
-      padding: 1rem 2rem;
+      background: var(--nav-bg);
+      padding: 1.2rem 2rem;
       display: flex;
       justify-content: center;
       position: sticky;
       top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .navbar-container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .navbar-brand i {
+      font-size: 1.4rem;
     }
 
     .navbar ul {
       list-style: none;
       display: flex;
       gap: 1.5rem;
+      padding: 0;
+      margin: 0;
     }
 
     .navbar a {
-      color: #ccc;
+      color: var(--text-muted);
       text-decoration: none;
-      transition: color 0.3s;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      position: relative;
+      padding: 0.5rem 0;
     }
 
     .navbar a:hover,
-    .navbar a.active {
-      color: #00ffaa;
+    .navbar a.active,
+    .navbar a[aria-current="page"] {
+      color: var(--primary);
     }
 
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    .navbar a:hover::after,
+    .navbar a.active::after,
+    .navbar a[aria-current="page"]::after {
+      width: 100%;
+    }
+
+    /* Main Content */
     .section {
-      padding: 3rem 2rem;
-      max-width: 800px;
-      margin: auto;
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
     }
 
     h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #00ffaa;
-      margin-bottom: 2rem;
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* Resume Sections */
+    .resume-section {
+      margin-bottom: 3rem;
+      background: var(--card-bg);
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid var(--card-border);
+      transition: var(--transition);
+    }
+
+    .resume-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px var(--shadow-color);
     }
 
     h3 {
-      color: #00ffaa;
-      margin-top: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
     }
 
-    ul {
-      padding-left: 1.2rem;
+    h3 i {
+      font-size: 1.2rem;
     }
 
-    ul li {
-      margin-bottom: 0.6rem;
+    .timeline-item {
+      margin-bottom: 2rem;
+      position: relative;
+      padding-left: 2.5rem;
     }
 
-    strong {
-      color: #fff;
+    .timeline-item:last-child {
+      margin-bottom: 0;
     }
 
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0.5rem;
+      top: 0.4rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 1rem;
+      top: 1.6rem;
+      bottom: -2rem;
+      width: 2px;
+      background: var(--primary);
+      opacity: 0.3;
+    }
+
+    .timeline-item:last-child::after {
+      display: none;
+    }
+
+    .timeline-date {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-light);
+    }
+
+    .timeline-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+
+    .timeline-description {
+      margin-top: 0.8rem;
+    }
+
+    /* Skills Section */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-category {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 0.8rem;
+      padding: 1.5rem;
+    }
+
+    .skill-category h4 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .skill-list {
+      list-style: none;
+    }
+
+    .skill-list li {
+      margin-bottom: 0.7rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .skill-list li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    /* Download Button */
     .download-btn {
-      display: inline-block;
-      background-color: #00ffaa;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background-color: var(--primary);
       color: #000;
-      font-weight: bold;
-      padding: 0.7rem 1.5rem;
-      border-radius: 25px;
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
       text-decoration: none;
-      margin: 1rem 0 2rem;
-      transition: background-color 0.3s ease;
+      margin: 2rem auto;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(0, 255, 170, 0.3);
     }
 
     .download-btn:hover {
-      background-color: #00ddaa;
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 255, 170, 0.4);
     }
 
-    .fa-shield-alt, .fa-globe {
-      color: #00ffaa;
-      margin-right: 0.5rem;
+    .download-btn i {
+      font-size: 1.2rem;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-top: 1px solid #222;
+      margin-top: 2rem;
+      background: var(--bg-darker);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .social-link {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      font-size: 0.85rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .skills-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      }
     }
 
     @media (max-width: 768px) {
-      h2 {
-        font-size: 2rem;
-      }
-
-      .navbar ul {
+      .navbar-container {
         flex-direction: column;
         gap: 1rem;
-        align-items: center;
+      }
+
+      h2 {
+        font-size: 2.2rem;
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
+      }
+
+      .resume-section {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .skills-container {
+        grid-template-columns: 1fr;
+      }
+
+      h2 {
+        font-size: 2rem;
       }
     }
   </style>
 </head>
-<body onload="AOS.init();">
+<body>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="resume.html" class="active">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="labs.html">Lab Challenges</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">
+        <i class="fas fa-user-secret"></i> Marcos Solomon
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html" class="active" aria-current="page">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="labs.html">Lab Challenges</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Resume Section -->
-  <section id="resume" class="section" data-aos="fade-up">
-    <h2>Resume</h2>
+  <main class="section">
+    <div class="section-header" data-aos="fade-up">
+      <h2>My Resume</h2>
+      <p class="section-subtitle">Cybersecurity professional with expertise in penetration testing and ethical hacking</p>
+    </div>
 
     <!-- Download CV Button -->
-    <a href="/files/marcos_solomon_CS-SA10-25038.pdf" download class="download-btn">
-      <i class="fas fa-download"></i> Download My CV (PDF)
-    </a>
+    <div class="btn-container" data-aos="fade-up" data-aos-delay="100">
+      <a href="/files/marcos_solomon_CS-SA10-25038.pdf" download class="download-btn">
+        <i class="fas fa-download"></i> Download Full Resume (PDF)
+      </a>
+    </div>
 
-    <h3>Education</h3>
-    <p><strong>Bachelor in Business Information Technology</strong><br>
-    University Name (2021 - 2025)</p>
+    <!-- Education Section -->
+    <section class="resume-section" data-aos="fade-up" data-aos-delay="150">
+      <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+      
+      <div class="timeline-item">
+        <span class="timeline-date">2021 - 2025</span>
+        <h4 class="timeline-title">Bachelor in Business Information Technology</h4>
+        <span class="timeline-subtitle">University Name</span>
+        <p class="timeline-description">
+          Specialized in cybersecurity and information systems with coursework in network security, 
+          ethical hacking, and digital forensics.
+        </p>
+      </div>
+    </section>
 
-    <h3>Certifications</h3>
-    <ul>
-      <li><i class="fas fa-shield-alt"></i> Certified Ethical Hacker (CEH) – Alison</li>
-      <li><i class="fas fa-globe"></i> Web Security Fundamentals – Udemy</li>
-      <li><i class="fas fa-laptop-code"></i> Python for Ethical Hacking – Online Course</li>
-    </ul>
+    <!-- Certifications Section -->
+    <section class="resume-section" data-aos="fade-up" data-aos-delay="200">
+      <h3><i class="fas fa-certificate"></i> Certifications</h3>
+      
+      <div class="timeline-item">
+        <span class="timeline-date">2023</span>
+        <h4 class="timeline-title">Certified Ethical Hacker (CEH)</h4>
+        <span class="timeline-subtitle">Alison</span>
+        <p class="timeline-description">
+          Comprehensive training in ethical hacking methodologies, tools, and techniques.
+        </p>
+      </div>
+      
+      <div class="timeline-item">
+        <span class="timeline-date">2022</span>
+        <h4 class="timeline-title">Web Security Fundamentals</h4>
+        <span class="timeline-subtitle">Udemy</span>
+        <p class="timeline-description">
+          Mastered OWASP Top 10 vulnerabilities and modern web application security principles.
+        </p>
+      </div>
+      
+      <div class="timeline-item">
+        <span class="timeline-date">2022</span>
+        <h4 class="timeline-title">Python for Ethical Hacking</h4>
+        <span class="timeline-subtitle">Online Course</span>
+        <p class="timeline-description">
+          Developed custom security tools and automation scripts using Python.
+        </p>
+      </div>
+    </section>
 
-    <h3>Professional Training</h3>
-    <p>
-      I have been actively involved in training corporate personnel in cybersecurity practices 
-      and digital forensics. These sessions were directed under the 
-      <strong>Society of Forensics and Researchers Association (SOFSREA)</strong>, 
-      aiming to equip professionals with practical skills in security auditing, 
-      vulnerability scanning, and cyber hygiene awareness.
-    </p>
+    <!-- Experience Section -->
+    <section class="resume-section" data-aos="fade-up" data-aos-delay="250">
+      <h3><i class="fas fa-briefcase"></i> Professional Training</h3>
+      
+      <div class="timeline-item">
+        <span class="timeline-date">2022 - Present</span>
+        <h4 class="timeline-title">Cybersecurity Trainer</h4>
+        <span class="timeline-subtitle">Society of Forensics and Researchers Association (SOFSREA)</span>
+        <p class="timeline-description">
+          Conducted corporate training sessions in cybersecurity practices and digital forensics.
+          Developed curriculum focused on security auditing, vulnerability scanning, and cyber 
+          hygiene awareness for professionals across various industries.
+        </p>
+      </div>
+    </section>
 
-    <h3>Skills</h3>
-    <ul>
-      <li><strong>Languages:</strong> Python, JavaScript, HTML/CSS, Bash</li>
-      <li><strong>Tools:</strong> OWASP ZAP, Wireshark, Nmap, Burp Suite, Metasploit</li>
-      <li><strong>Platforms:</strong> Linux, Windows, VirtualBox, Git, REST APIs</li>
-    </ul>
-  </section>
+    <!-- Skills Section -->
+    <section class="resume-section" data-aos="fade-up" data-aos-delay="300">
+      <h3><i class="fas fa-code"></i> Technical Skills</h3>
+      
+      <div class="skills-container">
+        <div class="skill-category">
+          <h4>Languages</h4>
+          <ul class="skill-list">
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>HTML/CSS</li>
+            <li>Bash Scripting</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h4>Security Tools</h4>
+          <ul class="skill-list">
+            <li>OWASP ZAP</li>
+            <li>Burp Suite</li>
+            <li>Metasploit</li>
+            <li>Wireshark</li>
+            <li>Nmap</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h4>Platforms</h4>
+          <ul class="skill-list">
+            <li>Linux</li>
+            <li>Windows</li>
+            <li>Kali Linux</li>
+            <li>VirtualBox/VMware</li>
+            <li>Git</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h4>Concepts</h4>
+          <ul class="skill-list">
+            <li>Penetration Testing</li>
+            <li>Vulnerability Assessment</li>
+            <li>Network Security</li>
+            <li>Cryptography</li>
+            <li>Incident Response</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <!-- AOS Script -->
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p class="copyright">&copy; 2025 Marcos Solomon. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- AOS Animation Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100
+    });
+  </script>
+
 </body>
 </html>
