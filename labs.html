@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lab Challenges | Marcos Solomon</title>
    
-
   <!-- Font Awesome for icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
@@ -106,13 +105,13 @@
 
     .lab-images {
       margin-top: 1rem;
+      text-align: center;
     }
 
-    .lab-images img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-top: 0.5rem;
-      box-shadow: 0 0 10px rgba(0, 255, 170, 0.2);
+    .lab-images .icon {
+      font-size: 3rem;
+      color: #00ffaa;
+      margin: 0.5rem 0;
     }
 
     .lab a {
@@ -154,7 +153,6 @@
 <body>
 
   <!-- Navbar -->
-
   <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -165,7 +163,7 @@
     </ul>
   </nav>
 
-    <!-- Lab Challenges Section -->
+  <!-- Lab Challenges Section -->
   <main class="section" id="labs">
     <h2><i class="fas fa-flask"></i> Lab Challenges</h2>
 
@@ -176,7 +174,7 @@
         <p><strong>Approach:</strong> Explored user permissions, the <code>net user</code> command, and group policies using Command Prompt and PowerShell</p>
         <p><strong>Tools:</strong> Windows Command Line, PowerShell, Hack The Box Academy</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/window2.png" alt="Windows User Management Screenshot" />
+          <i class="fas fa-users-cog icon"></i>
         </div>
         <p><strong>Lessons Learned:</strong> The importance of least privilege, proper account enumeration, and recognizing common misconfigurations in user and group management</p>
         <p><strong>Certificate:</strong> <a href="https://academy.hackthebox.com/achievement/1917487/49" target="_blank">View HTB Windows Fundamentals Certificate</a></p>
@@ -188,7 +186,7 @@
         <p><strong>Approach:</strong> Practiced using <code>ls -l</code>, <code>chmod</code>, <code>chown</code>, and symbolic vs numeric permissions</p>
         <p><strong>Tools:</strong> Linux Terminal, Hack The Box Pwnbox</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/linux1.png" alt="Linux File Permissions Screenshot" />
+          <i class="fas fa-file-alt icon"></i>
         </div>
         <p><strong>Lessons Learned:</strong> How Linux enforces access control via user/group/other permissions, and how misconfigurations can lead to privilege escalation</p>
         <p><strong>Certificate:</strong> <a href="https://academy.hackthebox.com/achievement/1917487/18" target="_blank">View HTB Linux Fundamentals Certificate</a></p>
@@ -198,7 +196,7 @@
         <h4><i class="fas fa-terminal"></i> Pawned Fawn Machine On Hackthebox</h4>
         <p><strong>Summary:</strong> connected FTP, SMB, Telnet, Rsync and RDP anonymously. Use Nmap to identify open ports. connected to a MongoDB server.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen3.png" alt="Command Injection Screenshot" />
+          <i class="fas fa-server icon"></i>
         </div>
       </article>
 
@@ -206,7 +204,7 @@
         <h4><i class="fas fa-folder-open"></i> Pawned Dancing Machine on HacktheBox</h4>
         <p><strong>Summary:</strong> connected FTP, SMB, Telnet, Rsync and RDP anonymously. Use Nmap to identify open ports. connected to a MongoDB server.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen4.png" alt="Directory Traversal Screenshot" />
+          <i class="fas fa-folder icon"></i>
         </div>
       </article>
 
@@ -214,7 +212,7 @@
         <h4><i class="fas fa-user-secret"></i> Pawned Redeemer Machine on Hackthebox</h4>
         <p><strong>Summary:</strong> connected FTP, SMB, Telnet, Rsync and RDP anonymously. Use Nmap to identify open ports. connected to a MongoDB server.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen5.png" alt="Broken Authentication Screenshot" />
+          <i class="fas fa-database icon"></i>
         </div>
       </article>
 
@@ -222,7 +220,7 @@
         <h4><i class="fas fa-user-shield"></i> Pawned the Meow Machine on Hackthebox</h4>
         <p><strong>Summary:</strong> connected FTP, SMB, Telnet, Rsync and RDP anonymously. Use Nmap to identify open ports. connected to a MongoDB server.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/screen6.png" alt="Privilege Escalation Screenshot 1" />
+          <i class="fas fa-shield-alt icon"></i>
         </div>
       </article>
 
@@ -230,7 +228,7 @@
         <h4><i class="fas fa-user-shield"></i> Performed Defensive Security On Tryhackme</h4>
         <p><strong>Summary:</strong> Practiced how soc analyst works with siem practices</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/defensive.png" alt="Privilege Escalation Screenshot 2" />
+          <i class="fas fa-eye icon"></i>
         </div>
       </article>
       <!-- New Labs Added -->
@@ -239,7 +237,7 @@
         <h4><i class="fas fa-network-wired"></i> Attacktive Directory on TryHackMe</h4>
         <p><strong>Summary:</strong> Explored Active Directory fundamentals, enumeration, and exploitation using common tools like BloodHound and SMB.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/attacktive.png" alt="Attacktive Directory Screenshot" />
+          <i class="fas fa-sitemap icon"></i>
         </div>
       </article>
       
@@ -247,7 +245,7 @@
         <h4><i class="fas fa-microscope"></i> Windows Forensics 1 on TryHackMe</h4>
         <p><strong>Summary:</strong> Learned disk, memory, and event log analysis techniques to investigate Windows incidents.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/forensics1.png" alt="Windows Forensics Screenshot" />
+          <i class="fas fa-search icon"></i>
         </div>
       </article>
       
@@ -255,7 +253,7 @@
         <h4><i class="fas fa-network-wired"></i> Introduction to Networking on HackTheBox</h4>
         <p><strong>Summary:</strong> Covered OSI model, subnetting, routing, and packet inspection with Wireshark and tcpdump.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/networking.png" alt="Networking Screenshot" />
+          <i class="fas fa-project-diagram icon"></i>
         </div>
       </article>
       
@@ -263,7 +261,7 @@
         <h4><i class="fas fa-bullseye"></i> Attacking Web Apps with FFUF on HackTheBox</h4>
         <p><strong>Summary:</strong> Discovered hidden directories, parameters, and files using the FFUF fuzzing tool.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/ffuf.png" alt="FFUF Screenshot" />
+          <i class="fas fa-crosshairs icon"></i>
         </div>
       </article>
       
@@ -271,7 +269,7 @@
         <h4><i class="fas fa-bug"></i> MAL: Malware Introductory on TryHackMe</h4>
         <p><strong>Summary:</strong> Introduced to basic malware types, signatures, and static/dynamic analysis techniques.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/malware.png" alt="Malware Analysis Screenshot" />
+          <i class="fas fa-virus icon"></i>
         </div>
       </article>
       
@@ -279,7 +277,7 @@
         <h4><i class="fas fa-crosshairs"></i> Using Metasploit Framework on HackTheBox</h4>
         <p><strong>Summary:</strong> Practiced scanning, exploitation, and post-exploitation using Metasploit modules and Meterpreter.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/metasploit.png" alt="Metasploit Screenshot" />
+          <i class="fas fa-terminal icon"></i>
         </div>
       </article>
       
@@ -287,7 +285,7 @@
         <h4><i class="fas fa-shield-alt"></i> OWASP Top 10 - 2021 on TryHackMe</h4>
         <p><strong>Summary:</strong> Studied and exploited web vulnerabilities like XSS, IDOR, SSRF, and Injection based on the OWASP Top 10.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/owasp.png" alt="OWASP Screenshot" />
+          <i class="fas fa-lock icon"></i>
         </div>
       </article>
       
@@ -295,7 +293,7 @@
         <h4><i class="fas fa-user-secret"></i> Passive Recon on TryHackMe</h4>
         <p><strong>Summary:</strong> Explored methods to gather information without directly engaging with the target using WHOIS, Shodan, and DNS dumps.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/passive.png" alt="Passive Recon Screenshot" />
+          <i class="fas fa-binoculars icon"></i>
         </div>
       </article>
       
@@ -303,7 +301,7 @@
         <h4><i class="fas fa-search"></i> Splunk: Exploring SPL on TryHackMe</h4>
         <p><strong>Summary:</strong> Learned how to write Splunk Processing Language queries to analyze logs and detect anomalies.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/splunk.png" alt="Splunk Screenshot" />
+          <i class="fas fa-chart-line icon"></i>
         </div>
       </article>
       
@@ -311,7 +309,7 @@
         <h4><i class="fas fa-database"></i> SQLi Fundamentals on HackTheBox</h4>
         <p><strong>Summary:</strong> Practiced SQL Injection techniques to extract database content and bypass login forms.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/sqli.png" alt="SQLi Screenshot" />
+          <i class="fas fa-code icon"></i>
         </div>
       </article>
       
@@ -319,7 +317,7 @@
         <h4><i class="fas fa-eye"></i> Threat Intelligence Tools on TryHackMe</h4>
         <p><strong>Summary:</strong> Worked with tools like VirusTotal, AbuseIPDB, and MISP to collect, correlate, and analyze threat indicators.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/threatintel.png" alt="Threat Intelligence Screenshot" />
+          <i class="fas fa-globe icon"></i>
         </div>
       </article>
       
@@ -327,7 +325,7 @@
         <h4><i class="fas fa-exclamation-triangle"></i> Vulnerability Assessment on HackTheBox</h4>
         <p><strong>Summary:</strong> Scanned systems using Nmap and Nessus to identify and assess vulnerabilities.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/vulnscan.png" alt="Vulnerability Assessment Screenshot" />
+          <i class="fas fa-shield-virus icon"></i>
         </div>
       </article>
       
@@ -335,7 +333,7 @@
         <h4><i class="fas fa-paper-plane"></i> Web Requests on HackTheBox</h4>
         <p><strong>Summary:</strong> Understood the structure and behavior of HTTP requests and practiced crafting them with Burp Suite and curl.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/webrequests.png" alt="Web Requests Screenshot" />
+          <i class="fas fa-exchange-alt icon"></i>
         </div>
       </article>
       
@@ -343,7 +341,7 @@
         <h4><i class="fas fa-wifi"></i> WiFi Hacking 101 on TryHackMe</h4>
         <p><strong>Summary:</strong> Captured and cracked WPA2 handshakes, deauthenticated users, and scanned wireless networks.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/wifi.png" alt="WiFi Screenshot" />
+          <i class="fas fa-wifi icon"></i>
         </div>
       </article>
       
@@ -351,7 +349,7 @@
         <h4><i class="fas fa-ethernet"></i> L2 MAC Flooding & ARP Spoofing on TryHackMe</h4>
         <p><strong>Summary:</strong> Practiced ARP poisoning and MAC flooding to intercept and analyze network traffic.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/arp.png" alt="ARP Spoofing Screenshot" />
+          <i class="fas fa-project-diagram icon"></i>
         </div>
       </article>
       
@@ -359,7 +357,7 @@
         <h4><i class="fas fa-user-tie"></i> Junior Security Analyst Intro on TryHackMe</h4>
         <p><strong>Summary:</strong> Introductory SOC analyst lab covering alert triage, log correlation, and SIEM usage.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/junior.png" alt="Jr Analyst Screenshot" />
+          <i class="fas fa-desktop icon"></i>
         </div>
       </article>
       
@@ -367,7 +365,7 @@
         <h4><i class="fas fa-file-alt"></i> Intro to Log Analysis on TryHackMe</h4>
         <p><strong>Summary:</strong> Analyzed Windows and Linux logs to identify malicious activity using grep, Event Viewer, and audit logs.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/loganalysis.png" alt="Log Analysis Screenshot" />
+          <i class="fas fa-file-code icon"></i>
         </div>
       </article>
       
@@ -375,11 +373,9 @@
         <h4><i class="fas fa-globe"></i> DNS in Detail on TryHackMe</h4>
         <p><strong>Summary:</strong> Explored DNS record types, zone transfers, and DNS reconnaissance using dig, nslookup, and DNSenum.</p>
         <div class="lab-images">
-          <img src="https://marcos-solo.github.io/images/dns.png" alt="DNS Screenshot" />
+          <i class="fas fa-globe-americas icon"></i>
         </div>
       </article>
-
-
     </section>
   </main>
 
@@ -387,6 +383,5 @@
   <footer>
     <p>&copy; 2025 Marcos Solomon. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
