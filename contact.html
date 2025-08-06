@@ -4,9 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Marcos Solomon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    :root {
+      --primary: #00ffaa;
+      --primary-dark: #00cc88;
+      --dark: #121212;
+      --darker: #0a0a0a;
+      --light: #f0f0f0;
+      --gray: #cccccc;
+      --dark-gray: #333333;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -15,82 +26,219 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #1c1c1c, #0f0f0f);
-      color: #fff;
+      background: radial-gradient(circle at top, var(--darker), var(--dark));
+      color: var(--light);
       line-height: 1.6;
       scroll-behavior: smooth;
+      min-height: 100vh;
     }
 
     .navbar {
-      background: #121212;
-      padding: 1rem 2rem;
+      background: rgba(18, 18, 18, 0.95);
+      padding: 1.5rem 2rem;
       display: flex;
       justify-content: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.4);
       position: sticky;
       top: 0;
       z-index: 1000;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .navbar ul {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .navbar a {
-      color: #ccc;
+      color: var(--gray);
       text-decoration: none;
-      transition: color 0.3s;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      font-size: 1.1rem;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
     }
 
     .navbar a:hover,
     .navbar a.active {
-      color: #00ffaa;
+      color: var(--primary);
+    }
+
+    .navbar a:hover::after,
+    .navbar a.active::after {
+      width: 100%;
     }
 
     .section {
-      padding: 4rem 2rem;
-      max-width: 800px;
+      padding: 5rem 2rem;
+      max-width: 900px;
       margin: auto;
+    }
+
+    .section-header {
       text-align: center;
+      margin-bottom: 3rem;
     }
 
     h2 {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 3px;
+      bottom: -10px;
+      left: 20%;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    }
+
+    .section-subtitle {
+      color: var(--gray);
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .contact-info {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+
+    .contact-info:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 255, 170, 0.1);
+      background: rgba(0, 255, 170, 0.05);
+      border-color: rgba(0, 255, 170, 0.2);
+    }
+
+    .contact-icon {
       font-size: 2.5rem;
-      color: #00ffaa;
-      margin-bottom: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
     }
 
-    p {
-      margin: 1rem 0;
-      color: #ccc;
+    .contact-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--light);
+    }
+
+    .contact-detail {
+      color: var(--gray);
       font-size: 1.1rem;
+      margin-bottom: 1.5rem;
     }
 
-    a {
-      color: #00ffaa;
+    .contact-link {
+      display: inline-block;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background: rgba(0, 255, 170, 0.1);
+      border: 1px solid rgba(0, 255, 170, 0.2);
+    }
+
+    .contact-link:hover {
+      color: var(--light);
+      background: rgba(0, 255, 170, 0.2);
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .social-link {
+      color: var(--gray);
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      color: var(--gray);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     @media (max-width: 768px) {
-      h2 {
-        font-size: 2rem;
+      .navbar ul {
+        gap: 1rem;
       }
-
-      p {
+      
+      h2 {
+        font-size: 2.2rem;
+      }
+      
+      .section-subtitle {
         font-size: 1rem;
       }
-
-      .navbar ul {
-        flex-direction: column;
-        align-items: center;
+      
+      .contact-container {
+        grid-template-columns: 1fr;
       }
     }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .contact-info {
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    .contact-info:nth-child(1) { animation-delay: 0.1s; }
+    .contact-info:nth-child(2) { animation-delay: 0.2s; }
+    .contact-info:nth-child(3) { animation-delay: 0.3s; }
+    .contact-info:nth-child(4) { animation-delay: 0.4s; }
   </style>
 </head>
 <body>
@@ -108,12 +256,68 @@
 
   <!-- Contact Section -->
   <section id="contact" class="section">
-    <h2>Contact Me</h2>
-    <p><strong>Email:</strong> <a href="mailto:solomonmarcos34@gmail.com">solomonmarcos34@gmail.com</a></p>
-    <p><strong>Phone:</strong> +254 0741840839</p>
-    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/marcos-solomon" target="_blank">linkedin.com/in/marcos-solomon</a></p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/marcos-solo" target="_blank">github.com/marcos-solo</a></p>
+    <div class="section-header">
+      <h2>Get In Touch</h2>
+      <p class="section-subtitle">Feel free to reach out for collaborations, opportunities, or just to say hello!</p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3 class="contact-title">Email</h3>
+        <p class="contact-detail">Preferred method of contact</p>
+        <a href="mailto:solomonmarcos34@gmail.com" class="contact-link">solomonmarcos34@gmail.com</a>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-icon">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <h3 class="contact-title">Phone</h3>
+        <p class="contact-detail">Available for calls and WhatsApp</p>
+        <a href="tel:+2540741840839" class="contact-link">+254 0741840839</a>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-icon">
+          <i class="fab fa-linkedin"></i>
+        </div>
+        <h3 class="contact-title">LinkedIn</h3>
+        <p class="contact-detail">Let's connect professionally</p>
+        <a href="https://linkedin.com/in/marcos-solomon" target="_blank" class="contact-link">linkedin.com/in/marcos-solomon</a>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-icon">
+          <i class="fab fa-github"></i>
+        </div>
+        <h3 class="contact-title">GitHub</h3>
+        <p class="contact-detail">Check out my projects</p>
+        <a href="https://github.com/marcos-solo" target="_blank" class="contact-link">github.com/marcos-solo</a>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <a href="https://linkedin.com/in/marcos-solomon" target="_blank" class="social-link">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/marcos-solo" target="_blank" class="social-link">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://twitter.com/" target="_blank" class="social-link">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://instagram.com/" target="_blank" class="social-link">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
   </section>
+
+  <footer class="footer">
+    <p>&copy; <script>document.write(new Date().getFullYear())</script> Marcos Solomon. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
