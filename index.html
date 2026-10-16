@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
  
-  <title>Home | Marcos Solomon - Cybersecurity Professional</title>
+  <title>Home | Marcos Solomon - Network &amp; Security Engineer</title>
   
   <!-- SEO -->
-  <meta name="description" content="Marcos Solomon's Cybersecurity Portfolio – showcasing projects, resume, and ethical hacking expertise.">
-  <meta name="keywords" content="Cybersecurity, Penetration Testing, Ethical Hacking, Digital Forensics, Portfolio">
+  <meta name="description" content="Marcos Solomon's network and cybersecurity portfolio, featuring secure networking, infrastructure automation, security operations, penetration testing, and digital forensics.">
+  <meta name="keywords" content="Network Engineering, Network Security, Terraform, Ansible, Cybersecurity, SIEM, Penetration Testing, Digital Forensics, Portfolio">
   <meta name="author" content="Marcos Solomon">
-  <meta property="og:image" content="/images/port1.jpeg">
+  <meta property="og:image" content="/images/DSCN4281.JPG">
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,14 +25,14 @@
   <!-- Custom Styles -->
   <style>
     :root {
-      --primary: #00ffaa;
-      --primary-dark: #00cc88;
-      --bg-dark: #0f0f0f;
-      --bg-darker: #080808;
-      --text-light: #ffffff;
-      --text-muted: #cccccc;
-      --nav-bg: rgba(18, 18, 18, 0.95);
-      --shadow-color: rgba(0, 255, 170, 0.3);
+      --primary: #f0a078;
+      --primary-dark: #dc8058;
+      --bg-dark: #111922;
+      --bg-darker: #0a1118;
+      --text-light: #f4f0e9;
+      --text-muted: #b8c1c8;
+      --nav-bg: rgba(13, 21, 29, 0.94);
+      --shadow-color: rgba(240, 160, 120, 0.14);
       --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
       --navbar-height: 80px;
     }
@@ -384,6 +384,8 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="portfolio-theme.css?v=4">
+  <script src="portfolio-nav.js?v=4" defer></script>
    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9076762560898117"
      crossorigin="anonymous"></script>
 </head>
@@ -395,13 +397,18 @@
       <a href="index.html" class="navbar-brand">
         <i class="fas fa-user-secret"></i> Marcos Solomon
       </a>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
+      <button class="navbar-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-menu" aria-expanded="false">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <ul class="navbar-menu" id="site-menu" aria-hidden="false">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
         <li><a href="resume.html">Resume</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="labs.html">Lab Challenges</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <button class="nav-backdrop" type="button" aria-label="Close navigation menu" aria-hidden="true" tabindex="-1"></button>
+n>
     </div>
   </nav>
 
@@ -409,45 +416,42 @@
   <section id="home" class="home-section">
     <div class="home-content" data-aos="fade-up" data-aos-delay="100">
       <div class="profile-img-container">
-        <img loading="lazy" src="/images/port1.jpeg" alt="Marcos Solomon Profile Picture" class="profile-img" />
+        <img src="images/port1.jpeg" alt="Marcos Solomon outdoors" class="profile-img" fetchpriority="high" />
       </div>
-      
-      <h1>Marcos Solomon</h1>
-      <p class="tagline"><span id="typewriter"></span></p>
-      
-      <p class="intro">
-        I'm a passionate cybersecurity professional specializing in penetration testing, 
-        vulnerability assessment, and security architecture. With hands-on experience 
-        in both offensive and defensive security, I help organizations identify weaknesses 
-        before attackers do.
-      </p>
-      
-      <div class="btn-container">
-        <a href="resume.html" class="btn">
-          <i class="fas fa-file-alt"></i> View Resume
-        </a>
-        <a href="projects.html" class="btn btn-outline">
-          <i class="fas fa-code"></i> My Projects
-        </a>
-      </div>
-
-      <div class="socials">
-        <a href="https://github.com/marcos-solo" target="_blank" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://linkedin.com/in/marcos-solomon" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://twitter.com/marcos_solo" target="_blank" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="mailto:solomonmarcos34@gmail.com" aria-label="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-
-      <div class="scroll-down" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
-        <i class="fas fa-chevron-down"></i>
+      <div class="hero-copy">
+        <span class="eyebrow">Network &amp; Security Engineer</span>
+        <h1>Marcos Solomon</h1>
+        <p class="tagline"><span id="typewriter"></span></p>
+        <p class="intro">
+          I design, secure, and troubleshoot resilient networks—from routing, switching,
+          firewalls, and VPNs to security operations and incident response. I also use
+          Terraform and Ansible to make infrastructure more repeatable and consistent.
+        </p>
+        <div class="hero-tags" aria-label="Areas of expertise">
+          <span>Network Security</span>
+          <span>Terraform</span>
+          <span>Ansible</span>
+          <span>Security Operations</span>
+        </div>
+        <div class="btn-container">
+          <a href="resume.html" class="btn">
+            <i class="fas fa-file-lines"></i> View Resume
+          </a>
+          <a href="projects.html" class="btn btn-outline">
+            <i class="fas fa-code"></i> Explore Projects
+          </a>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/marcos-solo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:solomonmarcos34@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -458,7 +462,10 @@
   <!-- Typewriter Effect -->
   <script>
     const phrases = [
-      'Cybersecurity Specialist', 
+      'Network & Security Engineer',
+      'Network Security Specialist',
+      'Infrastructure Automation | Terraform & Ansible',
+      'Cybersecurity Analyst',
       'Penetration Tester', 
       'Ethical Hacker',
       'Security Researcher',

@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Resume | Marcos Solomon</title>
+  <title>Network &amp; Security Engineer (L2/L3) | Marcos Solomon</title>
   
   <!-- SEO -->
-  <meta name="description" content="Marcos Solomon's cybersecurity resume highlighting education, skills, and certifications.">
-  <meta name="keywords" content="Cybersecurity, Resume, Penetration Tester, Ethical Hacking, Skills, Certifications">
+  <meta name="description" content="Marcos Solomon's network and security engineering resume, covering routing, switching, firewalls, VPNs, security operations, infrastructure automation, and training.">
+  <meta name="keywords" content="Network Engineering, Network Security, Terraform, Ansible, Cybersecurity, SIEM, Resume, Certifications">
   <meta name="author" content="Marcos Solomon">
 
   <!-- Fonts & Icons -->
@@ -22,18 +22,18 @@
   <!-- Styles -->
   <style>
     :root {
-      --primary: #00ffaa;
-      --primary-dark: #00cc88;
-      --bg-dark: #0f0f0f;
-      --bg-darker: #080808;
-      --card-bg: #1a1a1a;
-      --card-border: #2a2a2a;
-      --text-light: #f5f5f5;
-      --text-muted: #ccc;
-      --nav-bg: rgba(18, 18, 18, 0.95);
-      --tag-bg: rgba(0, 255, 170, 0.12);
-      --tag-border: rgba(0, 255, 170, 0.3);
-      --shadow-color: rgba(0, 255, 170, 0.1);
+      --primary: #f0a078;
+      --primary-dark: #dc8058;
+      --bg-dark: #111922;
+      --bg-darker: #0a1118;
+      --card-bg: #192530;
+      --card-border: #344452;
+      --text-light: #f4f0e9;
+      --text-muted: #b8c1c8;
+      --nav-bg: rgba(13, 21, 29, 0.94);
+      --tag-bg: rgba(240, 160, 120, 0.12);
+      --tag-border: rgba(240, 160, 120, 0.32);
+      --shadow-color: rgba(240, 160, 120, 0.14);
       --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
@@ -181,6 +181,14 @@
     .resume-section:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px var(--shadow-color);
+    }
+
+    .resume-section a {
+      color: var(--primary);
+    }
+
+    .resume-section a:hover {
+      color: var(--primary-dark);
     }
 
     h3 {
@@ -408,6 +416,8 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="portfolio-theme.css?v=4">
+  <script src="portfolio-nav.js?v=4" defer></script>
 </head>
 <body>
 
@@ -417,142 +427,201 @@
       <a href="index.html" class="navbar-brand">
         <i class="fas fa-user-secret"></i> Marcos Solomon
       </a>
-      <ul>
+      <button class="navbar-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-menu" aria-expanded="false">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <ul class="navbar-menu" id="site-menu" aria-hidden="false">
         <li><a href="index.html">Home</a></li>
         <li><a href="resume.html" class="active" aria-current="page">Resume</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="labs.html">Lab Challenges</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <button class="nav-backdrop" type="button" aria-label="Close navigation menu" aria-hidden="true" tabindex="-1"></button>
     </div>
   </nav>
 
   <!-- Resume Section -->
   <main class="section">
     <div class="section-header" data-aos="fade-up">
-      <h2>My Resume</h2>
-      <p class="section-subtitle">Cybersecurity professional with expertise in penetration testing and ethical hacking</p>
+      <h2>Network &amp; Security Resume</h2>
+      <p class="section-subtitle">Network and security engineer focused on secure infrastructure, defensive operations, and practical technical training.</p>
     </div>
 
     <!-- Download CV Button -->
     <div class="btn-container" data-aos="fade-up" data-aos-delay="100">
-      <a href="/files/marcos_solomon_cv.pdf" download class="download-btn">
-        <i class="fas fa-download"></i> Download Full Resume (PDF)
+      <a href="Marcos_solomon_cv.html" class="download-btn">
+        <i class="fas fa-print"></i> View Printable CV
       </a>
     </div>
 
-    <!-- Education Section -->
     <section class="resume-section" data-aos="fade-up" data-aos-delay="150">
-      <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-      
+      <h3><i class="fas fa-user-shield"></i> Professional Profile</h3>
+      <p>Network &amp; Security Engineer with hands-on experience in enterprise routing, switching, firewall administration, and security operations. Skilled in secure network segmentation, LAN/WAN/VPN troubleshooting, firewall rules, IPSec/SSL VPN, SOC monitoring, threat hunting, and incident response. Combines cybersecurity knowledge with practical network engineering to deliver resilient, secure, and well-documented infrastructure, and mentors junior engineers.</p>
+      <p><strong>Location:</strong> Ruiru, Kiambu, Kenya</p>
+      <p><strong>Phone:</strong> <a href="tel:+254741840839">(254) 741840839</a> &nbsp; <strong>Email:</strong> <a href="mailto:Solomonmarcos34@gmail.com">Solomonmarcos34@gmail.com</a></p>
+      <p><strong>Website:</strong> <a href="https://marcos-solo.github.io" target="_blank" rel="noopener noreferrer">marcos-solo.github.io</a> &nbsp; <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer">linkedin.com/in/marcos-solomon</a></p>
+    </section>
+
+    <section class="resume-section" data-aos="fade-up" data-aos-delay="175">
+      <h3><i class="fas fa-briefcase"></i> Professional Experience</h3>
       <div class="timeline-item">
-        <span class="timeline-date">2021 - 2025</span>
-        <h4 class="timeline-title">Bachelor in Business Information Technology</h4>
-        <span class="timeline-subtitle">University of Embu</span>
-        <p class="timeline-description">
-          Specialized in cybersecurity and information systems with coursework in network security, 
-          ethical hacking, and digital forensics.
-        </p>
+        <span class="timeline-date">March 2026 – Present</span>
+        <h4 class="timeline-title">Corporate &amp; Technical Trainer (Networking &amp; Security)</h4>
+        <span class="timeline-subtitle">Institute of Advanced Technology (IAT)</span>
+        <ul>
+          <li>Deliver CCNA-aligned training in routing, switching, VLANs, STP, OSPF, NAT, and ACLs, aligned with enterprise L2 support standards.</li>
+          <li>Run practical secure router and switch configuration, firewall, IPSec/SSL VPN, segmentation, and least-privilege labs.</li>
+          <li>Guide structured root-cause analysis of simulated LAN/WAN/WLAN outages using Wireshark and packet-level diagnostics.</li>
+          <li>Contribute lab exercises and assessments, including documentation and change-management practices.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">May 2025 – August 2025</span>
+        <h4 class="timeline-title">Cybersecurity Analyst Trainee (Network Security Focus)</h4>
+        <span class="timeline-subtitle">Cybershujaa – Kenya</span>
+        <ul>
+          <li>Monitored simulated enterprise environments with SIEM platforms, Wireshark, and network security tools to detect anomalies and potential intrusions.</li>
+          <li>Applied firewall rules, analyzed IPSec/SSL VPN traffic, and assisted with secure-connectivity troubleshooting.</li>
+          <li>Performed threat detection, incident response, and malware analysis in simulated attack scenarios; documented findings and remediation.</li>
+          <li>Investigated multi-stage breach scenarios using MITRE ATT&amp;CK and correlated network and endpoint telemetry.</li>
+          <li>Graduated from the Security Analyst track with a focus on secure network design and defensive operations.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">May 2024 – August 2025</span>
+        <h4 class="timeline-title">Network Penetration Tester &amp; Security Trainer</h4>
+        <span class="timeline-subtitle">Society of Forensics and Researchers Association – Kenya</span>
+        <ul>
+          <li>Conducted network and web-system assessments, identified segmentation and access-control gaps, and implemented safeguards.</li>
+          <li>Reviewed firewall rule sets and ACLs and recommended changes to reduce lateral-movement risk.</li>
+          <li>Trained corporate personnel on network security, secure remote access, and incident reporting.</li>
+          <li>Prepared technical reports on network risks and remediation for executive stakeholders.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">July 2024 – January 2025</span>
+        <h4 class="timeline-title">System Designer &amp; Security Developer</h4>
+        <span class="timeline-subtitle">Bethsaida Medicare Institute</span>
+        <ul>
+          <li>Designed, developed, and deployed the institute’s primary website with embedded security measures.</li>
+          <li>Strengthened web infrastructure through vulnerability assessments and regular patching.</li>
+        </ul>
       </div>
     </section>
 
-    <!-- Certifications Section -->
     <section class="resume-section" data-aos="fade-up" data-aos-delay="200">
-      <h3><i class="fas fa-certificate"></i> Certifications</h3>
-      
-      <div class="timeline-item">
-        <span class="timeline-date">2023</span>
-        <h4 class="timeline-title">Certified Ethical Hacker (CEH)</h4>
-        <span class="timeline-subtitle">Alison</span>
-        <p class="timeline-description">
-          Comprehensive training in ethical hacking methodologies, tools, and techniques.
-        </p>
-      </div>
-      
-      <div class="timeline-item">
-        <span class="timeline-date">2022</span>
-        <h4 class="timeline-title">Web Security Fundamentals</h4>
-        <span class="timeline-subtitle">Udemy</span>
-        <p class="timeline-description">
-          Mastered OWASP Top 10 vulnerabilities and modern web application security principles.
-        </p>
-      </div>
-      
-      <div class="timeline-item">
-        <span class="timeline-date">2022</span>
-        <h4 class="timeline-title">Python for Ethical Hacking</h4>
-        <span class="timeline-subtitle">Online Course</span>
-        <p class="timeline-description">
-          Developed custom security tools and automation scripts using Python.
-        </p>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="resume-section" data-aos="fade-up" data-aos-delay="250">
-      <h3><i class="fas fa-briefcase"></i> Professional Training</h3>
-      
-      <div class="timeline-item">
-        <span class="timeline-date">2022 - Present</span>
-        <h4 class="timeline-title">Cybersecurity Trainer</h4>
-        <span class="timeline-subtitle">Society of Forensics and Researchers Association (SOFSREA)</span>
-        <p class="timeline-description">
-          Conducted corporate training sessions in cybersecurity practices and digital forensics.
-          Developed curriculum focused on security auditing, vulnerability scanning, and cyber 
-          hygiene awareness for professionals across various industries.
-        </p>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="resume-section" data-aos="fade-up" data-aos-delay="300">
-      <h3><i class="fas fa-code"></i> Technical Skills</h3>
-      
+      <h3><i class="fas fa-network-wired"></i> Network Engineering &amp; Security</h3>
       <div class="skills-container">
         <div class="skill-category">
-          <h4>Languages</h4>
+          <h4>Routing &amp; Switching</h4>
           <ul class="skill-list">
-            <li>Python</li>
-            <li>JavaScript</li>
-            <li>HTML/CSS</li>
-            <li>Bash Scripting</li>
-            <li>SQL</li>
+            <li>VLANs, STP, OSPF, BGP basics</li>
+            <li>NAT, ACLs, inter-VLAN routing</li>
+            <li>LAN/WAN/WLAN troubleshooting</li>
           </ul>
         </div>
-        
         <div class="skill-category">
-          <h4>Security Tools</h4>
+          <h4>Network Security</h4>
           <ul class="skill-list">
-            <li>OWASP ZAP</li>
-            <li>Burp Suite</li>
-            <li>Metasploit</li>
-            <li>Wireshark</li>
-            <li>Nmap</li>
+            <li>Firewall rules and VPN administration</li>
+            <li>IPSec/SSL VPN and secure remote access</li>
+            <li>Segmentation, 802.1X concepts, IDS/IPS awareness, zero trust</li>
           </ul>
         </div>
-        
         <div class="skill-category">
-          <h4>Platforms</h4>
+          <h4>Automation &amp; Operations</h4>
           <ul class="skill-list">
-            <li>Linux</li>
-            <li>Windows</li>
-            <li>Kali Linux</li>
-            <li>VirtualBox/VMware</li>
-            <li>Git</li>
+            <li>Terraform infrastructure provisioning</li>
+            <li>Ansible network configuration</li>
+            <li>Cloud and network integration</li>
+            <li>Network documentation and change management</li>
           </ul>
         </div>
-        
         <div class="skill-category">
-          <h4>Concepts</h4>
+          <h4>Monitoring &amp; Response</h4>
           <ul class="skill-list">
-            <li>Penetration Testing</li>
-            <li>Vulnerability Assessment</li>
-            <li>Network Security</li>
-            <li>Cryptography</li>
-            <li>Incident Response</li>
+            <li>Wireshark, packet analysis, and SIEM</li>
+            <li>SOC monitoring, threat hunting, incident response</li>
+            <li>Root-cause analysis and remediation</li>
           </ul>
         </div>
       </div>
+    </section>
+
+    <section class="resume-section" data-aos="fade-up" data-aos-delay="225">
+      <h3><i class="fas fa-diagram-project"></i> Projects &amp; Hands-On Labs</h3>
+      <div class="timeline-item">
+        <h4 class="timeline-title">Blue Team Labs Online</h4>
+        <p class="timeline-description">BEC-KY, Squid Game, Cap, Source, ATT&amp;CK, and The Report II.</p>
+      </div>
+      <div class="timeline-item">
+        <h4 class="timeline-title">Penetration Testing Labs</h4>
+        <p class="timeline-description">Pwned machines on Hack The Box and TryHackMe, including Cap and The Report II.</p>
+      </div>
+      <div class="timeline-item">
+        <h4 class="timeline-title">Forensics &amp; CTFs</h4>
+        <p class="timeline-description">PicoCTF and Sherlocks, including Operation Blackout.</p>
+      </div>
+      <div class="timeline-item">
+        <h4 class="timeline-title">Network Security &amp; Automation Labs</h4>
+        <p class="timeline-description">Firewall rule design, VPN configuration, secure VLAN segmentation, and network infrastructure automation using Terraform for provisioning and Ansible for repeatable configuration.</p>
+      </div>
+      <p>More work is available on the <a href="projects.html">Projects</a> and <a href="labs.html">Lab Challenges</a> pages.</p>
+    </section>
+
+    <section class="resume-section" data-aos="fade-up" data-aos-delay="250">
+      <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+      <div class="timeline-item">
+        <span class="timeline-date">2025</span>
+        <h4 class="timeline-title">BSc in Business Information Technology</h4>
+        <span class="timeline-subtitle">University of Embu</span>
+      </div>
+    </section>
+
+    <section class="resume-section" data-aos="fade-up" data-aos-delay="275">
+      <h3><i class="fas fa-certificate"></i> Certifications &amp; Training</h3>
+      <ul class="skill-list">
+        <li>Security Analyst – Cyber Shujaa</li>
+        <li>Google Cloud Security Analyst</li>
+        <li>CCNA (In Progress / Completed Modules)</li>
+        <li>SOC Operations – Coursera</li>
+        <li>Network Security – Coursera</li>
+        <li>Certified Ethical Hacker – Alison</li>
+        <li>Computer &amp; Digital Forensics Masterclass – Udemy</li>
+        <li>Real Ethical Hacking with Python (PYCEH23+) – Udemy</li>
+      </ul>
+    </section>
+
+    <section class="resume-section" data-aos="fade-up" data-aos-delay="300">
+      <h3><i class="fas fa-code"></i> Technical Skills</h3>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h4>Network &amp; Infrastructure</h4>
+          <ul class="skill-list">
+            <li>Cisco routing and switching</li>
+            <li>VLANs / STP / OSPF / BGP basics</li>
+            <li>NAT, ACLs, firewalls, IPSec/SSL VPN</li>
+            <li>Terraform and Ansible</li>
+            <li>Network documentation</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>Security &amp; Platforms</h4>
+          <ul class="skill-list">
+            <li>Wireshark, SIEM, and SOC operations</li>
+            <li>Penetration testing and digital forensics</li>
+            <li>Incident response and threat hunting</li>
+            <li>Linux / Unix, Python, Google Cloud</li>
+            <li>Mentoring and technical training</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="resume-section" data-aos="fade-up" data-aos-delay="325">
+      <h3><i class="fas fa-address-book"></i> Referees</h3>
+      <p>Available upon request.</p>
     </section>
   </main>
 

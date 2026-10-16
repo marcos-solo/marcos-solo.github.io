@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcos Solomon · Network & Security Engineer (L2/L3)</title>
+    <style>
+        /* ---------- reset & base ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --accent: #ea580c;
+            --text: #1a1a1a;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+            --muted: #64748b;
+        }
+
+        /* ---------- A4 print configuration ---------- */
+        @page {
+            size: A4 portrait;
+            margin: 8mm 10mm;
+        }
+
+        /* ---------- screen & print base ---------- */
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            background: #e4e4e7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            margin: 0;
+            color: var(--text);
+            line-height: 1.4;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            padding: 28px 32px;
+            border-radius: 6px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .cv-actions {
+            position: fixed;
+            top: 14px;
+            left: 14px;
+            z-index: 10;
+            display: flex;
+            gap: 8px;
+        }
+
+        .cv-actions a,
+        .cv-actions button {
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            background: #ffffff;
+            color: var(--primary);
+            padding: 9px 13px;
+            font: inherit;
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .cv-actions button {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        /* ---------- print overrides ---------- */
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+                min-height: auto;
+                display: block;
+                font-size: 10.5pt;
+            }
+            .cv-actions {
+                display: none !important;
+            }
+            .cv-container {
+                max-width: 100% !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                background: white !important;
+            }
+            a {
+                text-decoration: none !important;
+                color: #000000 !important;
+            }
+
+            /* Keep header + summary together at top of first page */
+            header, .summary {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            /* Keep section titles with at least the first block below */
+            h3 {
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            /* Allow jobs to break across pages so no huge gaps */
+            .job, .edu-item, .project-item {
+                break-inside: auto;
+                page-break-inside: auto;
+            }
+
+            /* Keep job title + company together with first bullets */
+            .job-header, .edu-header {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            /* Prevent a single bullet from being orphaned at bottom */
+            li {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                orphans: 2;
+                widows: 2;
+            }
+
+            /* Right column can break freely */
+            .right-column section {
+                break-inside: auto;
+                page-break-inside: auto;
+            }
+
+            .domain-list li, .cert-list li {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .highlight-box {
+                break-inside: auto;
+                page-break-inside: auto;
+            }
+        }
+
+        /* ---------- header ---------- */
+        header {
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+            margin: 0 0 2px 0;
+        }
+
+        header h2 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 0 0 8px 0;
+            letter-spacing: 0.3px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 18px;
+            font-size: 0.85rem;
+            color: #3f3f46;
+        }
+        .contact-info span {
+            display: inline-flex;
+            align-items: center;
+        }
+        .contact-info a {
+            color: #000;
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        /* ---------- summary ---------- */
+        .summary {
+            margin-bottom: 18px;
+            font-size: 0.9rem;
+            color: #27272a;
+            background: #fff7ed;
+            padding: 10px 14px;
+            border-radius: 4px;
+            border-left: 4px solid var(--accent);
+        }
+
+        /* ---------- grid layout ---------- */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1.8fr 1.2fr;
+            gap: 24px;
+        }
+        @media (max-width: 700px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        /* ---------- sections ---------- */
+        section {
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 3px;
+            margin: 0 0 10px 0;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            font-weight: 700;
+        }
+
+        /* ---------- experience / education / projects ---------- */
+        .job, .edu-item, .project-item {
+            margin-bottom: 12px;
+        }
+
+        .job-header, .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 1px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.92rem;
+        }
+
+        .company {
+            color: #000;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .date {
+            font-size: 0.78rem;
+            color: var(--muted);
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        ul {
+            margin: 4px 0 2px 0;
+            padding-left: 18px;
+        }
+        li {
+            margin-bottom: 3px;
+            font-size: 0.85rem;
+        }
+
+        /* ---------- badges / chips ---------- */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 5px;
+        }
+        .badge {
+            background: var(--light);
+            border: 1px solid #cbd5e1;
+            color: var(--primary);
+            padding: 3px 9px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        /* ---------- list without bullets ---------- */
+        .domain-list, .cert-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .domain-list li, .cert-list li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 4px;
+            font-size: 0.85rem;
+        }
+        .domain-list li::before, .cert-list li::before {
+            content: "▹";
+            color: var(--accent);
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+        }
+
+        /* ---------- project links inline ---------- */
+        .project-item a {
+            color: #000;
+            font-weight: 500;
+            border-bottom: 1px dotted #888;
+        }
+
+        /* ---------- highlight box ---------- */
+        .highlight-box {
+            background: #f8fafc;
+            border: 1px dashed var(--accent);
+            padding: 9px;
+            border-radius: 4px;
+            margin-top: 5px;
+            font-size: 0.83rem;
+        }
+        .highlight-box ul {
+            margin: 0;
+        }
+        .highlight-box li {
+            margin-bottom: 4px;
+            font-size: 0.83rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="cv-actions" aria-label="CV actions">
+    <a href="resume.html">Back to portfolio</a>
+    <button type="button" onclick="window.print()">Print CV</button>
+</nav>
+
+<div class="cv-container">
+    <header>
+        <h1>Marcos Solomon</h1>
+        <h2>Network & Security Engineer </h2>
+        <div class="contact-info">
+            <span>📍 Ruiru, Kiambu, Kenya</span>
+            <span>📞 (254) 741840839</span>
+            <span>✉️ <a href="mailto:Solomonmarcos34@gmail.com">Solomonmarcos34@gmail.com</a></span>
+            <span>🌐 <a href="https://marcos-solo.github.io" target="_blank">marcos-solo.github.io</a></span>
+            <span>🔗 <a href="https://linkedin.com/in/marcos-solomon" target="_blank">linkedin.com/in/marcos-solomon</a></span>
+        </div>
+    </header>
+
+    <div class="summary">
+        <strong>Network & Security Engineer</strong> with hands-on experience in enterprise routing, switching, firewall administration, and security operations. Skilled in designing secure network segments, troubleshooting LAN/WAN/VPN issues, and implementing firewall rules with IPSec/SSL VPN. Combines deep cybersecurity knowledge (SOC, threat hunting, incident response) with practical network engineering to deliver resilient, secure, and well-documented infrastructure. Proven ability to mentor junior engineers and lead security-focused network projects.
+    </div>
+
+    <div class="main-layout">
+        <!-- LEFT COLUMN: experience, projects, education -->
+        <div class="left-column">
+            <section>
+                <h3>Professional Experience</h3>
+
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">Corporate & Technical Trainer (Networking & Security)</span>
+                        <span class="date">March 2026 – Present</span>
+                    </div>
+                    <div class="company">Institute of Advanced Technology (IAT)</div>
+                    <ul>
+                        <li><strong>Network Training Delivery:</strong> Instruct students and professionals in CCNA modules covering routing, switching, VLANs, STP, OSPF, NAT, and ACLs, aligned with enterprise L2 support standards.</li>
+                        <li><strong>Secure Configuration Labs:</strong> Deliver practical labs on secure router/switch configuration, firewall rule implementation, and IPSec/SSL VPN setup, emphasizing segmentation and least-privilege access.</li>
+                        <li><strong>Troubleshooting & RCA:</strong> Guide learners through structured root cause analysis for simulated LAN/WAN/WLAN outages using Wireshark and packet-level diagnostics.</li>
+                        <li><strong>Curriculum Development:</strong> Contribute to lab exercises and assessments for networking and security courses, including documentation standards and change management practices.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">Cybersecurity Analyst Trainee (Network Security Focus)</span>
+                        <span class="date">May 2025 – August 2025</span>
+                    </div>
+                    <div class="company">Cybershujaa – Kenya</div>
+                    <ul>
+                        <li><strong>Network Security Monitoring:</strong> Monitored enterprise environments using SIEM platforms, Wireshark, and network security utilities to detect anomalies and potential intrusions.</li>
+                        <li><strong>Firewall & VPN Operations:</strong> Applied firewall rules, analyzed IPSec/SSL VPN traffic, and assisted in troubleshooting secure connectivity across simulated enterprise networks.</li>
+                        <li><strong>Incident Response:</strong> Executed threat detection, incident response, and malware analysis across simulated attacks, documenting findings and remediation steps.</li>
+                        <li><strong>Threat Hunting:</strong> Investigated multi-stage breach scenarios using MITRE ATT&CK framework, correlating network and endpoint telemetry.</li>
+                        <li><strong>Track Alignment:</strong> Graduated from the Security Analyst track with deep insight into secure network design and defensive operations.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">Network Penetration Tester & Security Trainer</span>
+                        <span class="date">May 2024 – August 2025</span>
+                    </div>
+                    <div class="company">Society of Forensics and Researchers Association – Kenya</div>
+                    <ul>
+                        <li><strong>Vulnerability Assessment:</strong> Conducted network and web system assessments, identified critical gaps in segmentation and access controls, and implemented safeguards.</li>
+                        <li><strong>Firewall & ACL Review:</strong> Audited firewall rule sets and ACLs, recommending tightening measures to reduce lateral movement risk.</li>
+                        <li><strong>Knowledge Sharing:</strong> Trained corporate personnel on network security best practices, secure remote access, and incident reporting.</li>
+                        <li><strong>Reporting:</strong> Authored technical reports detailing network risks and remediation for executive stakeholders.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">System Designer & Security Developer</span>
+                        <span class="date">July 2024 – January 2025</span>
+                    </div>
+                    <div class="company">Bethsaida Medicare Institute</div>
+                    <ul>
+                        <li>Designed, developed, and deployed the institute's primary website with embedded security measures.</li>
+                        <li>Strengthened web infrastructure via vulnerability assessments and regular patching.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3>Network Engineering & Security Skills</h3>
+                <div class="highlight-box">
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li>✅ <strong>Routing & Switching:</strong> VLANs, STP, OSPF, BGP basics, NAT, ACLs, inter-VLAN routing.</li>
+                        <li>✅ <strong>Firewall & VPN:</strong> Rule implementation, IPSec/SSL VPN, secure remote access, HA concepts.</li>
+                        <li>✅ <strong>Monitoring & Troubleshooting:</strong> Wireshark, SIEM, packet analysis, RCA for network outages.</li>
+                        <li>✅ <strong>Security Integration:</strong> Network segmentation, 802.1X concepts, IDS/IPS awareness, zero-trust principles.</li>
+                        <li>✅ <strong>Documentation & Change Management:</strong> Network diagrams, change logs, on-call support readiness.</li>
+                        <li>✅ <strong>Mentorship:</strong> Training L1/L2 engineers on secure network operations and troubleshooting.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3>Projects & Hands-On Labs</h3>
+                <div class="project-item">
+                    <ul>
+                        <li><strong>Blue Team Labs Online:</strong> BEC-KY, Squid Game, Cap, Source, ATT&CK, The Report II.</li>
+                        <li><strong>Penetration Testing Labs:</strong> Pwned machines on HTB & TryHackMe (Cap, The Report II).</li>
+                        <li><strong>Forensics & CTFs:</strong> PicoCTF, Sherlocks (Operation Blackout).</li>
+                        <li><strong>Network Security Labs:</strong> Firewall rule design, VPN configuration, and secure VLAN segmentation exercises.</li>
+                        <li><strong>Lab repositories:</strong> <a href="https://marcos-solo.github.io/labs" target="_blank">marcos-solo.github.io/labs</a> · <a href="https://marcos-solo.github.io/projects" target="_blank">projects</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3>Education</h3>
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <span class="job-title">BSc in Business Information Technology</span>
+                        <span class="date">2025</span>
+                    </div>
+                    <div class="company">University of Embu</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- RIGHT COLUMN: competencies, certs, skills, referees -->
+        <div class="right-column">
+            <section>
+                <h3>Core Competencies</h3>
+                <ul class="domain-list">
+                    <li>LAN/WAN/WLAN Troubleshooting</li>
+                    <li>Routing & Switching (OSPF, BGP, VLANs)</li>
+                    <li>Firewall & VPN Administration</li>
+                    <li>Network Security & Segmentation</li>
+                    <li>SIEM & Network Monitoring</li>
+                    <li>Incident Response & RCA</li>
+                    <li>Cloud & Network Integration</li>
+                    <li>Mentoring & Technical Training</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Certifications</h3>
+                <ul class="cert-list">
+                    <li><strong>Security Analyst – Cyber Shujaa</strong></li>
+                    <li><strong>Google Cloud Security Analyst</strong></li>
+                    <li>CCNA (In Progress / Completed Modules)</li>
+                    <li>SOC Operations – Coursera</li>
+                    <li>Network Security – Coursera</li>
+                    <li>Certified Ethical Hacker – Alison</li>
+                    <li>Computer & Digital Forensics Masterclass – Udemy</li>
+                    <li>Real Ethical Hacking with Python (PYCEH23+) – Udemy</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Technical Skills</h3>
+                <div class="skills-grid">
+                    <span class="badge">Cisco Routing & Switching</span>
+                    <span class="badge">VLANs / STP / OSPF</span>
+                    <span class="badge">BGP Basics</span>
+                    <span class="badge">NAT & ACLs</span>
+                    <span class="badge">Firewall Rules</span>
+                    <span class="badge">IPSec / SSL VPN</span>
+                    <span class="badge">Wireshark</span>
+                    <span class="badge">SIEM & SOC</span>
+                    <span class="badge">Linux / Unix</span>
+                    <span class="badge">Python</span>
+                    <span class="badge">Google Cloud</span>
+                    <span class="badge">Penetration Testing</span>
+                    <span class="badge">Digital Forensics</span>
+                    <span class="badge">Incident Response</span>
+                    <span class="badge">Network Documentation</span>
+                    <span class="badge">Mentoring & Training</span>
+                </div>
+            </section>
+
+            <section>
+                <h3>Referees</h3>
+                <p style="font-size: 0.85rem; color: var(--muted);">Available upon request.</p>
+            </section>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

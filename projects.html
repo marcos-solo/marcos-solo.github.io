@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Marcos Solomon's portfolio projects showcasing web development and security expertise">
+  <meta name="description" content="Marcos Solomon's network engineering, security, infrastructure automation, forensics, and software projects.">
   <title>Projects | Marcos Solomon</title>
 
   <!-- Google Fonts -->
@@ -19,18 +19,18 @@
 
   <style>
     :root {
-      --primary: #00ffaa;
-      --primary-dark: #00cc88;
-      --bg-dark: #101010;
-      --bg-darker: #080808;
-      --card-bg: #1a1a1a;
-      --card-border: #2a2a2a;
-      --text-light: #eaeaea;
-      --text-muted: #bbb;
-      --nav-bg: rgba(18, 18, 18, 0.95);
-      --tag-bg: rgba(0, 255, 170, 0.12);
-      --tag-border: rgba(0, 255, 170, 0.3);
-      --shadow-color: rgba(0, 255, 170, 0.1);
+      --primary: #f0a078;
+      --primary-dark: #dc8058;
+      --bg-dark: #111922;
+      --bg-darker: #0a1118;
+      --card-bg: #192530;
+      --card-border: #344452;
+      --text-light: #f4f0e9;
+      --text-muted: #b8c1c8;
+      --nav-bg: rgba(13, 21, 29, 0.94);
+      --tag-bg: rgba(240, 160, 120, 0.12);
+      --tag-border: rgba(240, 160, 120, 0.32);
+      --shadow-color: rgba(240, 160, 120, 0.14);
       --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
@@ -371,6 +371,8 @@
       animation: float 3s ease-in-out infinite;
     }
   </style>
+  <link rel="stylesheet" href="portfolio-theme.css?v=4">
+  <script src="portfolio-nav.js?v=4" defer></script>
 </head>
 <body>
 
@@ -380,13 +382,17 @@
       <a href="index.html" class="navbar-brand">
         <i class="fas fa-code"></i> Marcos Solomon
       </a>
-      <ul>
+      <button class="navbar-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-menu" aria-expanded="false">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <ul class="navbar-menu" id="site-menu" aria-hidden="false">
         <li><a href="index.html">Home</a></li>
         <li><a href="resume.html">Resume</a></li>
         <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
         <li><a href="labs.html">Lab Challenges</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <button class="nav-backdrop" type="button" aria-label="Close navigation menu" aria-hidden="true" tabindex="-1"></button>
     </div>
   </nav>
 
@@ -394,7 +400,7 @@
   <main class="section">
     <div class="section-header" data-aos="fade-up">
       <h2>My Projects</h2>
-      <p class="section-subtitle">A collection of my development and security projects showcasing my skills and experience</p>
+      <p class="section-subtitle">Network engineering, security operations, infrastructure automation, forensics, and software projects.</p>
     </div>
 
     <div class="project-list">
@@ -527,6 +533,76 @@
           <a href="#" class="project-link">
             <i class="fas fa-eye"></i> Demo
           </a>
+        </div>
+      </article>
+
+      <article class="project-item" data-aos="fade-up" data-aos-delay="700">
+        <div class="project-icon">
+          <i class="fas fa-shield-virus"></i>
+        </div>
+        <h3>Blue Team Labs Online Investigations</h3>
+        <p>Hands-on defensive security investigations covering business email compromise, endpoint and network evidence, and the MITRE ATT&amp;CK framework. Completed challenges include BEC-KY, Squid Game, Cap, Source, ATT&amp;CK, and The Report II.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Blue Team Labs Online</span>
+          <span class="tech-tag">Threat Hunting</span>
+          <span class="tech-tag">MITRE ATT&amp;CK</span>
+          <span class="tech-tag">Incident Analysis</span>
+        </div>
+      </article>
+
+      <article class="project-item" data-aos="fade-up" data-aos-delay="800">
+        <div class="project-icon">
+          <i class="fas fa-crosshairs"></i>
+        </div>
+        <h3>HTB &amp; TryHackMe Penetration Testing</h3>
+        <p>Practiced authorized penetration-testing workflows on vulnerable lab machines, including Cap and The Report II, with emphasis on enumeration, exploitation, and documenting findings.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Hack The Box</span>
+          <span class="tech-tag">TryHackMe</span>
+          <span class="tech-tag">Nmap</span>
+          <span class="tech-tag">Penetration Testing</span>
+        </div>
+      </article>
+
+      <article class="project-item" data-aos="fade-up" data-aos-delay="900">
+        <div class="project-icon">
+          <i class="fas fa-magnifying-glass-chart"></i>
+        </div>
+        <h3>Forensics &amp; CTF Investigations</h3>
+        <p>Forensics and capture-the-flag practice through PicoCTF and Sherlocks, including the Operation Blackout investigation.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">PicoCTF</span>
+          <span class="tech-tag">Sherlocks</span>
+          <span class="tech-tag">Operation Blackout</span>
+          <span class="tech-tag">Digital Forensics</span>
+        </div>
+      </article>
+
+      <article class="project-item" data-aos="fade-up" data-aos-delay="1000">
+        <div class="project-icon">
+          <i class="fas fa-network-wired"></i>
+        </div>
+        <h3>Network Security Design &amp; Operations</h3>
+        <p>Practical network security exercises focused on firewall rule design, IPSec/SSL VPN configuration, secure VLAN segmentation, access control, and troubleshooting with packet-level diagnostics.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">VLANs</span>
+          <span class="tech-tag">Firewall &amp; ACLs</span>
+          <span class="tech-tag">IPSec / SSL VPN</span>
+          <span class="tech-tag">Wireshark</span>
+        </div>
+      </article>
+
+      <article class="project-item" data-aos="fade-up" data-aos-delay="1100">
+        <div class="project-icon">
+          <i class="fas fa-cloud"></i>
+        </div>
+        <h3>Network Infrastructure as Code</h3>
+        <p>A network automation lab using Terraform to provision repeatable infrastructure and Ansible to apply consistent configurations to network hosts. The security focus includes segmented network design, controlled access, and documented configuration changes.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Terraform</span>
+          <span class="tech-tag">Ansible</span>
+          <span class="tech-tag">Network Automation</span>
+          <span class="tech-tag">Secure Configuration</span>
         </div>
       </article>
     </div>
