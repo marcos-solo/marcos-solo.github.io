@@ -18,11 +18,11 @@ body {
   background-color: var(--bg-dark);
   background-image: radial-gradient(ellipse at 50% -20%, #263543 0, var(--bg-dark) 58%);
   color: var(--text-light);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .home-section {
