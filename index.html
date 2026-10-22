@@ -384,8 +384,8 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="portfolio-theme.css?v=4">
-  <script src="portfolio-nav.js?v=4" defer></script>
+  <link rel="stylesheet" href="portfolio-theme.css?v=5">
+  <script src="portfolio-nav.js?v=5" defer></script>
    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9076762560898117"
      crossorigin="anonymous"></script>
 </head>
@@ -420,11 +420,9 @@
       <div class="hero-copy">
         <span class="eyebrow">Network &amp; Security Engineer</span>
         <h1>Marcos Solomon</h1>
-        <p class="tagline"><span id="typewriter"></span></p>
+        <p class="tagline">Secure networks. Clear investigations. Repeatable infrastructure.</p>
         <p class="intro">
-          I design, secure, and troubleshoot resilient networks—from routing, switching,
-          firewalls, and VPNs to security operations and incident response. I also use
-          Terraform and Ansible to make infrastructure more repeatable and consistent.
+          I secure and troubleshoot networks, investigate security incidents, and automate infrastructure with Terraform and Ansible.
         </p>
         <div class="hero-tags" aria-label="Areas of expertise">
           <span>Network Security</span>
@@ -436,8 +434,8 @@
           <a href="resume.html" class="btn">
             <i class="fas fa-file-lines"></i> View Resume
           </a>
-          <a href="projects.html" class="btn btn-outline">
-            <i class="fas fa-code"></i> Explore Projects
+          <a href="#selected-work" class="btn btn-outline">
+            <i class="fas fa-star"></i> See Selected Work
           </a>
         </div>
         <div class="socials">
@@ -455,69 +453,47 @@
     </div>
   </section>
 
+  <section class="featured-work" id="selected-work" aria-labelledby="selected-work-title">
+    <div class="featured-work-header">
+      <p class="eyebrow">Selected work</p>
+      <h2 id="selected-work-title">Practical work across security and infrastructure</h2>
+      <p>Three examples that show how I assess systems, investigate incidents, and build repeatable network infrastructure.</p>
+    </div>
+    <div class="featured-work-grid">
+      <a class="featured-work-card" href="projects.html#security-assessment">
+        <span class="featured-work-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
+        <h3>Business systems security assessment</h3>
+        <p>Reviewed authentication, access controls, and input handling; documented findings and remediation recommendations.</p>
+        <span class="featured-work-link">Assessment details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="featured-work-card" href="projects.html#blue-team-investigations">
+        <span class="featured-work-icon"><i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i></span>
+        <h3>Blue-team investigations</h3>
+        <p>Investigated BEC, endpoint, and network evidence through challenges including BEC-KY, Squid Game, Cap, Source, and The Report II.</p>
+        <span class="featured-work-link">Investigation details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="featured-work-card" href="projects.html#network-infrastructure-as-code">
+        <span class="featured-work-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></span>
+        <h3>Secure network infrastructure as code</h3>
+        <p>Combined Terraform provisioning and Ansible configuration with segmentation, controlled access, and documented changes.</p>
+        <span class="featured-work-link">Infrastructure details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+    </div>
+    <p class="featured-work-more"><a href="projects.html">Browse all projects <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+  </section>
+
   <!-- AOS Animation Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
-  <!-- Typewriter Effect -->
   <script>
-    const phrases = [
-      'Network & Security Engineer',
-      'Network Security Specialist',
-      'Infrastructure Automation | Terraform & Ansible',
-      'Cybersecurity Analyst',
-      'Penetration Tester', 
-      'Ethical Hacker',
-      'Security Researcher',
-      'CTF Player',
-      'Bug Bounty Hunter'
-    ];
-    
-    let i = 0, j = 0, currentPhrase = [], isDeleting = false, isEnd = false;
-
-    function loop() {
-      isEnd = false;
-      document.getElementById('typewriter').innerHTML = currentPhrase.join('');
-
-      if (i < phrases.length) {
-        if (!isDeleting && j <= phrases[i].length) {
-          currentPhrase.push(phrases[i][j]);
-          j++;
-        }
-
-        if (isDeleting && j > 0) {
-          currentPhrase.pop();
-          j--;
-        }
-
-        if (j === phrases[i].length) {
-          isEnd = true;
-          isDeleting = true;
-        }
-
-        if (isDeleting && j === 0) {
-          currentPhrase = [];
-          isDeleting = false;
-          i++;
-          if (i === phrases.length) {
-            i = 0;
-          }
-        }
-      }
-      
-      const speedUp = Math.random() * (80 - 50) + 50;
-      const normalSpeed = Math.random() * (300 - 200) + 200;
-      const time = isEnd ? 2000 : isDeleting ? speedUp : normalSpeed;
-      setTimeout(loop, time);
-    }
-    
     document.addEventListener('DOMContentLoaded', function() {
       AOS.init({
         duration: 800,
         easing: 'ease-in-out',
         once: true,
-        offset: 100
+        offset: 100,
+        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
       });
-      loop();
     });
   </script>
 

@@ -1,3 +1,7 @@
+document.querySelectorAll('.current-year').forEach((year) => {
+  year.textContent = String(new Date().getFullYear());
+});
+
 document.querySelectorAll('.navbar').forEach((navbar) => {
   const toggle = navbar.querySelector('.navbar-toggle');
   const menu = navbar.querySelector('.navbar-menu');
