@@ -59,16 +59,31 @@
             gap: 8px;
         }
 
-        .cv-actions a {
+        .cv-actions a,
+        .cv-actions button {
             border: 1px solid #cbd5e1;
             border-radius: 6px;
             background: #ffffff;
             color: var(--primary);
-            padding: 9px 13px;
+            padding: 9px 14px;
             font: inherit;
             font-size: 0.9rem;
+            font-weight: 500;
             text-decoration: none;
             cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cv-actions a:hover,
+        .cv-actions button:hover {
+            background: #0f172a;
+            color: #ffffff;
+            border-color: #0f172a;
+            transform: translateY(-2px);
         }
 
         /* ---------- print overrides ---------- */
@@ -334,7 +349,8 @@
 <body>
 
 <nav class="cv-actions" aria-label="CV actions">
-    <a href="resume.html">Back to portfolio</a>
+    <a href="resume.html">← Back to Portfolio</a>
+    <button type="button" onclick="window.print()">🖨️ Print / Save as PDF</button>
 </nav>
 
 <div class="cv-container">
@@ -351,7 +367,10 @@
     </header>
 
     <div class="summary">
-        <strong>Network & Security Engineer</strong> with hands-on experience in enterprise routing, switching, firewall administration, and security operations. Skilled in designing secure network segments, troubleshooting LAN/WAN/VPN issues, and implementing firewall rules with IPSec/SSL VPN. Combines deep cybersecurity knowledge (SOC, threat hunting, incident response) with practical network engineering to deliver resilient, secure, and well-documented infrastructure. Proven ability to mentor junior engineers and lead security-focused network projects.
+        <strong>Secure networks. Investigate threats. Automate resilience.</strong> I combine network engineering, defensive security, and infrastructure automation to strengthen enterprise environments. I analyze security telemetry, investigate suspicious activity, apply network security controls, and build repeatable infrastructure using Terraform and Ansible. I also deliver corporate and technical training in CCNA-aligned networking and defensive security operations.
+        <div style="margin-top: 6px; font-size: 0.82rem; color: #334155;">
+            <strong>Focus areas:</strong> SOC Operations · Security Incident Investigation · Network Security · Threat Detection &amp; Analysis · Infrastructure Automation · Technical Training
+        </div>
     </div>
 
     <div class="main-layout">

@@ -3,499 +3,454 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lab Challenges | Marcos Solomon</title>
-   
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="Marcos Solomon's hands-on cybersecurity labs: Hack The Box, TryHackMe, Blue Team Labs Online, digital forensics, Active Directory, and network engineering.">
+  <meta name="keywords" content="Hack The Box Labs, TryHackMe, Blue Team Labs, SOC Analyst, Network Security, Wireshark, Splunk, Marcos Solomon">
+  <title>Lab Challenges | Marcos Solomon · Network &amp; Security Engineer</title>
+
+  <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    :root {
-      --primary: #f0a078;
-      --primary-dark: #dc8058;
-      --bg-dark: #111922;
-      --bg-darker: #0a1118;
-      --card-bg: #192530;
-      --card-border: #344452;
-      --text-light: #f4f0e9;
-      --text-muted: #b8c1c8;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-light);
-      line-height: 1.6;
-    }
-
-    .navbar {
-      background: var(--nav-bg);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      padding: 0;
-      margin: 0;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .navbar a {
-      color: #ccc;
-      text-decoration: none;
-      transition: color 0.3s;
-      font-size: 1.1rem;
-    }
-
-    .navbar a:hover,
-    .navbar a.active,
-    .navbar a[aria-current="page"] {
-      color: var(--primary);
-    }
-
-    main.section {
-      padding: 3rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-      width: 100%;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 2.5rem;
-    }
-
-    .lab-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
-      gap: 2rem;
-    }
-
-    .lab {
-      background-color: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
-      transition: transform 0.3s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-
-    .lab:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
-    }
-
-    .lab h4 {
-      font-size: 1.2rem;
-      line-height: 1.4;
-      margin-bottom: 0.6rem;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .lab h4 i {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex: 0 0 2.5rem;
-      width: 2.5rem;
-      height: 2.5rem;
-      border: 1px solid var(--tag-border);
-      border-radius: 0.75rem;
-      background: var(--tag-bg);
-      font-size: 1.05rem;
-    }
-
-    .lab p {
-      margin: 0.4rem 0;
-      color: #ddd;
-      font-size: 0.92rem;
-    }
-
-    .lab strong {
-      color: var(--primary);
-    }
-
-    .lab code {
-      background-color: #2b2b2b;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      color: var(--primary);
-      font-family: 'Courier New', monospace;
-    }
-
-    .lab-images {
-      display: none;
-    }
-
-    .lab-images .icon {
-      font-size: 4rem;
-      color: var(--primary);
-      margin: 0.5rem 0;
-      opacity: 0.8;
-      transition: transform 0.3s, opacity 0.3s;
-    }
-
-    .lab:hover .lab-images .icon {
-      transform: scale(1.1);
-      opacity: 1;
-    }
-
-    .lab a {
-      display: inline-block;
-      margin-top: 1rem;
-      background: var(--primary);
-      color: #18202a;
-      text-decoration: none;
-      padding: 0.5rem 1.2rem;
-      border-radius: 25px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-      align-self: flex-start;
-      margin-top: auto;
-    }
-
-    .lab a:hover {
-      background-color: var(--primary-dark);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      background: #121212;
-      color: #888;
-      margin-top: 3rem;
-    }
-
-    @media (max-width: 768px) {
-      .lab-grid {
-        grid-template-columns: 1fr;
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-      
-    }
-
-    @media (max-width: 500px) {
-      main.section {
-        padding: 2rem 1rem;
-      }
-      
-      .lab {
-        padding: 1.2rem;
-      }
-      
-      .lab h4 {
-        font-size: 1.3rem;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="portfolio-theme.css?v=5">
-  <script src="portfolio-nav.js?v=5" defer></script>
+  <!-- Unified Theme Styles -->
+  <link rel="stylesheet" href="portfolio-theme.css?v=6">
+  <script src="portfolio-nav.js?v=6" defer></script>
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- Background Interactive Cyber Canvas -->
+  <canvas id="cyber-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation Bar -->
   <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <div class="navbar-container">
       <a href="index.html" class="navbar-brand">
-        <i class="fas fa-user-secret" aria-hidden="true"></i> Marcos Solomon
+        <span class="navbar-brand-badge"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
+        <span>Marcos Solomon</span>
       </a>
+      
       <button class="navbar-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-menu" aria-expanded="false">
         <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
+
       <ul class="navbar-menu" id="site-menu" aria-hidden="false">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="labs.html" class="active" aria-current="page">Lab Challenges</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html"><i class="fas fa-house" aria-hidden="true"></i> Home</a></li>
+        <li><a href="resume.html"><i class="fas fa-file-lines" aria-hidden="true"></i> Resume</a></li>
+        <li><a href="projects.html"><i class="fas fa-laptop-code" aria-hidden="true"></i> Projects</a></li>
+        <li><a href="labs.html" class="active" aria-current="page"><i class="fas fa-flask" aria-hidden="true"></i> Lab Challenges</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
       </ul>
+      
       <button class="nav-backdrop" type="button" aria-label="Close navigation menu" aria-hidden="true" tabindex="-1"></button>
     </div>
   </nav>
 
   <!-- Lab Challenges Section -->
   <main class="section" id="labs">
-    <header class="lab-header">
-      <p class="lab-kicker">Practice · Investigation · Learning</p>
-      <h2><i class="fas fa-flask"></i> Lab Challenges</h2>
-      <p class="lab-intro">Hands-on work across network engineering, security operations, penetration testing, forensics, and infrastructure automation.</p>
+    <header class="section-header" data-aos="fade-up">
+      <p class="eyebrow">Practical Investigation &amp; Training</p>
+      <h2>Hands-On Lab Challenges</h2>
+      <p class="section-subtitle">20+ documented walkthroughs across defensive SOC monitoring, offensive enumeration on Hack The Box &amp; TryHackMe, digital forensics, Active Directory attacks, and network automation.</p>
     </header>
 
+    <!-- Interactive Filtering & Live Search Toolbar -->
+    <div class="filter-toolbar" data-aos="fade-up" data-aos-delay="100">
+      <div class="filter-search-row">
+        <div class="search-input-wrapper">
+          <i class="fas fa-magnifying-glass search-icon" aria-hidden="true"></i>
+          <input type="text" class="filter-search-input" placeholder="Search lab challenges by topic, tool (e.g. Splunk, Wireshark, Active Directory)..." aria-label="Search labs">
+          <button type="button" class="search-clear-btn" aria-label="Clear search"><i class="fas fa-times"></i></button>
+        </div>
+        <span class="filter-results-count">Showing 23 of 23</span>
+      </div>
+
+      <div class="filter-pills-row" role="tablist" aria-label="Filter labs by platform or topic">
+        <button type="button" class="filter-pill active" data-category="all" role="tab" aria-selected="true">
+          All Labs <span class="pill-count">23</span>
+        </button>
+        <button type="button" class="filter-pill" data-category="blue-team" role="tab" aria-selected="false">
+          <i class="fas fa-shield-virus" aria-hidden="true"></i> Blue Team &amp; SOC
+        </button>
+        <button type="button" class="filter-pill" data-category="htb" role="tab" aria-selected="false">
+          <i class="fas fa-cube" aria-hidden="true"></i> Hack The Box
+        </button>
+        <button type="button" class="filter-pill" data-category="thm" role="tab" aria-selected="false">
+          <i class="fas fa-user-secret" aria-hidden="true"></i> TryHackMe
+        </button>
+        <button type="button" class="filter-pill" data-category="networking" role="tab" aria-selected="false">
+          <i class="fas fa-network-wired" aria-hidden="true"></i> Networking &amp; IaC
+        </button>
+        <button type="button" class="filter-pill" data-category="forensics" role="tab" aria-selected="false">
+          <i class="fas fa-microscope" aria-hidden="true"></i> Forensics &amp; OSINT
+        </button>
+      </div>
+    </div>
+
+    <!-- Fallback card when search yields 0 matches -->
+    <div class="no-results-card">
+      <i class="fas fa-flask" aria-hidden="true"></i>
+      <h3>No matching lab challenges found</h3>
+      <p>Try searching for a different keyword or selecting another category.</p>
+    </div>
+
+    <!-- Lab Challenges Grid -->
     <section class="lab-grid">
-      <article class="lab">
-        <h4><i class="fab fa-windows"></i> Windows Fundamentals: User Management</h4>
-        <p><strong>Objective:</strong> Understand and manage user accounts and groups in Windows environments</p>
+
+      <!-- Lab 1: Windows Fundamentals -->
+      <article class="lab" data-category="htb" data-aos="fade-up" data-aos-delay="50">
+        <h4><i class="fab fa-windows" aria-hidden="true"></i> Windows Fundamentals: User Management</h4>
+        <p><strong>Objective:</strong> Audit and administer local user accounts, group policies, and permissions in enterprise Windows environments.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Approach:</strong> Explored user permissions, the <code>net user</code> command, and group policies using Command Prompt and PowerShell</p>
-        <p><strong>Tools:</strong> Windows Command Line, PowerShell, Hack The Box Academy</p>
-        <p><strong>Lessons Learned:</strong> The importance of least privilege, proper account enumeration, and recognizing common misconfigurations in user and group management</p>
-        <p><strong>Certificate:</strong> <a href="https://academy.hackthebox.com/achievement/1917487/49" target="_blank">View HTB Windows Fundamentals Certificate</a></p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Approach:</strong> Explored account enumeration, group nesting, and least-privilege enforcement using Command Prompt (<code>net user</code>) and PowerShell cmdlets.</p>
+            <p><strong>Tools:</strong> Windows CLI, PowerShell, Hack The Box Academy</p>
+            <p><strong>Key Lesson:</strong> Recognizing dangerous privilege assignments and enforcing strict separation of administrative privileges.</p>
+            <a href="https://academy.hackthebox.com/achievement/1917487/49" target="_blank" rel="noopener noreferrer" class="lab-cert-link">
+              <i class="fas fa-award" aria-hidden="true"></i> View HTB Windows Fundamentals Certificate
+            </a>
+          </div>
+        </details>
       </article>
 
-      <article class="lab">
-        <h4><i class="fab fa-linux"></i> Linux Fundamentals: File Permissions and Ownership</h4>
-        <p><strong>Objective:</strong> Understand file and directory permissions in Linux systems</p>
+      <!-- Lab 2: Linux Fundamentals -->
+      <article class="lab" data-category="htb" data-aos="fade-up" data-aos-delay="75">
+        <h4><i class="fab fa-linux" aria-hidden="true"></i> Linux Fundamentals: Permissions &amp; Ownership</h4>
+        <p><strong>Objective:</strong> Master Unix Discretionary Access Control (DAC), POSIX permissions, SUID/SGID bits, and file system ownership.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Approach:</strong> Practiced using <code>ls -l</code>, <code>chmod</code>, <code>chown</code>, and symbolic vs numeric permissions</p>
-        <p><strong>Tools:</strong> Linux Terminal, Hack The Box Pwnbox</p>
-        <p><strong>Lessons Learned:</strong> How Linux enforces access control via user/group/other permissions, and how misconfigurations can lead to privilege escalation</p>
-        <p><strong>Certificate:</strong> <a href="https://academy.hackthebox.com/achievement/1917487/18" target="_blank">View HTB Linux Fundamentals Certificate</a></p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Approach:</strong> Analyzed symbolic vs numeric permission masks (<code>chmod</code>, <code>chown</code>), SUID binaries, and misconfigured write permissions on critical binaries.</p>
+            <p><strong>Tools:</strong> Linux Terminal, Bash, Hack The Box Pwnbox</p>
+            <p><strong>Key Lesson:</strong> SUID misconfigurations create direct vectors for local privilege escalation (LPE).</p>
+            <a href="https://academy.hackthebox.com/achievement/1917487/18" target="_blank" rel="noopener noreferrer" class="lab-cert-link">
+              <i class="fas fa-award" aria-hidden="true"></i> View HTB Linux Fundamentals Certificate
+            </a>
+          </div>
+        </details>
       </article>
 
-      <article class="lab">
-        <h4><i class="fas fa-terminal"></i> Pawned Fawn Machine On Hackthebox</h4>
-        <p><strong>Summary:</strong> Connected FTP, SMB, Telnet, Rsync and RDP anonymously. Used Nmap to identify open ports. Connected to a MongoDB server.</p>
+      <!-- Lab 3: Fawn HTB -->
+      <article class="lab" data-category="htb" data-aos="fade-up" data-aos-delay="100">
+        <h4><i class="fas fa-terminal" aria-hidden="true"></i> Pawned Fawn Machine on Hack The Box</h4>
+        <p><strong>Summary:</strong> Enumerated common network services including FTP, SMB, Telnet, Rsync, and RDP. Identified unauthenticated anonymous FTP access to retrieve sensitive flags.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Network service enumeration, anonymous access exploitation, basic privilege escalation</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> Network service scanning with Nmap, anonymous FTP exploitation, protocol banner verification.</p>
+            <p><strong>Defense Lesson:</strong> Disable anonymous logins and restrict service binds to internal interfaces.</p>
+          </div>
+        </details>
       </article>
 
-      <article class="lab">
-        <h4><i class="fas fa-folder-open"></i> Pawned Dancing Machine on HacktheBox</h4>
-        <p><strong>Summary:</strong> Exploited misconfigured SMB shares to gain initial access, then pivoted through the network using stolen credentials.</p>
+      <!-- Lab 4: Dancing HTB -->
+      <article class="lab" data-category="htb" data-aos="fade-up" data-aos-delay="125">
+        <h4><i class="fas fa-folder-open" aria-hidden="true"></i> Pawned Dancing Machine on Hack The Box</h4>
+        <p><strong>Summary:</strong> Exploited misconfigured SMB shares (port 445) allowing null session enumeration with <code>smbclient</code> to extract administrative flags.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> SMB enumeration, password cracking, lateral movement techniques</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> SMB enumeration, share permissions inspection, null session authentication.</p>
+            <p><strong>Defense Lesson:</strong> Restrict SMB signing and disable anonymous guest access across file servers.</p>
+          </div>
+        </details>
       </article>
 
-      <article class="lab">
-        <h4><i class="fas fa-user-secret"></i> Pawned Redeemer Machine on Hackthebox</h4>
-        <p><strong>Summary:</strong> Exploited Redis database misconfiguration to gain shell access and escalate privileges through cron job manipulation.</p>
+      <!-- Lab 5: Redeemer HTB -->
+      <article class="lab" data-category="htb" data-aos="fade-up" data-aos-delay="150">
+        <h4><i class="fas fa-database" aria-hidden="true"></i> Pawned Redeemer Machine on Hack The Box</h4>
+        <p><strong>Summary:</strong> Exploited an exposed, unauthenticated Redis in-memory database instance (port 6379) to extract stored credential keys.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> NoSQL database exploitation, cron job privilege escalation, Linux persistence techniques</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> NoSQL database discovery, Redis CLI inspection, key enumeration, network access controls.</p>
+            <p><strong>Defense Lesson:</strong> Always require strong Redis authentication and bind only to localhost/private VPCs.</p>
+          </div>
+        </details>
       </article>
 
-      <article class="lab">
-        <h4><i class="fas fa-user-shield"></i> Pawned the Meow Machine on Hackthebox</h4>
-        <p><strong>Summary:</strong> Gained initial access through exposed Telnet service, then exploited PATH variable misconfiguration for root access.</p>
+      <!-- Lab 6: Meow HTB -->
+      <article class="lab" data-category="htb" data-aos="fade-up" data-aos-delay="175">
+        <h4><i class="fas fa-user-shield" aria-hidden="true"></i> Pawned Meow Machine on Hack The Box</h4>
+        <p><strong>Summary:</strong> Discovered an unencrypted legacy Telnet service on port 23, authenticated with default root credentials to take over the host.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Telnet exploitation, Linux environment variable manipulation, basic privilege escalation</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> Telnet enumeration, plaintext protocol hazards, default credential testing.</p>
+            <p><strong>Defense Lesson:</strong> Replace all Telnet services with SSHv2 and enforce mandatory public key authentication.</p>
+          </div>
+        </details>
       </article>
 
-      <article class="lab">
-        <h4><i class="fas fa-eye"></i> Performed Defensive Security On Tryhackme</h4>
-        <p><strong>Summary:</strong> Practiced SOC analyst workflows including SIEM monitoring, log analysis, and incident response procedures.</p>
+      <!-- Lab 7: Defensive Security THM -->
+      <article class="lab" data-category="blue-team thm" data-aos="fade-up" data-aos-delay="200">
+        <h4><i class="fas fa-eye" aria-hidden="true"></i> Defensive Security Operations on TryHackMe</h4>
+        <p><strong>Summary:</strong> Simulated Tier 1 SOC Analyst workflows: alert ingestion, event correlation, false positive tuning, and incident escalation protocols.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> SIEM operations, log correlation, threat detection, incident documentation</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> SIEM dashboard monitoring, log timeline reconstruction, cyber kill chain mapping, triage reporting.</p>
+            <p><strong>Defense Lesson:</strong> Contextual log correlation prevents alert fatigue and accelerates time to containment (MTTC).</p>
+          </div>
+        </details>
       </article>
 
-      <article class="lab">
-        <h4><i class="fas fa-network-wired"></i> Attacktive Directory on TryHackMe</h4>
-        <p><strong>Summary:</strong> Explored Active Directory fundamentals, enumeration, and exploitation using common tools like BloodHound and SMB.</p>
+      <!-- Lab 8: Attacktive Directory THM -->
+      <article class="lab" data-category="thm" data-aos="fade-up" data-aos-delay="225">
+        <h4><i class="fas fa-network-wired" aria-hidden="true"></i> Attacktive Directory on TryHackMe</h4>
+        <p><strong>Summary:</strong> Deep dive into Windows Active Directory architecture: Kerberos AS-REP roasting, Kerberoasting, and BloodHound privilege path mapping.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> AD enumeration, Kerberos attacks, lateral movement, BloodHound analysis</p>
-              </details>
-      </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-microscope"></i> Windows Forensics 1 on TryHackMe</h4>
-        <p><strong>Summary:</strong> Learned disk, memory, and event log analysis techniques to investigate Windows incidents.</p>
-        <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Memory dump analysis, Windows Event Log parsing, forensic artifact collection</p>
-              </details>
-      </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-project-diagram"></i> Introduction to Networking on HackTheBox</h4>
-        <p><strong>Summary:</strong> Covered OSI model, subnetting, routing, and packet inspection with Wireshark and tcpdump.</p>
-        <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Network protocol analysis, packet capturing, subnet calculations</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> Kerbrute enumeration, Impacket toolkit, BloodHound graph analysis, SMB password spraying.</p>
+            <p><strong>Defense Lesson:</strong> Enforce AES encryption for Kerberos, disable pre-authentication checks on sensitive accounts, and audit nested Domain Admin groups.</p>
+          </div>
+        </details>
       </article>
 
-      <article class="lab">
-        <h4><i class="fas fa-diagram-project"></i> Secure Network Infrastructure as Code</h4>
-        <p><strong>Summary:</strong> A networking automation lab combining Terraform for repeatable infrastructure provisioning with Ansible for consistent network-host configuration.</p>
+      <!-- Lab 9: Windows Forensics 1 THM -->
+      <article class="lab" data-category="forensics thm" data-aos="fade-up" data-aos-delay="250">
+        <h4><i class="fas fa-microscope" aria-hidden="true"></i> Windows Forensics 1 on TryHackMe</h4>
+        <p><strong>Summary:</strong> Analyzed volatile RAM dumps, Registry hives (SAM, SYSTEM, SOFTWARE), and Windows Event Logs to establish timeline of compromise.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Security Focus:</strong> Apply segmented network design, controlled access, secure configuration baselines, and documented change management.</p>
-        <p><strong>Tools:</strong> Terraform, Ansible, routing and switching concepts, firewall rules, VLANs, ACLs</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> Registry analysis with FTK Imager, Prefetch parsing, Shimcache inspection, UserAssist execution tracking.</p>
+            <p><strong>Defense Lesson:</strong> Windows OS maintains redundant forensic artifacts that survive simple file deletion.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-crosshairs"></i> Attacking Web Apps with FFUF on HackTheBox</h4>
-        <p><strong>Summary:</strong> Discovered hidden directories, parameters, and files using the FFUF fuzzing tool.</p>
+
+      <!-- Lab 10: Introduction to Networking HTB -->
+      <article class="lab" data-category="networking htb" data-aos="fade-up" data-aos-delay="275">
+        <h4><i class="fas fa-diagram-project" aria-hidden="true"></i> Introduction to Networking on Hack The Box</h4>
+        <p><strong>Summary:</strong> Covered OSI model Layer 2 to Layer 7, VLSM subnetting, packet inspection with Wireshark and tcpdump, and TCP 3-way handshake analysis.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Web application fuzzing, directory brute-forcing, parameter discovery</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> Subnet mask calculations, Wireshark packet capture filtering, DNS and DHCP protocol flows.</p>
+            <p><strong>Defense Lesson:</strong> Deep packet inspection is essential for distinguishing benign traffic from covert exfiltration.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-bug"></i> MAL: Malware Introductory on TryHackMe</h4>
-        <p><strong>Summary:</strong> Introduced to basic malware types, signatures, and static/dynamic analysis techniques.</p>
+
+      <!-- Lab 11: Secure Network IaC -->
+      <article class="lab" data-category="networking" data-aos="fade-up" data-aos-delay="300">
+        <h4><i class="fas fa-code-branch" aria-hidden="true"></i> Secure Network Infrastructure as Code</h4>
+        <p><strong>Summary:</strong> Network automation lab combining Terraform for modular network provisioning and Ansible for repeatable network-host security configurations.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Malware classification, basic static analysis, sandbox analysis</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Security Focus:</strong> Enforcing zero-trust network segmentation, automated firewall rule generation, and git-backed configuration change management.</p>
+            <p><strong>Tools:</strong> Terraform, Ansible, Linux, VLANs, ACLs, SSH Hardening</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-terminal"></i> Using Metasploit Framework on HackTheBox</h4>
-        <p><strong>Summary:</strong> Practiced scanning, exploitation, and post-exploitation using Metasploit modules and Meterpreter.</p>
+
+      <!-- Lab 12: FFUF Web Fuzzing HTB -->
+      <article class="lab" data-category="htb" data-aos="fade-up" data-aos-delay="325">
+        <h4><i class="fas fa-crosshairs" aria-hidden="true"></i> Attacking Web Apps with FFUF on Hack The Box</h4>
+        <p><strong>Summary:</strong> High-speed web fuzzing to discover hidden administrative endpoints, virtual hosts, query parameters, and backup configuration files.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Metasploit framework usage, payload generation, post-exploitation modules</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> FFUF filter rules (HTTP status codes, word count, regex), VHost enumeration, rate-limit avoidance.</p>
+            <p><strong>Defense Lesson:</strong> Never rely on security-by-obscurity for administrative portals or sensitive API routes.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-lock"></i> OWASP Top 10 - 2021 on TryHackMe</h4>
-        <p><strong>Summary:</strong> Studied and exploited web vulnerabilities like XSS, IDOR, SSRF, and Injection based on the OWASP Top 10.</p>
+
+      <!-- Lab 13: Malware Introductory THM -->
+      <article class="lab" data-category="blue-team thm" data-aos="fade-up" data-aos-delay="350">
+        <h4><i class="fas fa-bug" aria-hidden="true"></i> Malware Introductory Analysis on TryHackMe</h4>
+        <p><strong>Summary:</strong> Investigated basic static and dynamic malware properties: file hashing, PE header inspection, string extraction, and behavioral sandbox execution.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Web vulnerability exploitation, secure coding principles, vulnerability mitigation</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> PEView, Strings, VirusTotal API, suspicious API import identification (e.g. VirtualAlloc, WriteProcessMemory).</p>
+            <p><strong>Defense Lesson:</strong> Code signing and endpoint behavioral heuristics stop malicious payloads before execution.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-binoculars"></i> Passive Recon on TryHackMe</h4>
-        <p><strong>Summary:</strong> Explored methods to gather information without directly engaging with the target using WHOIS, Shodan, and DNS dumps.</p>
+
+      <!-- Lab 14: Metasploit Framework HTB -->
+      <article class="lab" data-category="htb" data-aos="fade-up" data-aos-delay="375">
+        <h4><i class="fas fa-terminal" aria-hidden="true"></i> Using Metasploit Framework on Hack The Box</h4>
+        <p><strong>Summary:</strong> Practiced vulnerability verification, payload generation with msfvenom, Meterpreter post-exploitation modules, and network pivoting.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Open-source intelligence (OSINT), DNS enumeration, infrastructure mapping</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> Exploit selection, staged vs non-staged payloads, local port forwarding, post-exploitation enumeration.</p>
+            <p><strong>Defense Lesson:</strong> Patch critical services promptly to eliminate known CVE vectors utilized by automated exploit frameworks.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-chart-line"></i> Splunk: Exploring SPL on TryHackMe</h4>
-        <p><strong>Summary:</strong> Learned how to write Splunk Processing Language queries to analyze logs and detect anomalies.</p>
+
+      <!-- Lab 15: OWASP Top 10 THM -->
+      <article class="lab" data-category="thm" data-aos="fade-up" data-aos-delay="400">
+        <h4><i class="fas fa-lock" aria-hidden="true"></i> OWASP Top 10 - 2021 on TryHackMe</h4>
+        <p><strong>Summary:</strong> Hands-on exploitation and remediation of core web application vulnerabilities including Broken Access Control, Injection, SSRF, and Cryptographic Failures.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Splunk query language, log analysis, correlation searches</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> Burp Suite proxying, payload crafting, input validation bypass, remediation code design.</p>
+            <p><strong>Defense Lesson:</strong> Apply parameterized SQL queries, strict schema validation, and least privilege database connections.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-code"></i> SQLi Fundamentals on HackTheBox</h4>
-        <p><strong>Summary:</strong> Practiced SQL Injection techniques to extract database content and bypass login forms.</p>
+
+      <!-- Lab 16: Passive Recon THM -->
+      <article class="lab" data-category="forensics thm" data-aos="fade-up" data-aos-delay="425">
+        <h4><i class="fas fa-binoculars" aria-hidden="true"></i> Passive Reconnaissance on TryHackMe</h4>
+        <p><strong>Summary:</strong> Gathered external intelligence on target organizations without direct packet generation using WHOIS, DNSDumpster, Shodan, and Certificate Transparency logs.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> SQL injection techniques, database enumeration, blind SQLi</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> OSINT, IP range mapping, ASN lookup, SSL certificate inspection, public cloud bucket discovery.</p>
+            <p><strong>Defense Lesson:</strong> Maintain an updated attack surface management inventory to retire forgotten assets.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-globe"></i> Threat Intelligence Tools on TryHackMe</h4>
-        <p><strong>Summary:</strong> Worked with tools like VirusTotal, AbuseIPDB, and MISP to collect, correlate, and analyze threat indicators.</p>
+
+      <!-- Lab 17: Splunk SPL THM -->
+      <article class="lab" data-category="blue-team thm" data-aos="fade-up" data-aos-delay="450">
+        <h4><i class="fas fa-chart-line" aria-hidden="true"></i> Splunk: Exploring SPL on TryHackMe</h4>
+        <p><strong>Summary:</strong> Authored Splunk Search Processing Language (SPL) queries to filter millions of firewall, authentication, and web proxy events for attack indicators.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Threat intelligence platforms, IOC analysis, threat actor tracking</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> <code>stats</code>, <code>eval</code>, <code>rex</code> regex extraction, <code>transaction</code>, alert generation rules.</p>
+            <p><strong>Defense Lesson:</strong> Effective queries pinpoint lateral movement spikes and beaconing intervals in high-volume traffic.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-shield-virus"></i> Vulnerability Assessment on HackTheBox</h4>
-        <p><strong>Summary:</strong> Scanned systems using Nmap and Nessus to identify and assess vulnerabilities.</p>
+
+      <!-- Lab 18: SQLi Fundamentals HTB -->
+      <article class="lab" data-category="htb" data-aos="fade-up" data-aos-delay="475">
+        <h4><i class="fas fa-code" aria-hidden="true"></i> SQL Injection Fundamentals on Hack The Box</h4>
+        <p><strong>Summary:</strong> Practiced in-band UNION-based SQLi, Boolean error-based injection, and time-based blind extraction on MySQL backends.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Vulnerability scanning, CVSS scoring, remediation prioritization</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> Column count enumeration, database schema mapping, SQL query chaining, WAF bypass techniques.</p>
+            <p><strong>Defense Lesson:</strong> Strict prepared statements and Object-Relational Mappers (ORMs) completely prevent SQLi.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-exchange-alt"></i> Web Requests on HackTheBox</h4>
-        <p><strong>Summary:</strong> Understood the structure and behavior of HTTP requests and practiced crafting them with Burp Suite and curl.</p>
+
+      <!-- Lab 19: Threat Intel Tools THM -->
+      <article class="lab" data-category="blue-team thm" data-aos="fade-up" data-aos-delay="500">
+        <h4><i class="fas fa-globe" aria-hidden="true"></i> Threat Intelligence Platforms on TryHackMe</h4>
+        <p><strong>Summary:</strong> Integrated VirusTotal, AbuseIPDB, URLhaus, and MISP to automate IOC enrichment, score reputation, and feed firewall blocklists.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> HTTP protocol, request manipulation, Burp Suite usage</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> IOC hash and domain enrichment, threat actor infrastructure attribution, STIX/TAXII feed parsing.</p>
+            <p><strong>Defense Lesson:</strong> High-fidelity threat intelligence reduces Mean Time to Detection (MTTD) from weeks to seconds.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-wifi"></i> WiFi Hacking 101 on TryHackMe</h4>
-        <p><strong>Summary:</strong> Captured and cracked WPA2 handshakes, deauthenticated users, and scanned wireless networks.</p>
+
+      <!-- Lab 20: Vulnerability Assessment HTB -->
+      <article class="lab" data-category="htb" data-aos="fade-up" data-aos-delay="525">
+        <h4><i class="fas fa-shield-virus" aria-hidden="true"></i> Vulnerability Assessment on Hack The Box</h4>
+        <p><strong>Summary:</strong> Executed authenticated and unauthenticated vulnerability scans using Nmap NSE scripts and automated scanners. Scored findings with CVSS v3.1 metrics.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Wireless security, WPA2 cracking, RF monitoring</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> CVSS scoring, false-positive verification, remediation roadmapping, SLA tracking.</p>
+            <p><strong>Defense Lesson:</strong> Vulnerability scans must be paired with patch verification audits.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-project-diagram"></i> L2 MAC Flooding & ARP Spoofing on TryHackMe</h4>
-        <p><strong>Summary:</strong> Practiced ARP poisoning and MAC flooding to intercept and analyze network traffic.</p>
+
+      <!-- Lab 21: WiFi Hacking 101 THM -->
+      <article class="lab" data-category="networking thm" data-aos="fade-up" data-aos-delay="550">
+        <h4><i class="fas fa-wifi" aria-hidden="true"></i> Wireless Security &amp; WPA2 on TryHackMe</h4>
+        <p><strong>Summary:</strong> Analyzed 802.11 frames, captured WPA2 4-way handshakes via controlled deauthentication, and assessed PSK entropy against dictionary attacks.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Layer 2 attacks, MITM techniques, network traffic interception</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> Aircrack-ng suite, monitor mode configuration, beacon frame analysis, PMKID attack mechanics.</p>
+            <p><strong>Defense Lesson:</strong> Upgrade enterprise environments to WPA3-Enterprise with 802.1X certificate authentication.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-user-tie"></i> Junior Security Analyst Intro on TryHackMe</h4>
-        <p><strong>Summary:</strong> Introductory SOC analyst lab covering alert triage, log correlation, and SIEM usage.</p>
+
+      <!-- Lab 22: L2 MAC Flooding & ARP Spoofing THM -->
+      <article class="lab" data-category="networking thm" data-aos="fade-up" data-aos-delay="575">
+        <h4><i class="fas fa-shuffle" aria-hidden="true"></i> L2 MAC Flooding &amp; ARP Spoofing on TryHackMe</h4>
+        <p><strong>Summary:</strong> Executed Layer 2 attacks: CAM table flooding to force switch hub-mode fallback, and bidirectional ARP cache poisoning for Man-in-the-Middle traffic analysis.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Security operations, alert investigation, incident response basics</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> Ettercap, arpspoof, Wireshark MITM traffic inspection, L2 protocol vulnerabilities.</p>
+            <p><strong>Defense Lesson:</strong> Configure Cisco Port Security, Dynamic ARP Inspection (DAI), and DHCP Snooping across all access switches.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-file-code"></i> Intro to Log Analysis on TryHackMe</h4>
-        <p><strong>Summary:</strong> Analyzed Windows and Linux logs to identify malicious activity using grep, Event Viewer, and audit logs.</p>
+
+      <!-- Lab 23: DNS in Detail THM -->
+      <article class="lab" data-category="networking thm" data-aos="fade-up" data-aos-delay="600">
+        <h4><i class="fas fa-globe-americas" aria-hidden="true"></i> DNS In-Depth Architecture on TryHackMe</h4>
+        <p><strong>Summary:</strong> Investigated DNS resolution hierarchies, authoritative nameservers, zone transfer vulnerabilities (AXFR), and DNS tunneling detection.</p>
         <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> Log analysis, event correlation, anomaly detection</p>
-              </details>
+          <summary>View Approach &amp; Takeaways</summary>
+          <div class="lab-details-content">
+            <p><strong>Skills Gained:</strong> <code>dig</code>, <code>nslookup</code>, zone transfer exploitation, DNSSEC verification, query volume baseline analysis.</p>
+            <p><strong>Defense Lesson:</strong> Restrict zone transfers exclusively to authenticated secondary nameservers and monitor for high-entropy TXT lookups.</p>
+          </div>
+        </details>
       </article>
-      
-      <article class="lab">
-        <h4><i class="fas fa-globe-americas"></i> DNS in Detail on TryHackMe</h4>
-        <p><strong>Summary:</strong> Explored DNS record types, zone transfers, and DNS reconnaissance using dig, nslookup, and DNSenum.</p>
-        <details class="lab-details">
-          <summary>More notes and skills</summary>
-        <p><strong>Skills Gained:</strong> DNS protocol, record analysis, DNS enumeration techniques</p>
-              </details>
-      </article>
+
     </section>
+
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; <span class="current-year">2026</span> Marcos Solomon. All rights reserved.</p>
+    <div class="footer-content">
+      <a href="index.html" class="footer-brand">
+        <i class="fas fa-shield-halved" aria-hidden="true"></i> Marcos Solomon
+      </a>
+      
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="labs.html">Lab Challenges</a>
+        <a href="contact.html">Contact</a>
+        <a href="Marcos_solomon_cv.html">Printable CV</a>
+      </div>
+
+      <div class="social-links">
+        <a href="https://github.com/marcos-solo" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="mailto:solomonmarcos34@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        <a href="tel:+254741840839" class="social-link" aria-label="Phone"><i class="fas fa-phone" aria-hidden="true"></i></a>
+      </div>
+
+      <p class="copyright">&copy; <span class="current-year">2026</span> Marcos Solomon. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- AOS Animation Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 750,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 80,
+        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      });
+    });
+  </script>
+
 </body>
 </html>

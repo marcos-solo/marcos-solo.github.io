@@ -2,434 +2,245 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
-  <title>Contact | Marcos Solomon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Marcos Solomon · Network &amp; Security Engineer</title>
+  
+  <!-- SEO -->
+  <meta name="description" content="Get in touch with Marcos Solomon, Network & Security Engineer (L2/L3) based in Kenya. Inquire about network security, corporate training, or infrastructure opportunities.">
+  <meta name="keywords" content="Contact Marcos Solomon, Network Engineer Kenya, Cybersecurity Consultant, Hire Network Security Engineer">
+  <meta name="author" content="Marcos Solomon">
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <style>
-    :root {
-      --primary: #f0a078;
-      --primary-dark: #dc8058;
-      --dark: #111922;
-      --darker: #0a1118;
-      --light: #f4f0e9;
-      --gray: #b8c1c8;
-      --dark-gray: #344452;
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #263543, var(--dark));
-      color: var(--light);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* Navigation */
-    .navbar {
-      background: rgba(13, 21, 29, 0.94);
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: center;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.4);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      width: 100%;
-    }
-
-    .navbar-container {
-      width: 100%;
-      max-width: 1200px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .navbar-brand {
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .navbar-brand i {
-      font-size: 1.3rem;
-    }
-
-    .navbar-menu {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    .navbar a {
-      color: var(--gray);
-      text-decoration: none;
-      transition: var(--transition);
-      font-weight: 500;
-      font-size: 0.95rem;
-      position: relative;
-      padding: 0.5rem 0;
-    }
-
-    .navbar a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: var(--primary);
-      transition: var(--transition);
-    }
-
-    .navbar a:hover,
-    .navbar a.active {
-      color: var(--primary);
-    }
-
-    .navbar a:hover::after,
-    .navbar a.active::after {
-      width: 100%;
-    }
-
-    /* Main Content */
-    .section {
-      padding: 3rem 1.5rem;
-      max-width: 900px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-weight: 600;
-      position: relative;
-      display: inline-block;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      width: 60%;
-      height: 3px;
-      bottom: -10px;
-      left: 20%;
-      background: linear-gradient(90deg, transparent, var(--primary), transparent);
-    }
-
-    .section-subtitle {
-      color: var(--gray);
-      font-size: 1rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* Contact Grid */
-    .contact-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .contact-info {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      padding: 1.5rem;
-      transition: var(--transition);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      text-align: center;
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .contact-info:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 255, 170, 0.1);
-      background: rgba(240, 160, 120, 0.05);
-      border-color: rgba(240, 160, 120, 0.35);
-    }
-
-    .contact-icon {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .contact-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.8rem;
-      color: var(--light);
-    }
-
-    .contact-detail {
-      color: var(--gray);
-      font-size: 0.95rem;
-      margin-bottom: 1.2rem;
-      flex-grow: 1;
-    }
-
-    .contact-link {
-      display: inline-block;
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 500;
-      transition: var(--transition);
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      background: rgba(240, 160, 120, 0.12);
-      border: 1px solid rgba(240, 160, 120, 0.32);
-      font-size: 0.9rem;
-      width: 100%;
-      max-width: 200px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .contact-link:hover {
-      color: var(--light);
-      background: rgba(240, 160, 120, 0.22);
-    }
-
-    /* Social Links */
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      margin-top: 2.5rem;
-      flex-wrap: wrap;
-    }
-
-    .social-link {
-      color: var(--gray);
-      font-size: 1.5rem;
-      transition: var(--transition);
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .social-link:hover {
-      color: var(--primary);
-      transform: translateY(-3px);
-      border-color: var(--primary);
-      box-shadow: 0 5px 15px rgba(0, 255, 170, 0.2);
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-      color: var(--gray);
-      font-size: 0.85rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      width: 100%;
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      .section {
-        padding: 2rem 1rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-      }
-
-      .contact-container {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .contact-info {
-        padding: 1.2rem;
-      }
-
-      .contact-icon {
-        font-size: 1.8rem;
-      }
-
-      .contact-title {
-        font-size: 1.1rem;
-      }
-
-      .contact-link {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.8rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .navbar {
-        padding: 0.8rem 1rem;
-      }
-
-      .navbar-brand {
-        font-size: 1rem;
-      }
-
-      h2 {
-        font-size: 1.6rem;
-      }
-
-      .section-subtitle {
-        font-size: 0.9rem;
-      }
-
-      .social-link {
-        width: 40px;
-        height: 40px;
-        font-size: 1.3rem;
-      }
-    }
-
-    /* Animations */
-    [data-aos] {
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    [data-aos="fade-up"] {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-
-    [data-aos="fade-up"].aos-animate {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  </style>
-  <link rel="stylesheet" href="portfolio-theme.css?v=5">
-  <script src="portfolio-nav.js?v=5" defer></script>
+  <!-- Unified Theme Styles -->
+  <link rel="stylesheet" href="portfolio-theme.css?v=6">
+  <script src="portfolio-nav.js?v=6" defer></script>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
+  <!-- Background Interactive Cyber Canvas -->
+  <canvas id="cyber-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <div class="navbar-container">
       <a href="index.html" class="navbar-brand">
-        <i class="fas fa-user-secret"></i> Marcos Solomon
+        <span class="navbar-brand-badge"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
+        <span>Marcos Solomon</span>
       </a>
+      
       <button class="navbar-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-menu" aria-expanded="false">
         <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
+
       <ul class="navbar-menu" id="site-menu" aria-hidden="false">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="labs.html">Lab Challenges</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="index.html"><i class="fas fa-house" aria-hidden="true"></i> Home</a></li>
+        <li><a href="resume.html"><i class="fas fa-file-lines" aria-hidden="true"></i> Resume</a></li>
+        <li><a href="projects.html"><i class="fas fa-laptop-code" aria-hidden="true"></i> Projects</a></li>
+        <li><a href="labs.html"><i class="fas fa-flask" aria-hidden="true"></i> Lab Challenges</a></li>
+        <li><a href="contact.html" class="active" aria-current="page"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
       </ul>
+      
       <button class="nav-backdrop" type="button" aria-label="Close navigation menu" aria-hidden="true" tabindex="-1"></button>
     </div>
   </nav>
 
-  <main id="contact" class="section">
-    <div class="section-header" data-aos="fade-up">
-      <h2>Get In Touch</h2>
-      <p class="section-subtitle">Feel free to reach out for collaborations, opportunities, or just to say hello!</p>
-    </div>
+  <!-- Contact Section -->
+  <main class="section">
+    <header class="section-header" data-aos="fade-up">
+      <p class="eyebrow">Direct Communication</p>
+      <h2>Get in Touch</h2>
+      <p class="section-subtitle">Interested in discussing an L2/L3 Network &amp; Security Engineering opportunity, technical training consultation, or defensive security audit? Reach out directly below.</p>
+    </header>
 
-    <div class="contact-container">
-      <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
-        <div class="contact-icon">
-          <i class="fas fa-envelope"></i>
+    <div class="contact-layout">
+
+      <!-- Left Column: Contact Cards Grid -->
+      <div class="contact-cards-grid" data-aos="fade-right" data-aos-duration="850">
+        
+        <!-- Email Card -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </div>
+          <h4>Email Inquiries</h4>
+          <p>Direct communication for engineering roles, technical mentoring, and project consultations.</p>
+          <div style="font-family: 'Space Mono', monospace; font-size: 0.88rem; color: var(--primary); margin-bottom: 1rem; word-break: break-all;">
+            solomonmarcos34@gmail.com
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="mailto:solomonmarcos34@gmail.com" class="btn btn-sm btn-primary">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Email
+            </a>
+            <button type="button" class="contact-copy-btn" data-copy="solomonmarcos34@gmail.com" data-label="Email address">
+              <i class="fas fa-copy" aria-hidden="true"></i> Copy
+            </button>
+          </div>
         </div>
-        <h3 class="contact-title">Email</h3>
-        <p class="contact-detail">Preferred method of contact</p>
-        <a href="mailto:solomonmarcos34@gmail.com" class="contact-link">solomonmarcos34@gmail.com</a>
+
+        <!-- Phone & WhatsApp Card -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-phone-volume" aria-hidden="true"></i>
+          </div>
+          <h4>Phone &amp; WhatsApp</h4>
+          <p>Available for phone interviews, urgent technical inquiries, and secure messaging.</p>
+          <div style="font-family: 'Space Mono', monospace; font-size: 0.95rem; color: var(--cyber-cyan); margin-bottom: 1rem;">
+            +254 741 840 839
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="tel:+254741840839" class="btn btn-sm btn-outline">
+              <i class="fas fa-phone" aria-hidden="true"></i> Call
+            </a>
+            <a href="https://wa.me/254741840839" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+            </a>
+            <button type="button" class="contact-copy-btn" data-copy="+254741840839" data-label="Phone number">
+              <i class="fas fa-copy" aria-hidden="true"></i> Copy
+            </button>
+          </div>
+        </div>
+
+        <!-- Professional Profiles Card -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-globe" aria-hidden="true"></i>
+          </div>
+          <h4>Professional Networks</h4>
+          <p>Connect on LinkedIn for endorsements and view open-source repositories on GitHub.</p>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: auto;">
+            <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer" class="project-link" style="justify-content: flex-start;">
+              <i class="fab fa-linkedin" style="color: var(--primary);" aria-hidden="true"></i> linkedin.com/in/marcos-solomon
+            </a>
+            <a href="https://github.com/marcos-solo" target="_blank" rel="noopener noreferrer" class="project-link" style="justify-content: flex-start;">
+              <i class="fab fa-github" style="color: var(--primary);" aria-hidden="true"></i> github.com/marcos-solo
+            </a>
+          </div>
+        </div>
+
+        <!-- Location & Working Hours Card -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-location-dot" aria-hidden="true"></i>
+          </div>
+          <h4>Location &amp; Availability</h4>
+          <p>Based in Ruiru, Kiambu, Kenya. Operating in East Africa Time (EAT · UTC+3).</p>
+          <div class="status-badge" style="margin-bottom: 0;">
+            <span class="status-dot"></span>
+            <span>Available for On-site / Remote / Hybrid</span>
+          </div>
+        </div>
+
       </div>
 
-      <div class="contact-info" data-aos="fade-up" data-aos-delay="150">
-        <div class="contact-icon">
-          <i class="fas fa-phone-alt"></i>
-        </div>
-        <h3 class="contact-title">Phone</h3>
-        <p class="contact-detail">Available for calls and WhatsApp</p>
-        <a href="tel:+254741840839" class="contact-link">+254 741 840 839</a>
+      <!-- Right Column: Quick Message Form Composer -->
+      <div class="contact-form-card" data-aos="fade-left" data-aos-duration="850">
+        <h3><i class="fas fa-message" style="color: var(--primary); margin-right: 0.5rem;" aria-hidden="true"></i> Direct Message Composer</h3>
+        <p>Compose your message here and click Send to launch your email client with all details formatted automatically.</p>
+
+        <form id="contact-composer-form">
+          <div class="form-group">
+            <label for="sender-name" class="form-label">Your Name</label>
+            <input type="text" id="sender-name" class="form-control" placeholder="e.g. Jane Doe" required />
+          </div>
+
+          <div class="form-group">
+            <label for="sender-email" class="form-label">Your Email</label>
+            <input type="email" id="sender-email" class="form-control" placeholder="e.g. jane@company.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message-subject" class="form-label">Subject</label>
+            <input type="text" id="message-subject" class="form-control" placeholder="e.g. Network &amp; Security Engineering Opportunity" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message-body" class="form-label">Message</label>
+            <textarea id="message-body" class="form-control" placeholder="Provide a brief overview of your organization and the role or engagement you'd like to discuss..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i> Launch Email Client
+          </button>
+        </form>
       </div>
 
-      <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
-        <div class="contact-icon">
-          <i class="fab fa-linkedin"></i>
-        </div>
-        <h3 class="contact-title">LinkedIn</h3>
-        <p class="contact-detail">Let's connect professionally</p>
-        <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/marcos-solomon</a>
-      </div>
-
-      <div class="contact-info" data-aos="fade-up" data-aos-delay="250">
-        <div class="contact-icon">
-          <i class="fab fa-github"></i>
-        </div>
-        <h3 class="contact-title">GitHub</h3>
-        <p class="contact-detail">Check out my projects</p>
-        <a href="https://github.com/marcos-solo" target="_blank" rel="noopener noreferrer" class="contact-link">github.com/marcos-solo</a>
-      </div>
-    </div>
-
-    <div class="social-links" data-aos="fade-up" data-aos-delay="300">
-      <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="https://github.com/marcos-solo" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="mailto:Solomonmarcos34@gmail.com" class="social-link" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
     </div>
   </main>
 
-  <footer class="footer">
-    <p>&copy; <script>document.write(new Date().getFullYear())</script> Marcos Solomon. All rights reserved.</p>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <a href="index.html" class="footer-brand">
+        <i class="fas fa-shield-halved" aria-hidden="true"></i> Marcos Solomon
+      </a>
+      
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="labs.html">Lab Challenges</a>
+        <a href="contact.html">Contact</a>
+        <a href="Marcos_solomon_cv.html">Printable CV</a>
+      </div>
+
+      <div class="social-links">
+        <a href="https://github.com/marcos-solo" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="mailto:solomonmarcos34@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        <a href="tel:+254741840839" class="social-link" aria-label="Phone"><i class="fas fa-phone" aria-hidden="true"></i></a>
+      </div>
+
+      <p class="copyright">&copy; <span class="current-year">2026</span> Marcos Solomon. All rights reserved.</p>
+    </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Contact Form Script -->
   <script>
-    AOS.init({
-      duration: 600,
-      easing: 'ease-out',
-      once: true,
-      offset: 100
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contact-composer-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const name = document.getElementById('sender-name').value;
+          const email = document.getElementById('sender-email').value;
+          const subject = document.getElementById('message-subject').value;
+          const body = document.getElementById('message-body').value;
+
+          const mailtoUri = 'mailto:solomonmarcos34@gmail.com' +
+            '?subject=' + encodeURIComponent(subject) +
+            '&body=' + encodeURIComponent(
+              'Name: ' + name + '\n' +
+              'Email: ' + email + '\n\n' +
+              'Message:\n' + body
+            );
+
+          window.location.href = mailtoUri;
+        });
+      }
     });
   </script>
+
+  <!-- AOS Animation Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 750,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 80,
+        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      });
+    });
+  </script>
+
 </body>
 </html>

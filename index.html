@@ -4,494 +4,302 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
  
-  <title>Home | Marcos Solomon - Network &amp; Security Engineer</title>
+  <title>Marcos Solomon | Network &amp; Security Engineer (L2/L3)</title>
   
-  <!-- SEO -->
-  <meta name="description" content="Marcos Solomon's network and cybersecurity portfolio, featuring secure networking, infrastructure automation, security operations, penetration testing, and digital forensics.">
-  <meta name="keywords" content="Network Engineering, Network Security, Terraform, Ansible, Cybersecurity, SIEM, Penetration Testing, Digital Forensics, Portfolio">
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="Marcos Solomon combines network engineering, defensive security, and infrastructure automation to strengthen enterprise environments. Secure networks. Investigate threats. Automate resilience.">
+  <meta name="keywords" content="Network Engineering, Network Security, Cisco, CCNA, Terraform, Ansible, Cybersecurity, SIEM, Wireshark, Penetration Testing, Digital Forensics, Marcos Solomon">
   <meta name="author" content="Marcos Solomon">
-  <meta property="og:image" content="/images/DSCN4281.JPG">
+  <meta property="og:title" content="Marcos Solomon | Network & Security Engineer (L2/L3)">
+  <meta property="og:description" content="Secure networks. Investigate threats. Automate resilience.">
+  <meta property="og:image" content="images/port1.jpeg">
+  <meta property="og:type" content="website">
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/port1.jpeg" type="image/jpeg">
 
-  <!-- AOS Animation -->
+  <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <!-- Custom Styles -->
-  <style>
-    :root {
-      --primary: #f0a078;
-      --primary-dark: #dc8058;
-      --bg-dark: #111922;
-      --bg-darker: #0a1118;
-      --text-light: #f4f0e9;
-      --text-muted: #b8c1c8;
-      --nav-bg: rgba(13, 21, 29, 0.94);
-      --shadow-color: rgba(240, 160, 120, 0.14);
-      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-      --navbar-height: 80px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(ellipse at top, #1a1a1a, #0a0a0a);
-      color: var(--text-light);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
-    /* Navigation */
-    .navbar {
-      background: var(--nav-bg);
-      padding: 1.2rem 2rem;
-      height: var(--navbar-height);
-      display: flex;
-      justify-content: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .navbar-container {
-      width: 100%;
-      max-width: 1200px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .navbar-brand {
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .navbar-brand i {
-      font-size: 1.4rem;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .navbar a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: var(--transition);
-      position: relative;
-      padding: 0.5rem 0;
-    }
-
-    .navbar a:hover,
-    .navbar a.active {
-      color: var(--primary);
-    }
-
-    .navbar a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: var(--transition);
-    }
-
-    .navbar a:hover::after,
-    .navbar a.active::after {
-      width: 100%;
-    }
-
-    /* Hero Section */
-    .home-section {
-      min-height: calc(100vh - var(--navbar-height));
-      padding-top: var(--navbar-height);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .home-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0,255,170,0.05) 0%, rgba(0,0,0,0) 70%);
-      z-index: -1;
-      animation: pulse 15s infinite alternate;
-    }
-
-    .home-content {
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-      position: relative;
-    }
-
-    .profile-img-container {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 2rem;
-    }
-
-    .profile-img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--primary);
-      box-shadow: 0 0 30px var(--shadow-color);
-      transition: var(--transition);
-      position: relative;
-      z-index: 1;
-    }
-
-    .profile-img-container::before {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      border-radius: 50%;
-      border: 2px dashed var(--primary);
-      animation: spin 20s linear infinite;
-      opacity: 0.7;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin: 1rem 0 0.5rem;
-      background: linear-gradient(to right, var(--primary), #ffffff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      font-weight: 700;
-    }
-
-    .tagline {
-      font-size: 1.5rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-      height: 2rem;
-      font-family: 'Space Mono', monospace;
-    }
-
-    .intro {
-      margin: 1.5rem auto 2.5rem;
-      color: var(--text-muted);
-      max-width: 600px;
-      font-size: 1.1rem;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      background-color: var(--primary);
-      color: #000;
-      padding: 0.9rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: var(--transition);
-      box-shadow: 0 4px 15px var(--shadow-color);
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      margin: 0 0.5rem;
-    }
-
-    .btn:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px var(--shadow-color);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-
-    .btn-outline:hover {
-      background: rgba(0, 255, 170, 0.1);
-    }
-
-    /* Social Links */
-    .socials {
-      margin-top: 3rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
-    .socials a {
-      color: var(--text-muted);
-      font-size: 1.5rem;
-      transition: var(--transition);
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .socials a:hover {
-      color: var(--primary);
-      transform: translateY(-5px);
-      border-color: var(--primary);
-      box-shadow: 0 5px 15px var(--shadow-color);
-    }
-
-    /* Scroll Indicator */
-    .scroll-down {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: var(--text-muted);
-      font-size: 1.5rem;
-      animation: bounce 2s infinite;
-      cursor: pointer;
-    }
-
-    .scroll-down:hover {
-      color: var(--primary);
-    }
-
-    /* Animations */
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.5; }
-      100% { transform: scale(1.2); opacity: 0.8; }
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-      40% { transform: translateY(-20px) translateX(-50%); }
-      60% { transform: translateY(-10px) translateX(-50%); }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .navbar-container {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .navbar {
-        padding: 1rem;
-        height: auto;
-      }
-
-      .home-section {
-        padding-top: 120px; /* Adjusted for stacked navbar */
-        min-height: calc(100vh - 120px);
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .tagline {
-        font-size: 1.2rem;
-      }
-
-      .profile-img {
-        width: 150px;
-        height: 150px;
-      }
-
-      .intro {
-        font-size: 1rem;
-      }
-
-      .btn-container {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .btn {
-        width: 100%;
-        justify-content: center;
-        margin: 0;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .navbar ul {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      .tagline {
-        font-size: 1rem;
-      }
-
-      .home-content {
-        padding: 1rem;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="portfolio-theme.css?v=5">
-  <script src="portfolio-nav.js?v=5" defer></script>
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9076762560898117"
-     crossorigin="anonymous"></script>
+  <!-- Unified Theme Styles -->
+  <link rel="stylesheet" href="portfolio-theme.css?v=6">
+  <script src="portfolio-nav.js?v=6" defer></script>
 </head>
 <body>
 
+  <!-- Background Interactive Cyber Canvas -->
+  <canvas id="cyber-canvas" aria-hidden="true"></canvas>
+
   <!-- Navigation Bar -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <div class="navbar-container">
       <a href="index.html" class="navbar-brand">
-        <i class="fas fa-user-secret"></i> Marcos Solomon
+        <span class="navbar-brand-badge"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
+        <span>Marcos Solomon</span>
       </a>
+      
       <button class="navbar-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-menu" aria-expanded="false">
         <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
+
       <ul class="navbar-menu" id="site-menu" aria-hidden="false">
-        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="labs.html">Lab Challenges</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" class="active" aria-current="page"><i class="fas fa-house" aria-hidden="true"></i> Home</a></li>
+        <li><a href="resume.html"><i class="fas fa-file-lines" aria-hidden="true"></i> Resume</a></li>
+        <li><a href="projects.html"><i class="fas fa-laptop-code" aria-hidden="true"></i> Projects</a></li>
+        <li><a href="labs.html"><i class="fas fa-flask" aria-hidden="true"></i> Lab Challenges</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
       </ul>
+      
       <button class="nav-backdrop" type="button" aria-label="Close navigation menu" aria-hidden="true" tabindex="-1"></button>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section id="home" class="home-section">
-    <div class="home-content" data-aos="fade-up" data-aos-delay="100">
-      <div class="profile-img-container">
-        <img src="images/port1.jpeg" alt="Marcos Solomon outdoors" class="profile-img" fetchpriority="high" />
-      </div>
-      <div class="hero-copy">
+    <div class="home-content">
+      
+      <div class="hero-copy" data-aos="fade-right" data-aos-duration="900">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>Open for L2/L3 Network &amp; Security Roles</span>
+        </div>
+
         <span class="eyebrow">Network &amp; Security Engineer</span>
         <h1>Marcos Solomon</h1>
-        <p class="tagline">Secure networks. Clear investigations. Repeatable infrastructure.</p>
+        <p class="tagline">Secure networks. Investigate threats. Automate resilience.</p>
+        
         <p class="intro">
-          I secure and troubleshoot networks, investigate security incidents, and automate infrastructure with Terraform and Ansible.
+          I combine network engineering, defensive security, and infrastructure automation to strengthen enterprise environments. I analyze security telemetry, investigate suspicious activity, apply network security controls, and build repeatable infrastructure using Terraform and Ansible. I also deliver corporate and technical training in CCNA-aligned networking and defensive security operations.
         </p>
-        <div class="hero-tags" aria-label="Areas of expertise">
-          <span>Network Security</span>
-          <span>Terraform</span>
-          <span>Ansible</span>
-          <span>Security Operations</span>
+
+        <div class="hero-tags" aria-label="Focus Areas">
+          <span><i class="fas fa-shield-virus" aria-hidden="true"></i> SOC Operations</span>
+          <span><i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i> Security Incident Investigation</span>
+          <span><i class="fas fa-lock" aria-hidden="true"></i> Network Security</span>
+          <span><i class="fas fa-shield-halved" aria-hidden="true"></i> Threat Detection &amp; Analysis</span>
+          <span><i class="fas fa-code-branch" aria-hidden="true"></i> Infrastructure Automation</span>
+          <span><i class="fas fa-chalkboard-user" aria-hidden="true"></i> Technical Training</span>
         </div>
+
         <div class="btn-container">
-          <a href="resume.html" class="btn">
-            <i class="fas fa-file-lines"></i> View Resume
+          <a href="resume.html" class="btn btn-primary">
+            <i class="fas fa-file-shield" aria-hidden="true"></i> View Resume &amp; Experience
           </a>
-          <a href="#selected-work" class="btn btn-outline">
-            <i class="fas fa-star"></i> See Selected Work
+          <a href="#terminal-section" class="btn btn-outline">
+            <i class="fas fa-terminal" aria-hidden="true"></i> Interactive Terminal
+          </a>
+          <a href="#selected-work" class="btn btn-ghost">
+            <i class="fas fa-layer-group" aria-hidden="true"></i> Selected Work
           </a>
         </div>
+
         <div class="socials">
-          <a href="https://github.com/marcos-solo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="fab fa-github"></i>
+          <a href="https://github.com/marcos-solo" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+            <i class="fab fa-github" aria-hidden="true"></i>
           </a>
-          <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
+          <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
           </a>
-          <a href="mailto:solomonmarcos34@gmail.com" aria-label="Email">
-            <i class="fas fa-envelope"></i>
+          <a href="mailto:solomonmarcos34@gmail.com" aria-label="Send Email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="tel:+254741840839" aria-label="Call Direct Phone">
+            <i class="fas fa-phone" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/254741840839" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Chat">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
           </a>
         </div>
+      </div>
+
+      <div class="hero-visual" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+        <div class="profile-card-wrapper">
+          
+          <div class="floating-badge badge-top">
+            <div class="floating-badge-icon">
+              <i class="fas fa-server" aria-hidden="true"></i>
+            </div>
+            <div class="floating-badge-text">
+              <span class="floating-badge-title">Infrastructure</span>
+              <span class="floating-badge-value">L2/L3 Routing · VPN</span>
+            </div>
+          </div>
+
+          <div class="profile-img-container">
+            <img src="images/port1.jpeg" alt="Marcos Solomon - Network & Security Engineer" class="profile-img" fetchpriority="high" />
+          </div>
+
+          <div class="floating-badge badge-bottom">
+            <div class="floating-badge-icon">
+              <i class="fas fa-shield-halved" aria-hidden="true"></i>
+            </div>
+            <div class="floating-badge-text">
+              <span class="floating-badge-title">Defense &amp; Ops</span>
+              <span class="floating-badge-value">SOC · SIEM · Wireshark</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Metrics Strip -->
+  <section class="metrics-strip" aria-label="Professional Highlights">
+    <div class="metrics-grid" data-aos="fade-up" data-aos-duration="800">
+      <div class="metric-item">
+        <span class="metric-number">L2 / L3</span>
+        <span class="metric-label">Routing, Switching &amp; Firewall Administration</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-number">10+</span>
+        <span class="metric-label">Infrastructure, IaC &amp; Security Projects</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-number">20+</span>
+        <span class="metric-label">Documented Hands-On Lab Investigations</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-number">IAT</span>
+        <span class="metric-label">Corporate &amp; Technical Trainer in Networking</span>
       </div>
     </div>
   </section>
 
-  <section class="featured-work" id="selected-work" aria-labelledby="selected-work-title">
-    <div class="featured-work-header">
-      <p class="eyebrow">Selected work</p>
-      <h2 id="selected-work-title">Practical work across security and infrastructure</h2>
-      <p>Three examples that show how I assess systems, investigate incidents, and build repeatable network infrastructure.</p>
+  <!-- Interactive Cyber Terminal Emulator -->
+  <section class="terminal-section" id="terminal-section" aria-labelledby="terminal-title">
+    <div class="section-header" data-aos="fade-up">
+      <p class="eyebrow">Interactive Environment</p>
+      <h2 id="terminal-title">Engineer Shell &amp; Diagnostics</h2>
+      <p class="section-subtitle">Query my technical skill set, simulated network topology, and security operations directly from this interactive terminal session.</p>
     </div>
-    <div class="featured-work-grid">
-      <a class="featured-work-card" href="projects.html#security-assessment">
-        <span class="featured-work-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
-        <h3>Business systems security assessment</h3>
-        <p>Reviewed authentication, access controls, and input handling; documented findings and remediation recommendations.</p>
-        <span class="featured-work-link">Assessment details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
-      </a>
-      <a class="featured-work-card" href="projects.html#blue-team-investigations">
-        <span class="featured-work-icon"><i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i></span>
-        <h3>Blue-team investigations</h3>
-        <p>Investigated BEC, endpoint, and network evidence through challenges including BEC-KY, Squid Game, Cap, Source, and The Report II.</p>
-        <span class="featured-work-link">Investigation details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
-      </a>
-      <a class="featured-work-card" href="projects.html#network-infrastructure-as-code">
-        <span class="featured-work-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></span>
-        <h3>Secure network infrastructure as code</h3>
-        <p>Combined Terraform provisioning and Ansible configuration with segmentation, controlled access, and documented changes.</p>
-        <span class="featured-work-link">Infrastructure details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
-      </a>
+
+    <div class="terminal-window" id="terminal-window" data-aos="zoom-in" data-aos-duration="800">
+      <div class="terminal-header">
+        <div class="terminal-controls">
+          <span class="terminal-dot dot-red" aria-hidden="true"></span>
+          <span class="terminal-dot dot-yellow" aria-hidden="true"></span>
+          <span class="terminal-dot dot-green" aria-hidden="true"></span>
+        </div>
+        <div class="terminal-title">
+          <i class="fas fa-terminal" aria-hidden="true"></i>
+          <span>marcos@sec-net-eng: ~ (bash)</span>
+        </div>
+        <span class="terminal-badge">LIVE SESSION</span>
+      </div>
+
+      <div class="terminal-body" tabindex="0" aria-label="Terminal screen output">
+        <div class="terminal-output">
+          <div class="terminal-line accent">=============================================================</div>
+          <div class="terminal-line accent">  MARCOS SOLOMON // NETWORK &amp; SECURITY ENGINEER (L2/L3)</div>
+          <div class="terminal-line accent">=============================================================</div>
+          <div class="terminal-line info">Session initialized. Type <span class="cmd-echo">help</span> to view available diagnostic commands.</div>
+          <div class="terminal-line info">Or click any of the quick-run pills below.</div>
+          <div class="terminal-line">&nbsp;</div>
+        </div>
+        <form class="terminal-form" autocomplete="off">
+          <div class="terminal-input-row">
+            <span class="terminal-prompt"><span class="terminal-prompt-user">marcos@solomon</span>:<span class="terminal-prompt-path">~</span>$</span>
+            <input type="text" class="terminal-input" placeholder="Type a command (e.g., nmap -sV, cat skills.txt)..." aria-label="Terminal input" spellcheck="false" />
+          </div>
+        </form>
+      </div>
+
+      <div class="terminal-actions-bar">
+        <span class="terminal-actions-label">Quick Commands:</span>
+        <button type="button" class="terminal-cmd-btn" data-cmd="whoami">whoami</button>
+        <button type="button" class="terminal-cmd-btn" data-cmd="cat skills.txt">cat skills.txt</button>
+        <button type="button" class="terminal-cmd-btn" data-cmd="nmap -sV">nmap -sV</button>
+        <button type="button" class="terminal-cmd-btn" data-cmd="ping defense">ping defense</button>
+        <button type="button" class="terminal-cmd-btn" data-cmd="projects">projects</button>
+        <button type="button" class="terminal-cmd-btn" data-cmd="contact">contact</button>
+        <button type="button" class="terminal-cmd-btn" data-cmd="clear">clear</button>
+      </div>
     </div>
-    <p class="featured-work-more"><a href="projects.html">Browse all projects <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
   </section>
 
-  <!-- AOS Animation Library -->
+  <!-- Featured / Selected Work Section -->
+  <section class="featured-work" id="selected-work" aria-labelledby="selected-work-title">
+    <div class="featured-work-header" data-aos="fade-up">
+      <p class="eyebrow">Selected Engineering Work</p>
+      <h2 id="selected-work-title">Practical Impact Across Security &amp; Infrastructure</h2>
+      <p>Three core examples demonstrating system security assessments, blue-team threat investigations, and repeatable Infrastructure-as-Code automation.</p>
+    </div>
+
+    <div class="featured-work-grid">
+      
+      <a class="featured-work-card" href="projects.html#security-assessment" data-aos="fade-up" data-aos-delay="100">
+        <span class="featured-work-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
+        <h3>Business Systems Security Assessment</h3>
+        <p>Conducted authorized reviews of authentication, access controls, and session handling for Bethsaida Medicare Institute and WebSeal International with comprehensive remediation roadmaps.</p>
+        <span class="featured-work-link">Assessment details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+
+      <a class="featured-work-card" href="projects.html#blue-team-investigations" data-aos="fade-up" data-aos-delay="200">
+        <span class="featured-work-icon"><i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i></span>
+        <h3>Blue-Team Threat Investigations</h3>
+        <p>Investigated business email compromise (BEC), endpoint telemetry, and packet-level evidence across BTLO scenarios including BEC-KY, Squid Game, Cap, Source, and The Report II.</p>
+        <span class="featured-work-link">Investigation details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+
+      <a class="featured-work-card" href="projects.html#network-infrastructure-as-code" data-aos="fade-up" data-aos-delay="300">
+        <span class="featured-work-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></span>
+        <h3>Secure Network Infrastructure as Code</h3>
+        <p>Automated network topology provisioning with Terraform and consistent host security configuration with Ansible, enforcing zero-trust segmentation and versioned change control.</p>
+        <span class="featured-work-link">Infrastructure details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+
+    </div>
+
+    <div class="featured-work-more" data-aos="fade-up">
+      <a href="projects.html">
+        <span>Explore All 10 Projects</span>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <a href="index.html" class="footer-brand">
+        <i class="fas fa-shield-halved" aria-hidden="true"></i> Marcos Solomon
+      </a>
+      
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="labs.html">Lab Challenges</a>
+        <a href="contact.html">Contact</a>
+        <a href="Marcos_solomon_cv.html">Printable CV</a>
+      </div>
+
+      <div class="social-links">
+        <a href="https://github.com/marcos-solo" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="mailto:solomonmarcos34@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        <a href="tel:+254741840839" class="social-link" aria-label="Phone"><i class="fas fa-phone" aria-hidden="true"></i></a>
+      </div>
+
+      <p class="copyright">&copy; <span class="current-year">2026</span> Marcos Solomon. All rights reserved. Built with precision for Network &amp; Security Engineering.</p>
+    </div>
+  </footer>
+
+  <!-- AOS Animation Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       AOS.init({
-        duration: 800,
+        duration: 750,
         easing: 'ease-in-out',
         once: true,
-        offset: 100,
+        offset: 80,
         disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
       });
     });

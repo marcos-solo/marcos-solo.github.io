@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Network &amp; Security Engineer (L2/L3) | Marcos Solomon</title>
+  <title>Resume | Marcos Solomon · Network &amp; Security Engineer (L2/L3)</title>
   
   <!-- SEO -->
-  <meta name="description" content="Marcos Solomon's network and security engineering resume, covering routing, switching, firewalls, VPNs, security operations, infrastructure automation, and training.">
-  <meta name="keywords" content="Network Engineering, Network Security, Terraform, Ansible, Cybersecurity, SIEM, Resume, Certifications">
+  <meta name="description" content="Resume of Marcos Solomon: Network & Security Engineer (L2/L3) with experience in Cisco routing, switching, firewalls, IPSec/SSL VPNs, SIEM, and Terraform/Ansible automation.">
+  <meta name="keywords" content="Marcos Solomon Resume, Network Engineer Resume, Network Security Engineer, CCNA, Terraform, Ansible, Cybersecurity, SIEM, IAT Trainer">
   <meta name="author" content="Marcos Solomon">
 
   <!-- Fonts & Icons -->
@@ -16,640 +16,320 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
-  <!-- AOS Animation -->
+  <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-
-  <style>
-    :root {
-      --primary: #f0a078;
-      --primary-dark: #dc8058;
-      --bg-dark: #111922;
-      --bg-darker: #0a1118;
-      --card-bg: #192530;
-      --card-border: #344452;
-      --text-light: #f4f0e9;
-      --text-muted: #b8c1c8;
-      --nav-bg: rgba(13, 21, 29, 0.94);
-      --tag-bg: rgba(240, 160, 120, 0.12);
-      --tag-border: rgba(240, 160, 120, 0.32);
-      --shadow-color: rgba(240, 160, 120, 0.14);
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-light);
-      line-height: 1.6;
-    }
-
-    /* Navbar */
-    .navbar {
-      background: var(--nav-bg);
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .navbar-container {
-      width: 100%;
-      max-width: 1200px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .navbar-brand {
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .navbar-brand i {
-      font-size: 1.4rem;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      padding: 0;
-      margin: 0;
-    }
-
-    .navbar a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: var(--transition);
-      position: relative;
-      padding: 0.5rem 0;
-    }
-
-    .navbar a:hover,
-    .navbar a.active,
-    .navbar a[aria-current="page"] {
-      color: var(--primary);
-    }
-
-    .navbar a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: var(--transition);
-    }
-
-    .navbar a:hover::after,
-    .navbar a.active::after,
-    .navbar a[aria-current="page"]::after {
-      width: 100%;
-    }
-
-    /* Main Content */
-    .section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    h2 {
-      font-size: 2.8rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-weight: 700;
-      position: relative;
-      display: inline-block;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
-
-    .section-subtitle {
-      color: var(--text-muted);
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-    }
-
-    /* Resume Sections */
-    .resume-section {
-      margin-bottom: 3rem;
-      background: var(--card-bg);
-      border-radius: 1rem;
-      padding: 2rem;
-      border: 1px solid var(--card-border);
-      transition: var(--transition);
-    }
-
-    .resume-section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px var(--shadow-color);
-    }
-
-    .resume-section a {
-      color: var(--primary);
-    }
-
-    .resume-section a:hover {
-      color: var(--primary-dark);
-    }
-
-    h3 {
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    h3 i {
-      font-size: 1.2rem;
-    }
-
-    .timeline-item {
-      margin-bottom: 2rem;
-      position: relative;
-      padding-left: 2.5rem;
-    }
-
-    .timeline-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 0.5rem;
-      top: 0.4rem;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--primary);
-    }
-
-    .timeline-item::after {
-      content: '';
-      position: absolute;
-      left: 1rem;
-      top: 1.6rem;
-      bottom: -2rem;
-      width: 2px;
-      background: var(--primary);
-      opacity: 0.3;
-    }
-
-    .timeline-item:last-child::after {
-      display: none;
-    }
-
-    .timeline-date {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    .timeline-title {
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-light);
-    }
-
-    .timeline-subtitle {
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-      font-style: italic;
-    }
-
-    .timeline-description {
-      margin-top: 0.8rem;
-    }
-
-    /* Skills Section */
-    .skills-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .skill-category {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 0.8rem;
-      padding: 1.5rem;
-    }
-
-    .skill-category h4 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-
-    .skill-list {
-      list-style: none;
-    }
-
-    .skill-list li {
-      margin-bottom: 0.7rem;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    .skill-list li::before {
-      content: '▹';
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-    }
-
-    /* Download Button */
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      background-color: var(--primary);
-      color: #000;
-      font-weight: 600;
-      padding: 0.9rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      margin: 2rem auto;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      box-shadow: 0 4px 15px rgba(0, 255, 170, 0.3);
-    }
-
-    .download-btn:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0, 255, 170, 0.4);
-    }
-
-    .download-btn i {
-      font-size: 1.2rem;
-    }
-
-    .btn-container {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 3rem 1rem;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      border-top: 1px solid #222;
-      margin-top: 2rem;
-      background: var(--bg-darker);
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .social-link {
-      color: var(--text-muted);
-      font-size: 1.2rem;
-      transition: var(--transition);
-    }
-
-    .social-link:hover {
-      color: var(--primary);
-      transform: translateY(-3px);
-    }
-
-    .copyright {
-      font-size: 0.85rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      .skills-container {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      }
-    }
-
-    @media (max-width: 768px) {
-      .navbar-container {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      h2 {
-        font-size: 2.2rem;
-      }
-
-      .section-subtitle {
-        font-size: 1rem;
-      }
-
-      .resume-section {
-        padding: 1.5rem;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .navbar ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-      }
-
-      .skills-container {
-        grid-template-columns: 1fr;
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="portfolio-theme.css?v=5">
-  <script src="portfolio-nav.js?v=5" defer></script>
+  <!-- Unified Theme Styles -->
+  <link rel="stylesheet" href="portfolio-theme.css?v=6">
+  <script src="portfolio-nav.js?v=6" defer></script>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
+  <!-- Background Interactive Cyber Canvas -->
+  <canvas id="cyber-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <div class="navbar-container">
       <a href="index.html" class="navbar-brand">
-        <i class="fas fa-user-secret"></i> Marcos Solomon
+        <span class="navbar-brand-badge"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
+        <span>Marcos Solomon</span>
       </a>
+      
       <button class="navbar-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-menu" aria-expanded="false">
         <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
+
       <ul class="navbar-menu" id="site-menu" aria-hidden="false">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="resume.html" class="active" aria-current="page">Resume</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="labs.html">Lab Challenges</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html"><i class="fas fa-house" aria-hidden="true"></i> Home</a></li>
+        <li><a href="resume.html" class="active" aria-current="page"><i class="fas fa-file-lines" aria-hidden="true"></i> Resume</a></li>
+        <li><a href="projects.html"><i class="fas fa-laptop-code" aria-hidden="true"></i> Projects</a></li>
+        <li><a href="labs.html"><i class="fas fa-flask" aria-hidden="true"></i> Lab Challenges</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
       </ul>
+      
       <button class="nav-backdrop" type="button" aria-label="Close navigation menu" aria-hidden="true" tabindex="-1"></button>
     </div>
   </nav>
 
   <!-- Resume Section -->
   <main class="section">
-    <div class="section-header" data-aos="fade-up">
+    <header class="section-header" data-aos="fade-up">
+      <p class="eyebrow">Professional Background</p>
       <h2>Network &amp; Security Resume</h2>
-      <p class="section-subtitle">Network and security engineer focused on secure infrastructure, defensive operations, and practical technical training.</p>
-    </div>
+      <p class="section-subtitle">Secure networks. Investigate threats. Automate resilience.</p>
+    </header>
 
-    <!-- Download CV Button -->
-    <div class="btn-container" data-aos="fade-up" data-aos-delay="100">
-      <a href="Marcos_solomon_cv.html" class="download-btn">
-        <i class="fas fa-print"></i> View Printable CV
+    <!-- Quick Action Bar -->
+    <div class="btn-container" style="justify-content: center; margin-bottom: 2.75rem;" data-aos="fade-up" data-aos-delay="100">
+      <a href="Marcos_solomon_cv.html" class="btn btn-primary">
+        <i class="fas fa-print" aria-hidden="true"></i> View Printable A4 CV
       </a>
+      <button type="button" class="btn btn-ghost" data-copy="solomonmarcos34@gmail.com" data-label="Email">
+        <i class="fas fa-copy" aria-hidden="true"></i> Copy Email
+      </button>
     </div>
 
-    <section class="resume-section" data-aos="fade-up" data-aos-delay="150">
-      <h3><i class="fas fa-user-shield"></i> Professional Profile</h3>
-      <p>Network &amp; Security Engineer with hands-on experience in enterprise routing, switching, firewall administration, and security operations. Skilled in secure network segmentation, LAN/WAN/VPN troubleshooting, firewall rules, IPSec/SSL VPN, SOC monitoring, threat hunting, and incident response. Combines cybersecurity knowledge with practical network engineering to deliver resilient, secure, and well-documented infrastructure, and mentors junior engineers.</p>
-      <p><strong>Location:</strong> Ruiru, Kiambu, Kenya</p>
-      <p><strong>Phone:</strong> <a href="tel:+254741840839">(254) 741840839</a> &nbsp; <strong>Email:</strong> <a href="mailto:Solomonmarcos34@gmail.com">Solomonmarcos34@gmail.com</a></p>
-      <p><strong>Website:</strong> <a href="https://marcos-solo.github.io" target="_blank" rel="noopener noreferrer">marcos-solo.github.io</a> &nbsp; <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer">linkedin.com/in/marcos-solomon</a></p>
+    <!-- 1. Professional Profile -->
+    <section class="resume-section" data-aos="fade-up" data-aos-delay="125">
+      <h3><i class="fas fa-user-shield" aria-hidden="true"></i> Professional Profile</h3>
+      <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.25rem;">
+        I combine network engineering, defensive security, and infrastructure automation to strengthen enterprise environments. I analyze security telemetry, investigate suspicious activity, apply network security controls, and build repeatable infrastructure using Terraform and Ansible. I also deliver corporate and technical training in CCNA-aligned networking and defensive security operations.
+      </p>
+
+      <div class="hero-tags" style="margin-bottom: 1.25rem;" aria-label="Focus Areas">
+        <span><i class="fas fa-shield-virus" aria-hidden="true"></i> SOC Operations</span>
+        <span><i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i> Security Incident Investigation</span>
+        <span><i class="fas fa-lock" aria-hidden="true"></i> Network Security</span>
+        <span><i class="fas fa-shield-halved" aria-hidden="true"></i> Threat Detection &amp; Analysis</span>
+        <span><i class="fas fa-code-branch" aria-hidden="true"></i> Infrastructure Automation</span>
+        <span><i class="fas fa-chalkboard-user" aria-hidden="true"></i> Technical Training</span>
+      </div>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem 2rem; font-size: 0.95rem; color: var(--text-muted); padding-top: 0.75rem; border-top: 1px solid var(--divider);">
+        <div><strong style="color: var(--primary);"><i class="fas fa-location-dot"></i> Location:</strong> Ruiru, Kiambu, Kenya (UTC+3)</div>
+        <div><strong style="color: var(--primary);"><i class="fas fa-phone"></i> Phone:</strong> <a href="tel:+254741840839" style="color: var(--cyber-cyan); text-decoration: none;">+254 741 840 839</a></div>
+        <div><strong style="color: var(--primary);"><i class="fas fa-envelope"></i> Email:</strong> <a href="mailto:solomonmarcos34@gmail.com" style="color: var(--cyber-cyan); text-decoration: none;">solomonmarcos34@gmail.com</a></div>
+        <div><strong style="color: var(--primary);"><i class="fab fa-linkedin"></i> LinkedIn:</strong> <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer" style="color: var(--cyber-cyan); text-decoration: none;">in/marcos-solomon</a></div>
+      </div>
     </section>
 
-    <section class="resume-section" data-aos="fade-up" data-aos-delay="175">
-      <h3><i class="fas fa-briefcase"></i> Professional Experience</h3>
+    <!-- 2. Professional Experience -->
+    <section class="resume-section" data-aos="fade-up" data-aos-delay="150">
+      <h3><i class="fas fa-briefcase" aria-hidden="true"></i> Professional Experience</h3>
+      
       <div class="timeline-item">
         <span class="timeline-date">March 2026 – Present</span>
         <h4 class="timeline-title">Corporate &amp; Technical Trainer (Networking &amp; Security)</h4>
-        <span class="timeline-subtitle">Institute of Advanced Technology (IAT)</span>
+        <div class="timeline-subtitle">Institute of Advanced Technology (IAT) · Nairobi, Kenya</div>
         <ul>
-          <li>Deliver CCNA-aligned training in routing, switching, VLANs, STP, OSPF, NAT, and ACLs, aligned with enterprise L2 support standards.</li>
-          <li>Run practical secure router and switch configuration, firewall, IPSec/SSL VPN, segmentation, and least-privilege labs.</li>
-          <li>Guide structured root-cause analysis of simulated LAN/WAN/WLAN outages using Wireshark and packet-level diagnostics.</li>
-          <li>Contribute lab exercises and assessments, including documentation and change-management practices.</li>
+          <li>Deliver CCNA-aligned corporate and technical training in enterprise routing, switching, VLANs, STP, OSPF, NAT, and ACLs, aligned with enterprise L2 support standards.</li>
+          <li>Lead structured practical labs in router/switch configuration, Cisco ASA / FortiGate firewalls, IPSec/SSL VPN tunnels, network segmentation, and least-privilege security controls.</li>
+          <li>Guide root-cause analysis (RCA) workshops diagnosing simulated enterprise LAN/WAN/WLAN outages using Wireshark and packet telemetry.</li>
+          <li>Develop comprehensive lab curricula, technical assessments, network topology diagrams, and formal change-management documentation.</li>
         </ul>
       </div>
+
       <div class="timeline-item">
         <span class="timeline-date">May 2025 – August 2025</span>
         <h4 class="timeline-title">Cybersecurity Analyst Trainee (Network Security Focus)</h4>
-        <span class="timeline-subtitle">Cybershujaa – Kenya</span>
+        <div class="timeline-subtitle">Cybershujaa · Kenya</div>
         <ul>
-          <li>Monitored simulated enterprise environments with SIEM platforms, Wireshark, and network security tools to detect anomalies and potential intrusions.</li>
-          <li>Applied firewall rules, analyzed IPSec/SSL VPN traffic, and assisted with secure-connectivity troubleshooting.</li>
-          <li>Performed threat detection, incident response, and malware analysis in simulated attack scenarios; documented findings and remediation.</li>
-          <li>Investigated multi-stage breach scenarios using MITRE ATT&amp;CK and correlated network and endpoint telemetry.</li>
-          <li>Graduated from the Security Analyst track with a focus on secure network design and defensive operations.</li>
+          <li>Monitored simulated enterprise network perimeters utilizing SIEM platforms (Splunk), Wireshark, and IDS/IPS to detect anomalies, beaconing, and malicious lateral movement.</li>
+          <li>Implemented stateful firewall rules, analyzed IPSec and SSL VPN traffic flows, and resolved complex connectivity issues in segmented multi-VLAN environments.</li>
+          <li>Executed threat detection, incident triage, and malware analysis across simulated breach scenarios; authored technical post-incident remediation reports.</li>
+          <li>Investigated multi-stage attack chains mapped directly to the MITRE ATT&amp;CK framework, correlating network packet captures with endpoint Event Log telemetry.</li>
+          <li>Graduated from the Security Analyst track with specialized commendation in secure network design and defensive operations.</li>
         </ul>
       </div>
+
       <div class="timeline-item">
         <span class="timeline-date">May 2024 – August 2025</span>
         <h4 class="timeline-title">Network Penetration Tester &amp; Security Trainer</h4>
-        <span class="timeline-subtitle">Society of Forensics and Researchers Association – Kenya</span>
+        <div class="timeline-subtitle">Society of Forensics and Researchers Association · Kenya</div>
         <ul>
-          <li>Conducted network and web-system assessments, identified segmentation and access-control gaps, and implemented safeguards.</li>
-          <li>Reviewed firewall rule sets and ACLs and recommended changes to reduce lateral-movement risk.</li>
-          <li>Trained corporate personnel on network security, secure remote access, and incident reporting.</li>
-          <li>Prepared technical reports on network risks and remediation for executive stakeholders.</li>
+          <li>Conducted authorized network and web application penetration tests, uncovering segmentation gaps and access-control bypasses.</li>
+          <li>Audited enterprise firewall rule bases and router ACLs, recommending remediation steps to neutralize lateral movement paths.</li>
+          <li>Trained technical staff on network defense fundamentals, secure remote telework configurations, and rapid incident escalation protocols.</li>
+          <li>Delivered comprehensive vulnerability reports detailing exploitation vectors, CVSS severity ratings, and remediation roadmaps to executive leadership.</li>
         </ul>
       </div>
+
       <div class="timeline-item">
         <span class="timeline-date">July 2024 – January 2025</span>
         <h4 class="timeline-title">System Designer &amp; Security Developer</h4>
-        <span class="timeline-subtitle">Bethsaida Medicare Institute</span>
+        <div class="timeline-subtitle">Bethsaida Medicare Institute · Kenya</div>
         <ul>
-          <li>Designed, developed, and deployed the institute’s primary website with embedded security measures.</li>
-          <li>Assessed the institute’s business systems, reviewing authentication, access controls, and input handling; documented findings and remediation recommendations.</li>
-          <li>Strengthened web infrastructure through regular security reviews and patching.</li>
+          <li>Architected, developed, and deployed the institute's primary web infrastructure incorporating defensive coding standards and secure HTTP headers.</li>
+          <li>Assessed internal business systems, reviewing user authentication flows, session handling, access controls, and input validation.</li>
+          <li>Strengthened perimeter defense through scheduled vulnerability scanning, patch verification, and server configuration hardening.</li>
         </ul>
       </div>
     </section>
 
+    <!-- 3. Network Engineering & Security Core Competencies -->
+    <section class="resume-section" data-aos="fade-up" data-aos-delay="175">
+      <h3><i class="fas fa-network-wired" aria-hidden="true"></i> Technical Skills Matrix</h3>
+      
+      <div class="skills-container">
+        <div class="skill-category">
+          <h4><i class="fas fa-route" aria-hidden="true"></i> Routing &amp; Switching</h4>
+          <ul>
+            <li>VLANs, 802.1Q, Inter-VLAN Routing</li>
+            <li>Spanning Tree Protocol (STP / RSTP)</li>
+            <li>OSPF Multi-Area &amp; BGP Core Basics</li>
+            <li>NAT / PAT &amp; Access Control Lists (ACLs)</li>
+            <li>LAN / WAN / WLAN Root-Cause Diagnostics</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h4><i class="fas fa-shield-halved" aria-hidden="true"></i> Network Security &amp; VPN</h4>
+          <ul>
+            <li>Stateful Firewall Administration</li>
+            <li>IPSec Site-to-Site &amp; SSL Remote Access VPN</li>
+            <li>Zero-Trust Network Segmentation</li>
+            <li>802.1X Port Authentication Concepts</li>
+            <li>IDS / IPS Baseline Tuning &amp; Defense</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h4><i class="fas fa-code-branch" aria-hidden="true"></i> Automation &amp; IaC</h4>
+          <ul>
+            <li>Terraform (Network &amp; Cloud Provisioning)</li>
+            <li>Ansible (Host Configuration &amp; Hardening)</li>
+            <li>Bash &amp; Python Scripting for Automation</li>
+            <li>GitOps Version Control &amp; Change Logs</li>
+            <li>Network Topology Documentation</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h4><i class="fas fa-chart-line" aria-hidden="true"></i> SOC &amp; Threat Defense</h4>
+          <ul>
+            <li>Wireshark Deep Packet Telemetry</li>
+            <li>SIEM Operations (Splunk &amp; SPL Queries)</li>
+            <li>MITRE ATT&amp;CK Framework TTP Mapping</li>
+            <li>Incident Triage, RCA &amp; Threat Hunting</li>
+            <li>Digital Forensics Artifact Collection</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Certifications & Verified Training -->
     <section class="resume-section" data-aos="fade-up" data-aos-delay="200">
-      <h3><i class="fas fa-network-wired"></i> Network Engineering &amp; Security</h3>
-      <div class="skills-container">
-        <div class="skill-category">
-          <h4>Routing &amp; Switching</h4>
-          <ul class="skill-list">
-            <li>VLANs, STP, OSPF, BGP basics</li>
-            <li>NAT, ACLs, inter-VLAN routing</li>
-            <li>LAN/WAN/WLAN troubleshooting</li>
-          </ul>
+      <h3><i class="fas fa-certificate" aria-hidden="true"></i> Certifications &amp; Accreditations</h3>
+      
+      <div class="certs-grid">
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-shield-virus" aria-hidden="true"></i></div>
+          <div class="cert-info">
+            <h5>Security Analyst Certification</h5>
+            <span>Cyber Shujaa · Kenya</span>
+          </div>
         </div>
-        <div class="skill-category">
-          <h4>Network Security</h4>
-          <ul class="skill-list">
-            <li>Firewall rules and VPN administration</li>
-            <li>IPSec/SSL VPN and secure remote access</li>
-            <li>Segmentation, 802.1X concepts, IDS/IPS awareness, zero trust</li>
-          </ul>
+
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fab fa-google" aria-hidden="true"></i></div>
+          <div class="cert-info">
+            <h5>Google Cloud Security Analyst</h5>
+            <span>Google Cloud Credentials</span>
+          </div>
         </div>
-        <div class="skill-category">
-          <h4>Automation &amp; Operations</h4>
-          <ul class="skill-list">
-            <li>Terraform infrastructure provisioning</li>
-            <li>Ansible network configuration</li>
-            <li>Cloud and network integration</li>
-            <li>Network documentation and change management</li>
-          </ul>
+
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
+          <div class="cert-info">
+            <h5>CCNA (Routing &amp; Switching)</h5>
+            <span>In Progress / Core Modules Completed</span>
+          </div>
         </div>
-        <div class="skill-category">
-          <h4>Monitoring &amp; Response</h4>
-          <ul class="skill-list">
-            <li>Wireshark, packet analysis, and SIEM</li>
-            <li>SOC monitoring, threat hunting, incident response</li>
-            <li>Root-cause analysis and remediation</li>
-          </ul>
+
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-cubes" aria-hidden="true"></i></div>
+          <div class="cert-info">
+            <h5>SOC Operations Specialization</h5>
+            <span>Coursera Verified</span>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
+          <div class="cert-info">
+            <h5>Network Security Specialization</h5>
+            <span>Coursera Verified</span>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-user-secret" aria-hidden="true"></i></div>
+          <div class="cert-info">
+            <h5>Certified Ethical Hacker (CEH)</h5>
+            <span>Alison Verified</span>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-microscope" aria-hidden="true"></i></div>
+          <div class="cert-info">
+            <h5>Computer &amp; Digital Forensics</h5>
+            <span>Udemy Masterclass</span>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fab fa-python" aria-hidden="true"></i></div>
+          <div class="cert-info">
+            <h5>Real Ethical Hacking with Python</h5>
+            <span>Udemy (PYCEH23+)</span>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- 5. Education -->
     <section class="resume-section" data-aos="fade-up" data-aos-delay="225">
-      <h3><i class="fas fa-diagram-project"></i> Projects &amp; Hands-On Labs</h3>
-      <div class="timeline-item">
-        <h4 class="timeline-title">Blue Team Labs Online</h4>
-        <p class="timeline-description">BEC-KY, Squid Game, Cap, Source, ATT&amp;CK, and The Report II.</p>
+      <h3><i class="fas fa-graduation-cap" aria-hidden="true"></i> Education</h3>
+      <div class="timeline-item" style="margin-bottom: 0;">
+        <span class="timeline-date">Graduated 2025</span>
+        <h4 class="timeline-title">Bachelor of Science in Business Information Technology (BBIT)</h4>
+        <div class="timeline-subtitle">University of Embu · Embu, Kenya</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Comprehensive coursework covering Data Communications &amp; Computer Networks, Systems Administration, Database Engineering, Information Security, and Enterprise Software Architecture.
+        </p>
       </div>
-      <div class="timeline-item">
-        <h4 class="timeline-title">Penetration Testing Labs</h4>
-        <p class="timeline-description">Pwned machines on Hack The Box and TryHackMe, including Cap and The Report II.</p>
-      </div>
-      <div class="timeline-item">
-        <h4 class="timeline-title">Forensics &amp; CTFs</h4>
-        <p class="timeline-description">PicoCTF and Sherlocks, including Operation Blackout.</p>
-      </div>
-      <div class="timeline-item">
-        <h4 class="timeline-title">Network Security &amp; Automation Labs</h4>
-        <p class="timeline-description">Firewall rule design, VPN configuration, secure VLAN segmentation, and network infrastructure automation using Terraform for provisioning and Ansible for repeatable configuration.</p>
-      </div>
-      <div class="timeline-item">
-        <h4 class="timeline-title">Client Security Assessment</h4>
-        <p class="timeline-description">For WebSeal International, reviewed session management and browser-side security controls across business systems, then documented findings and security recommendations.</p>
-      </div>
-      <p>More work is available on the <a href="projects.html">Projects</a> and <a href="labs.html">Lab Challenges</a> pages.</p>
     </section>
 
+    <!-- 6. Referees -->
     <section class="resume-section" data-aos="fade-up" data-aos-delay="250">
-      <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-      <div class="timeline-item">
-        <span class="timeline-date">2025</span>
-        <h4 class="timeline-title">BSc in Business Information Technology</h4>
-        <span class="timeline-subtitle">University of Embu</span>
-      </div>
+      <h3><i class="fas fa-address-book" aria-hidden="true"></i> Referees</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        Professional and academic references available immediately upon request. Contact via <a href="mailto:solomonmarcos34@gmail.com" style="color: var(--primary); text-decoration: underline;">solomonmarcos34@gmail.com</a>.
+      </p>
     </section>
 
-    <section class="resume-section" data-aos="fade-up" data-aos-delay="275">
-      <h3><i class="fas fa-certificate"></i> Certifications &amp; Training</h3>
-      <ul class="skill-list">
-        <li>Security Analyst – Cyber Shujaa</li>
-        <li>Google Cloud Security Analyst</li>
-        <li>CCNA (In Progress / Completed Modules)</li>
-        <li>SOC Operations – Coursera</li>
-        <li>Network Security – Coursera</li>
-        <li>Certified Ethical Hacker – Alison</li>
-        <li>Computer &amp; Digital Forensics Masterclass – Udemy</li>
-        <li>Real Ethical Hacking with Python (PYCEH23+) – Udemy</li>
-      </ul>
-    </section>
-
-    <section class="resume-section" data-aos="fade-up" data-aos-delay="300">
-      <h3><i class="fas fa-code"></i> Technical Skills</h3>
-      <div class="skills-container">
-        <div class="skill-category">
-          <h4>Network &amp; Infrastructure</h4>
-          <ul class="skill-list">
-            <li>Cisco routing and switching</li>
-            <li>VLANs / STP / OSPF / BGP basics</li>
-            <li>NAT, ACLs, firewalls, IPSec/SSL VPN</li>
-            <li>Terraform and Ansible</li>
-            <li>Network documentation</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <h4>Security &amp; Platforms</h4>
-          <ul class="skill-list">
-            <li>Wireshark, SIEM, and SOC operations</li>
-            <li>Penetration testing and digital forensics</li>
-            <li>Incident response and threat hunting</li>
-            <li>Linux / Unix, Python, Google Cloud</li>
-            <li>Mentoring and technical training</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="resume-section" data-aos="fade-up" data-aos-delay="325">
-      <h3><i class="fas fa-address-book"></i> Referees</h3>
-      <p>Available upon request.</p>
-    </section>
   </main>
 
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <div class="social-links">
-        <a href="https://github.com/marcos-solo" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:solomonmarcos34@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="index.html" class="footer-brand">
+        <i class="fas fa-shield-halved" aria-hidden="true"></i> Marcos Solomon
+      </a>
+      
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="labs.html">Lab Challenges</a>
+        <a href="contact.html">Contact</a>
+        <a href="Marcos_solomon_cv.html">Printable CV</a>
       </div>
+
+      <div class="social-links">
+        <a href="https://github.com/marcos-solo" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="https://linkedin.com/in/marcos-solomon" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="mailto:solomonmarcos34@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        <a href="tel:+254741840839" class="social-link" aria-label="Phone"><i class="fas fa-phone" aria-hidden="true"></i></a>
+      </div>
+
       <p class="copyright">&copy; <span class="current-year">2026</span> Marcos Solomon. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- AOS Animation Library -->
+  <!-- AOS Animation Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true,
-      offset: 100
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 750,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 80,
+        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      });
     });
   </script>
 
